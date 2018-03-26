@@ -65,12 +65,18 @@ export default Form.create()(class extends React.Component {
           </div>
         </div>
         <div className="login-right">
-          <img className="login-right-img" src={bgImg}/>
+            <lable className="login-lable1">
+                专业的展会管理团队
+            </lable>
+            <lable className="login-lable2">
+                拥有10000平米以上的制作工厂百余名专业技术人员
+            </lable>
+            <lable className="login-lable3">
+                每年负责的主场和特装面积达500000平方米
+            </lable>
+            <img className="login-right-img" src={bgImg}></img>
         </div>
-
-        {/*<div className="p20 bdr-10 body shadow-6 webkit-sassui-transform-center-xy t375">*/}
-
-
+        <div className="login-right2"></div>
       </section>
     );
   }
