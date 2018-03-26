@@ -1,6 +1,6 @@
 import {Card, Form, Icon, Input, Button} from 'antd';
-import ReactFullImage from 'react-full-image';
 import bgImg from 'images/bg.jpg';
+import logoImg from 'images/logo.png';
 import ReactAntForm from 'react-ant-form';
 import AppBase, {
   $api, $route, $app,
@@ -41,7 +41,11 @@ export default Form.create()(class extends React.Component {
     return (
       <section className="login-view h100">
         <div className="login-left">
-          <center><ExwLogo className="py20"/></center>
+          <div className="login-logo">
+              <img className="login-logo-img" src={logoImg}/>
+          </div>
+
+
           <div className="bg-f bdr-5 p30">
             <ReactAntForm formLayout={null}
                           submitLabel={null}
