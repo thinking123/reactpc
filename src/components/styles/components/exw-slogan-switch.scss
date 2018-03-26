@@ -1,0 +1,17 @@
+.exw-slogan-switch {
+  &-overlay {
+    .item {
+      @extend .bg-blue-a, .c-f, .tc, .f14;
+      line-height: 60px;
+
+      span {
+        margin-left: 10px;
+      }
+
+      &:hover {
+        background: darken(#4769B2, 10%);
+      }
+
+    }
+  }
+}

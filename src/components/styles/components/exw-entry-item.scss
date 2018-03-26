@@ -1,0 +1,20 @@
+.exw-entry-item {
+  border-radius: 20px;
+  color: #99A3B1;
+  background: #354965;
+  transition: all 0.3s;
+  border: none;
+
+  @include size(240px);
+  @extend .tc, .dib, .rel, .z3;
+
+  &:first-child {
+    margin-right: 150px;
+  }
+
+  &:hover {
+    color:#fff;
+    background: #486AB0;
+    transform: scale(1.2);
+  }
+}

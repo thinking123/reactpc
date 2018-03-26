@@ -1,0 +1,37 @@
+#app {
+  background: #FFF;
+}
+
+#app,
+.route-wrapper {
+  height: 100%;
+  overflow: hidden;
+}
+
+button {
+  outline: none;
+}
+
+.opactiy-bg-text-5 {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.footer-view {
+  border-top: 1px solid #ccc;
+  padding: 12px 10px;
+
+  .ant-tag {
+    height: auto;
+    line-height: inherit;
+    padding: 8px 14px;
+    font-size: 14px;
+    cursor: default;
+    user-select: none;
+    min-width: 70px;
+    text-align: center;
+    &:hover {
+      opacity: 0.8;
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,67 @@
+/**_override Start**/
+
+.ant-menu-dark {
+  background: #364964;
+
+  &.ant-menu-inline {
+    &-collapsed{
+      width: auto;
+    }
+  }
+
+  .ant-menu-inline {
+    &.ant-menu-sub {
+      background: #303845;
+    }
+  }
+
+
+  .ant-menu-submenu {
+    border-bottom: 1px solid #000;
+  }
+
+
+  .ant-menu-item-group {
+    padding-left: 10px;
+    &-list {
+      margin-left: -10px;
+    }
+    &-title {
+      @extend .c-gray;
+    }
+  }
+
+  .ant-menu-item {
+    //background: #2F3846;
+
+    &:hover{
+      color:#fff;
+    }
+
+    &,
+    .ant-badge {
+      @extend .c-gray, .f14;
+    }
+    &-selected {
+      > *,
+      .ant-badge {
+        color: #fff;
+      }
+    }
+  }
+
+}
+
+.ant-layout-header {
+  @extend .bg-blue-a;
+  &,
+  a {
+    @extend .c-f;
+  }
+}
+
+.ant-badge {
+  color: #fff;
+}
+
+/**_override  End**/
