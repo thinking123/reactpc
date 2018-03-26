@@ -3,8 +3,7 @@ import bgImg from 'images/bg.jpg';
 import logoImg from 'images/logo.png';
 import ReactAntForm from 'react-ant-form';
 import AppBase, {
-  $api, $route, $app,
-  ExwLogo
+  $api, $route, $app
 } from 'components/scripts/index';
 export default Form.create()(class extends React.Component {
 

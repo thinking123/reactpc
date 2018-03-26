@@ -13,72 +13,42 @@ export default class extends Component {
             selectedKeys={[activeRoute]}
             openKeys={[openKeys]}
             onClick={this._onMenuClick}>
-        <Menu.SubMenu key="/admin/apply-files" onTitleClick={this._onSubMenuClick}
-                      title={<span className="f14">报馆资料审核</span>}>
+
           <Menu.Item key="/admin/dashboards/index">
             <Icon type="appstore-o"/><span>首页</span>
           </Menu.Item>
           <Menu.Item key={`/admin/building-businesses/index/${activeState || 1}`}>
             <Icon type="hdd"/>
-            <Badge count={5} offset={[0, 20]}>
-              <span className="nav-text">搭建商</span>
-            </Badge>
+              <span className="nav-text">我的报馆</span>
           </Menu.Item>
           <Menu.Item key="/admin/newspaper-offices/index">
             <Icon type="database"/>
-            <span className="nav-text">报馆</span>
+            <span className="nav-text">施工人员</span>
           </Menu.Item>
           <Menu.Item key="/admin/builders/index">
             <Icon type="tool"/>
-            <span className="nav-text">施工人员</span>
+            <span className="nav-text">付款通知单</span>
           </Menu.Item>
           <Menu.Item key="/admin/truck-infomations/index">
             <Icon type="rocket"/>
-            <span className="nav-text">货车信息</span>
+            <span className="nav-text">汇款水单和发票</span>
           </Menu.Item>
-        </Menu.SubMenu>
-
-        <Menu.SubMenu key="/admin/finance" onTitleClick={this._onSubMenuClick} title={<span className="f14">财务</span>}>
-          <Menu.Item key="/admin/payment-orders/index">
-            <Icon type="file"/>
-            <span className="nav-text">付款通知单</span>
+          <Menu.Item key="/admin/dashboards/index2">
+            <Icon type="rocket"/>
+            <span className="nav-text">通知</span>
           </Menu.Item>
-          <Menu.Item key="/admin/bank-slips/index">
-            <Icon type="file"/>
-            <span className="nav-text">银行汇款水单</span>
-          </Menu.Item>
-          <Menu.Item key="/admin/receipts/index">
-            <Icon type="file"/>
-            <span className="nav-text">发票</span>
-          </Menu.Item>
-          <Menu.Item key="/admin/service-costs/index">
-            <Icon type="file"/>
-            <span className="nav-text">现场服务费用</span>
-          </Menu.Item>
-          <Menu.Item key="/admin/deposits/index">
-            <Icon type="file"/>
-            <span className="nav-text">押金</span>
-          </Menu.Item>
-        </Menu.SubMenu>
-
-        <Menu.SubMenu key="/admin/manage" onTitleClick={this._onSubMenuClick} title={<span className="f14">管理</span>}>
-          <Menu.Item key="/admin/illegal-records/index">
-            <Icon type="exception"/>
+          <Menu.Item key="/admin/dashboards/index3">
+            <Icon type="rocket"/>
             <span className="nav-text">违规记录</span>
           </Menu.Item>
-          <Menu.Item key="/admin/certificate-records/index">
-            <Icon type="calculator"/>
-            <span className="nav-text">发证记录</span>
-          </Menu.Item>
-          <Menu.Item key="/admin/notifications/index">
-            <Icon type="mail"/>
-            <span className="nav-text">通知管理</span>
-          </Menu.Item>
-          <Menu.Item key="/admin/account-settings/index">
-            <Icon type="setting"/>
+          <Menu.Item key="/admin/dashboards/index4">
+            <Icon type="rocket"/>
             <span className="nav-text">账号设置</span>
           </Menu.Item>
-        </Menu.SubMenu>
+          <Menu.Item key="/admin/dashboards/index5">
+            <Icon type="rocket"/>
+            <span className="nav-text">个人和公司</span>
+          </Menu.Item>
       </Menu>
     )
   }

@@ -2,8 +2,7 @@ import React, {Component} from 'react';
 import {Layout, Menu, Icon, Dropdown} from 'antd';
 import classNames from 'classnames';
 import AppBase, {
-  $api, $app, $config, $route,
-  ExwLogo
+  $api, $app, $config, $route
 } from 'components/scripts/index';
 
 export default class extends Component {
@@ -40,7 +39,7 @@ export default class extends Component {
     return (
       <Dropdown overlay={this.overlayView} trigger={['click']}>
         <div className="mb10 bg-blue-a tc py30 exw-slogan-switch">
-          <ExwLogo title={title}/>
+
         </div>
       </Dropdown>
     )

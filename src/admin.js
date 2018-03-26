@@ -10,7 +10,6 @@ import ReactDynamicRouter from 'react-dynamic-router';
 
 import AppBase, {
   $api, $app, $config,
-  ExwLogo,
   ExwSideMenu,
   ExwHeader,
   ExwPageException,

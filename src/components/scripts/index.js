@@ -21,7 +21,7 @@ export const $date = require('next-date');
 
 /*===components start===*/
 export const AntAbstractControllerIndex = require('./ant-abstract-controller-index').default;
-export const ExwLogo=require('./exw-logo').default;
+//export const ExwLogo=require('./exw-logo').default;
 export const ExwModalSelectExhibition=require('./exw-modal-select-exhibition').default;
 export const ExwInfoCardItem=require('./exw-info-card-item').default;
 export const ExwSideMenu=require('./exw-side-menu').default;
