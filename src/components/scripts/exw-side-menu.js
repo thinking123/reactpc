@@ -33,19 +33,19 @@ export default class extends Component {
             <Icon type="rocket"/>
             <span className="nav-text">汇款水单和发票</span>
           </Menu.Item>
-          <Menu.Item key="/admin/dashboards/index2">
+          <Menu.Item key="/admin/notifications/index">
             <Icon type="rocket"/>
             <span className="nav-text">通知</span>
           </Menu.Item>
-          <Menu.Item key="/admin/dashboards/index3">
+          <Menu.Item key="/admin/payment-orders/index">
             <Icon type="rocket"/>
             <span className="nav-text">违规记录</span>
           </Menu.Item>
-          <Menu.Item key="/admin/dashboards/index4">
+          <Menu.Item key="/admin/account-settings/index">
             <Icon type="rocket"/>
             <span className="nav-text">账号设置</span>
           </Menu.Item>
-          <Menu.Item key="/admin/dashboards/index5">
+          <Menu.Item key="/admin/certificate-records/index">
             <Icon type="rocket"/>
             <span className="nav-text">个人和公司</span>
           </Menu.Item>

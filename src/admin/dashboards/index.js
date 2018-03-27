@@ -11,8 +11,8 @@ export default class extends AntAbstractControllerIndex {
   childView() {
     return (
       <div className="p20 dashboard-view">
-        <Row>
-          <Col span="16">
+        <Row gutter={30}>
+          <Col span="18">
               <Row gutter={20}>
               <Col span="8">
               <ExwInfoCardItem icon="file" count="12" title="我的报馆" apply/>
@@ -33,7 +33,7 @@ export default class extends AntAbstractControllerIndex {
             </Col>
             </Row>
           </Col>
-          <Col span="8" className="pl20">
+          <Col span="6">
               <Row gutter={20}>
                   <Col span="24">
                     <ExwInfoCardItem icon="file" count="112" title="欢迎你,李华" apply/>
@@ -42,8 +42,8 @@ export default class extends AntAbstractControllerIndex {
 
                 <Row gutter={20}>
                   <Col span="24">
-                  <ExwInfoCardItem icon="file" count="112" title="违规记录" apply/>
-                </Col>
+                      <ExwInfoCardItem icon="file" count="112" title="违规记录" apply/>
+                  </Col>
                 </Row>
           </Col>
         </Row>
