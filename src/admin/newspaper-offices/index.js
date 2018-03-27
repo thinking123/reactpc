@@ -1,39 +1,42 @@
-import React, {Component} from 'react';
-import {Row, Col, Tag, Icon} from 'antd';
 import AppBase, {
-  $api, $store,
-  ExwInfoCardItem,
+  $api, $store, $app, $config,
   AntAbstractControllerIndex
 } from 'components/scripts/index';
-import ReactButton from 'react-button';
+import {Table, Icon, Card, Input, Button, Tabs} from 'antd';
 
-@mixin(['pure-layout'])
+
+@mixin(['tabs-layout'])
 export default class extends AntAbstractControllerIndex {
-  layout = 'pure';
+  layout = 'tabs';
 
-  _onClick = inStatus => {
-    AppBase.notify(`You Click status: => ${inStatus}`);
-  };
-
-  footerView() {
+  get extra() {
     return (
-      <div className="tr ml10_ ml__ test-footer-view">
-        <Tag color="#38a0f5" onClick={this._onClick.bind(this, 'back')}>
-          <Icon type="left"/>
-          <span>返回</span>
-        </Tag>
-        <Tag color="#F34D45" onClick={this._onClick.bind(this, 'refuse')}>拒绝</Tag>
-        <Tag color="#46A96A" onClick={this._onClick.bind(this, 'pass')}>通过</Tag>
+      <div className="lfix_ ml10_ ml__ extra">
+        <Input.Search className="dib" style={{width: 220}} enterButton placeholder="do search"/>
       </div>
-    );
+    )
   }
 
-  childView() {
-    return (
-      <div className="p20 newspaper-office-view">
-        Child View!
-      </div>
-    );
+  get route() {
+    return {
+      path: '/admin/newspaper-offices/index/:state',
+      component: require('admin/newspaper-offices/index-status').default
+    };
   }
 
+  componentDidMount() {
+  }
+
+  get header() {
+    return [
+      {
+        state: '1',
+        component: <span>待审核(12)</span>
+      },
+      {
+        state: '2',
+        component: <span>已审核(213)</span>
+      }
+    ];
+  }
 }

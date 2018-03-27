@@ -1,34 +1,42 @@
-import React, {Component} from 'react';
-import {Row, Col, Menu, Icon} from 'antd';
 import AppBase, {
-  $api, $store, ExwInfoCardItem
+  $api, $store, $app, $config,
+  AntAbstractControllerIndex
 } from 'components/scripts/index';
+import {Table, Icon, Card, Input, Button, Tabs} from 'antd';
 
-export default class extends Component {
-  render() {
+
+@mixin(['tabs-layout'])
+export default class extends AntAbstractControllerIndex {
+  layout = 'tabs';
+
+  get extra() {
     return (
-      <div className="dashboard-view">
-        <Row gutter={40}>
-          <Col span="6">
-            <ExwInfoCardItem icon="file" count="12" title="搭建商" apply/>
-          </Col>
-          <Col span="6">
-            <ExwInfoCardItem icon="file" count="3" title="报馆" apply/>
-          </Col>
-          <Col span="6">
-            <ExwInfoCardItem icon="file" count="112" title="施工人员" apply/>
-          </Col>
-          <Col span="6">
-            <ExwInfoCardItem icon="file" count="512" title="货车信息" apply/>
-          </Col>
-          <Col span="6">
-            <ExwInfoCardItem icon="file" count="1239" title="通知" apply/>
-          </Col>
-        </Row>
-
-        <h3 className="f16 b">申请展位最多的搭建商历史记录</h3>
-
+      <div className="lfix_ ml10_ ml__ extra">
+        <Input.Search className="dib" style={{width: 220}} enterButton placeholder="do search"/>
       </div>
     )
+  }
+
+  get route() {
+    return {
+      path: '/admin/builders/index/:state',
+      component: require('admin/builders/index-status').default
+    };
+  }
+
+  componentDidMount() {
+  }
+
+  get header() {
+    return [
+      {
+        state: '1',
+        component: <span>待审核(12)</span>
+      },
+      {
+        state: '2',
+        component: <span>已审核(213)</span>
+      }
+    ];
   }
 }

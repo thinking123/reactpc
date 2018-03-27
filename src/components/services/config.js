@@ -22,6 +22,14 @@ export default class {
     '/admin/orders/index',
     '/admin/builders/index',
     '/admin/building-businesses/index',
+    '/admin/building-businesses/show/:id',
+
+    '/admin/newspaper-offices/index',
+    '/admin/newspaper-offices/show/:id',
+
+    '/admin/builders/index',
+    '/admin/builders/show/:id',
+
     '/admin/account-settings/index',
     '/admin/certificate-records/index',
     '/admin/dashboards/index',

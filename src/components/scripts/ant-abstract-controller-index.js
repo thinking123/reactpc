@@ -62,6 +62,12 @@ export default class extends React.Component {
     };
   }
 
+  componentWillUnmount() {
+    AppBase.$.memory = {
+      footerView: null
+    };
+  }
+
   footerView() {
     return null;
   }
@@ -84,7 +90,6 @@ export default class extends React.Component {
   tableView() {
     const {columns, data, selectedRowKeys}  = this.state;
     const {total, current} = this.pagination;
-
     return (
       <Table
         size={this.size}
@@ -94,6 +99,7 @@ export default class extends React.Component {
         columns={columns}
         dataSource={data}
         rowKey={this.rowKey}
+        onRow={this._onRow}
         pagination={{
           total: this.state[total],
           current: this.state[current],
@@ -101,6 +107,17 @@ export default class extends React.Component {
         }}/>
     )
   }
+
+  onRowClick() {
+  }
+
+  _onRow = inRecord => {
+    return {
+      onClick: () => {
+        this.onRowClick(inRecord);
+      }
+    }
+  };
 
   _onChange = (inCurrentPage) => {
     const pagination = {[this.pagination.current]: inCurrentPage};

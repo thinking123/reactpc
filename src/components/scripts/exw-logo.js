@@ -6,11 +6,12 @@ import AppBase, {$api, $app, $store} from 'components/scripts/index';
 export default class extends Component {
   static defaultProps = {
     title: '展会审核系统',
-    sub: '北京国机联创广告有限公司'
+    sub: '北京国机联创广告有限公司',
+    arrow: false
   };
 
   render() {
-    const {className, title, sub, selectable, ...props} = this.props;
+    const {className, title, sub, arrow, selectable, ...props} = this.props;
     const {sidebarCollapsed} = AppBase.$.memory;
     return (
       <section {...props} className={ classNames("c-f dib webkit-sassui-vim-center exw-logo", className) }>
@@ -22,7 +23,7 @@ export default class extends Component {
                 <h3 className="f20 c-f b hd">{title}</h3>
                 <p className="f10 mt3 ft">{sub}</p>
               </div>
-              <Icon type="right"/>
+              {arrow && <Icon type="right"/>}
             </div>
           )
         }

@@ -23,6 +23,7 @@ npm run dev
 + [x] ant-design optmize
 + [x] add spinkit for app
 + [x] theme customize
++ [ ] easymock: https://github.com/easy-mock/easy-mock
 
 ## resources:
 + https://ant.design/docs/react/introduce-cn

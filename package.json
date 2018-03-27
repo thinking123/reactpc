@@ -68,6 +68,7 @@
     "react-router": "^4.2.0",
     "react-router-config": "^1.0.0-beta.4",
     "react-router-dom": "^4.2.2",
+    "react-smart-photo": "github:afeiship/react-smart-photo",
     "react-status-manager": "github:afeiship/react-status-manager",
     "react-toggle": "github:afeiship/react-toggle",
     "webkit-sass-flexbox-grid": "github:afeiship/webkit-sass-flexbox-grid",

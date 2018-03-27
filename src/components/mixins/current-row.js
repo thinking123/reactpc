@@ -11,7 +11,7 @@ export default class {
   syncCurrentRow(e, index) {
     AppBase.$.memory = {
       currentRow: e,
-      currenIndex: index
+      currentIndex: index
     };
   }
 

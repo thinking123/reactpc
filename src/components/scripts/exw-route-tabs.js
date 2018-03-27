@@ -6,14 +6,17 @@ import {
   Switch,
   NavLink
 } from 'react-router-dom';
-import {Table, Icon, Card, Button, Tabs, Input, Modal} from 'antd';
+import AppBase, {
+  $api, $store, $app, $config
+} from 'components/scripts/index';
+import {Table, Icon, Card, Input, Button, Tabs} from 'antd';
 
 export default class extends Component {
 
   static defaultProps = {
     route: {
       path: '/admin/building-businesses/index/:state',
-      component: require('admin/building-businesses/show').default
+      component: require('admin/building-businesses/index-status').default
     },
     header: [
       {
@@ -33,18 +36,27 @@ export default class extends Component {
     )
   };
 
+  _onClick = inItem => {
+    console.log(inItem);
+    AppBase.$.memory = {
+      activeState: inItem.state,
+      activeRoute: `/admin/building-businesses/index/${inItem.state}`
+    };
+  };
+
   render() {
     const {className, extra, route, header, match, ...props} = this.props;
     const matchUrl = match.url;
     return (
-      <div className={ classNames("ml4 abs trbl0 webkit-sassui-flex-fixed-bdauto exw-route-tabs", className) } >
+      <div className={ classNames("ml4 abs trbl0 webkit-sassui-flex-fixed-bdauto exw-route-tabs", className) }>
         <nav className="rel px14 lrfix_ hd">
           <ul className="left">
             {
               header.map((item) => {
                 return (
-                  <li key={item.state}><NavLink activeClassName='active'
-                                                to={`${matchUrl}/${item.state}`}>{item.component}</NavLink></li>
+                  <li onClick={this._onClick.bind(this, item)} key={item.state}><NavLink activeClassName='active'
+                                                                                         to={`${matchUrl}/${item.state}`}>{item.component}</NavLink>
+                  </li>
                 )
               })
             }

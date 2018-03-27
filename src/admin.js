@@ -10,7 +10,6 @@ import ReactDynamicRouter from 'react-dynamic-router';
 
 import AppBase, {
   $api, $app, $config,
-  ExwLogo,
   ExwSideMenu,
   ExwHeader,
   ExwPageException,
@@ -21,7 +20,7 @@ import AppBase, {
 export default class extends React.Component {
 
   render() {
-    const {sidebarCollapsed, footer} = AppBase.$.memory;
+    const {sidebarCollapsed, footer, tabId} = AppBase.$.memory;
     return (
       <Layout className="admin-view">
         <Sider
