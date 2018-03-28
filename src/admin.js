@@ -28,15 +28,15 @@ export default class extends React.Component {
         </Header>
         <Layout>
           <Sider
-               width="200">
-               <ExwSideMenu />
+            width="200">
+            <ExwSideMenu />
           </Sider>
-               <Content className="rel">
-                 <Switch>
-                   { ReactDynamicRouter.build(Route, $config.ROUTES) }
-                   <Route component={ExwPageException}/>
-                 </Switch>
-               </Content>
+          <Content className="rel">
+            <Switch>
+              { ReactDynamicRouter.build(Route, $config.ROUTES) }
+              <Route component={ExwPageException}/>
+            </Switch>
+          </Content>
         </Layout>
       </Layout>
     );
