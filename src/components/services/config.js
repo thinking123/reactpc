@@ -36,7 +36,10 @@ export default class {
     '/admin/dashboards/index',
     '/admin/illegal-records/index',
     '/admin/newspaper-offices/index',
+
     '/admin/notifications/index',
+    '/admin/notifications/show',
+
     '/admin/truck-infomations/index',
   ];
 }
