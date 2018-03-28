@@ -132,6 +132,6 @@ export default class extends Component {
 
   render() {
     const {menuKey} = AppBase.$.session;
-    return this[`${nx.camelize(menuKey)}View`];
+    return this.applyFinanceView;
   }
 }
