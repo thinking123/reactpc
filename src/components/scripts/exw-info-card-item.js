@@ -19,20 +19,22 @@ export default class extends Component {
         {/*</row>*/}
 
           <div className="info-card-layout">
-            <div className="info-card-layout-img">
-              <img className="" src={img}/>
+            <div  className="info-card-layout-img">
+              <img src={img}/>
             </div>
 
           </div>
           <div className="info-card-layout ">
             <div className="info-card-layout-img">
-              <h3 className="tc f14 mb14 c-9 b">
-                  <span className="ml5">{title}</span>
+              <h3 className="tc f14 mb14  b card-text1">
+                  <span>{title}</span>
               </h3>
-              <p className="rel">
-                  <span className="f48 b">{count}</span>
-              {apply && <em className="abs c-red wp-10">待审</em>}
-              </p>
+              <h3 className="tc f32 mb14  b">
+                <span>{count}</span>
+              </h3>
+              {/*<p className="rel">*/}
+                  {/*<span className="f48 b">{count}</span>*/}
+              {/*{apply && <em className="abs c-red wp-10">待审</em>}*/}
             </div>
           </div>
 

@@ -8,12 +8,15 @@
     float:left;
     display:block;
     padding-left: 10%;
-    padding-top: 15%;
+    padding-top: 18%;
 
     .info-card-layout-img{
       width:78px;
       height:70px;
 
+      .card-text1{
+        color: #98A2B5;
+      }
     }
   }
 }
