@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import {Layout, Menu, Icon, Badge} from 'antd';
 const {Header, Content, Footer, Sider} = Layout;
 import AppBase, {$api, $store} from 'components/scripts/index';
+import logoImg from 'images/logo.png';
 
 export default class extends Component {
 
@@ -12,7 +13,10 @@ export default class extends Component {
   render() {
     //const {sidebarCollapsed} = AppBase.$.memory;
     return (
-      <Header className="rel lrfix_ bg-f">
+      <Header className="rel lrfix_ ">
+        <div className="login-logo">
+          <img className="login-logo-img" src={logoImg}/>
+        </div>
         <div className="right">
           <Icon type="user"/>
           <span className="mr10">Hello Admin</span>
