@@ -23,31 +23,20 @@ export default class extends React.Component {
     const {sidebarCollapsed, footer, tabId} = AppBase.$.memory;
     return (
       <Layout className="admin-view">
-        <Sider
-          breakpoint="lg"
-          width="250"
-          trigger={null}
-          collapsible
-          collapsedWidth={148}
-          collapsed={sidebarCollapsed}>
-          <ExwSloganSwitch />
-          <ExwSideMenu />
-        </Sider>
-        <Layout>
+        <Header>
           <ExwHeader/>
-          <Content className="rel">
-            <Switch>
-              { ReactDynamicRouter.build(Route, $config.ROUTES) }
-              <Route component={ExwPageException}/>
-            </Switch>
-          </Content>
-          {
-            footer && (
-              <Footer className="clearfix footer-view">
-                { footer }
-              </Footer>
-            )
-          }
+        </Header>
+        <Layout>
+          <Sider
+               width="200">
+               <ExwSideMenu />
+          </Sider>
+               <Content className="rel">
+                 <Switch>
+                   { ReactDynamicRouter.build(Route, $config.ROUTES) }
+                   <Route component={ExwPageException}/>
+                 </Switch>
+               </Content>
         </Layout>
       </Layout>
     );

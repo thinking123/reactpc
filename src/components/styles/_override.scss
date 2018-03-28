@@ -1,7 +1,7 @@
 /**_override Start**/
 
 .ant-menu-dark {
-  background: #364964;
+  background: rgba(235, 240, 244, 1);
 
   &.ant-menu-inline {
     &-collapsed{
@@ -34,9 +34,6 @@
   .ant-menu-item {
     //background: #2F3846;
 
-    &:hover{
-      color:#fff;
-    }
 
     &,
     .ant-badge {
@@ -45,7 +42,7 @@
     &-selected {
       > *,
       .ant-badge {
-        color: #fff;
+
       }
     }
   }
@@ -53,10 +50,15 @@
 }
 
 .ant-layout-header {
-  @extend .bg-blue-a;
+  background: #fff  !important;
+  padding: 0 !important;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+
   &,
   a {
-    @extend .c-f;
+    font-size: 14px;
+    color: #404453;
   }
 }
 
@@ -64,4 +66,31 @@
   color: #fff;
 }
 
+.ant-layout {
+  background: #fff !important;
+}
+
+.ant-layout-sider {
+  background: #fff !important;
+}
+
+.ant-layout-sider-children{
+  .bg-blue-a{
+    background-color: #fff !important;
+  }
+}
+
+.ant-menu.ant-menu-dark .ant-menu-item-selected{
+  background-color: rgba(255, 255, 255,1) !important;
+  border-radius: 3px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  color: #0075C2;
+}
+
+.ant-menu-inline .ant-menu-item{
+  margin-top: 0 !important;
+  float: right !important;
+  width: 90% !important;
+}
 /**_override  End**/

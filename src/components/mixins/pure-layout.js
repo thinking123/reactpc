@@ -13,7 +13,7 @@ export default class {
 
   pureLayout() {
     return (
-      <section className={classNames("ml4 abs trbl0 webkit-sassui-flex-fixed-bdauto exw-route-tabs pure-layout-view", {
+      <section className={classNames("abs trbl0 webkit-sassui-flex-fixed-bdauto exw-route-tabs pure-layout-view", {
         'ovs-y': this.scrollable
       })}>
         {this.childView()}

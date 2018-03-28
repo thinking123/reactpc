@@ -48,7 +48,7 @@ export default class extends Component {
     const {className, extra, route, header, match, ...props} = this.props;
     const matchUrl = match.url;
     return (
-      <div className={ classNames("ml4 abs trbl0 webkit-sassui-flex-fixed-bdauto exw-route-tabs", className) }>
+      <div className={ classNames("abs trbl0 webkit-sassui-flex-fixed-bdauto exw-route-tabs", className) }>
         <nav className="rel px14 lrfix_ hd">
           <ul className="left">
             {
