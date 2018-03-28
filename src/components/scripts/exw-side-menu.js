@@ -22,31 +22,31 @@ export default class extends Component {
               <span className="nav-text">我的报馆</span>
           </Menu.Item>
           <Menu.Item key="/admin/newspaper-offices/index">
-            <Icon type="database"/>
+            <Icon type="tool" />
             <span className="nav-text">施工人员</span>
           </Menu.Item>
           <Menu.Item key="/admin/builders/index">
-            <Icon type="tool"/>
+            <Icon type="pay-circle" />
             <span className="nav-text">付款通知单</span>
           </Menu.Item>
           <Menu.Item key="/admin/truck-infomations/index">
-            <Icon type="rocket"/>
+            <Icon type="barcode" />
             <span className="nav-text">汇款水单和发票</span>
           </Menu.Item>
           <Menu.Item key="/admin/notifications/index">
-            <Icon type="rocket"/>
+            <Icon type="notification" />
             <span className="nav-text">通知</span>
           </Menu.Item>
           <Menu.Item key="/admin/payment-orders/index">
-            <Icon type="rocket"/>
+            <Icon type="exception" />
             <span className="nav-text">违规记录</span>
           </Menu.Item>
           <Menu.Item key="/admin/account-settings/index">
-            <Icon type="rocket"/>
+            <Icon type="setting" />
             <span className="nav-text">账号设置</span>
           </Menu.Item>
           <Menu.Item key="/admin/certificate-records/index">
-            <Icon type="rocket"/>
+            <Icon type="user" />
             <span className="nav-text">个人和公司</span>
           </Menu.Item>
       </Menu>
