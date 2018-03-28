@@ -41,7 +41,7 @@ export default Form.create()(class extends React.Component {
       <section className="login-view h100">
         <div className="login-left">
           <div className="login-logo">
-              <img src={logoImg}/>
+              <img className="login-logo-img" src={logoImg}/>
           </div>
 
 
