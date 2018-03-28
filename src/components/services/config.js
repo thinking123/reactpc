@@ -1,6 +1,7 @@
 export default class {
 
   static VERSION = '__BUILD_VERSION__';
+  static ICP_INFO = '京ICP备12048196';
   static APIS = {
     baseUrl: `//${location.host}`,
     items: {
