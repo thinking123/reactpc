@@ -24,43 +24,41 @@ export default class extends Component {
           <Icon type="appstore-o"/>
           <span className="nav-text">首页</span>
         </Menu.Item>
-        <Menu.ItemGroup title="搭建商申报" theme="dark">
+        <Menu.ItemGroup title="" theme="dark">
           <Menu.Item key={`/admin/building-businesses/index/${activeState || 1}`}>
             <Icon type="hdd"/>
-            <Badge count={5} offset={[0, 20]}>
-              <span className="nav-text">搭建商</span>
-            </Badge>
+              <span className="nav-text">我的报馆</span>
           </Menu.Item>
           <Menu.Item key="/admin/newspaper-offices/index">
-            <Icon type="database"/>
-            <span className="nav-text">报馆</span>
-          </Menu.Item>
-          <Menu.Item key="/admin/builders/index">
-            <Icon type="tool"/>
+            <Icon type="tool" />
             <span className="nav-text">施工人员</span>
           </Menu.Item>
-          <Menu.Item key="/admin/truck-infomations/index3">
-            <Icon type="rocket"/>
-            <span className="nav-text">货车信息</span>
+          <Menu.Item key="/admin/builders/index">
+            <Icon type="pay-circle" />
+            <span className="nav-text">付款通知单</span>
+          </Menu.Item>
+          <Menu.Item key="/admin/truck-infomations/index">
+            <Icon type="barcode"/>
+            <span className="nav-text">汇款水单和发票</span>
           </Menu.Item>
         </Menu.ItemGroup>
 
-        <Menu.ItemGroup title="管理" theme="dark">
+        <Menu.ItemGroup title="" theme="dark">
           <Menu.Item key="/admin/illegal-records/index">
+            <Icon type="notification"/>
+            <span className="nav-text">通知</span>
+          </Menu.Item>
+          <Menu.Item key="/admin/certificate-records/index">
             <Icon type="exception"/>
             <span className="nav-text">违规记录</span>
           </Menu.Item>
-          <Menu.Item key="/admin/certificate-records/index">
-            <Icon type="calculator"/>
-            <span className="nav-text">发证记录</span>
-          </Menu.Item>
           <Menu.Item key="/admin/notifications/index">
-            <Icon type="mail"/>
-            <span className="nav-text">通知管理</span>
-          </Menu.Item>
-          <Menu.Item key="/admin/account-settings/index">
             <Icon type="setting"/>
             <span className="nav-text">账号设置</span>
+          </Menu.Item>
+          <Menu.Item key="/admin/account-settings/index">
+            <Icon type="user"/>
+            <span className="nav-text">个人和公司</span>
           </Menu.Item>
         </Menu.ItemGroup>
       </Menu>

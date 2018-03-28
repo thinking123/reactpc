@@ -9,15 +9,16 @@ export default class extends Component {
     return (
       <div data-depth="2" data-hover="true" className={ classNames("bdr-3 webkit-sassui-shadow-box bg-f rel exw-info-card-item", className) } {...props}>
         <div className="webkit-sassui-transform-center-xy">
-          <h3 className="tc f14 mb14 c-9 b webkit-sassui-icon-text">
-            <Icon type={icon}/>
 
-            <span className="ml5">{title}</span>
-          </h3>
-          <p className="rel">
-            <span className="f48 b">{count}</span>
-            {apply && <em className="abs c-red wp-10">待审</em>}
-          </p>
+          {/*<h3 className="tc f14 mb14 c-9 b webkit-sassui-icon-text">*/}
+            {/*<Icon type={icon}/>*/}
+
+            {/*<span className="ml5">{title}</span>*/}
+          {/*</h3>*/}
+          {/*<p className="rel">*/}
+            {/*<span className="f48 b">{count}</span>*/}
+            {/*{apply && <em className="abs c-red wp-10">待审</em>}*/}
+          {/*</p>*/}
         </div>
       </div>
     )
