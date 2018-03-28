@@ -11,6 +11,7 @@ export default class extends Component {
         <div className="webkit-sassui-transform-center-xy">
           <h3 className="tc f14 mb14 c-9 b webkit-sassui-icon-text">
             <Icon type={icon}/>
+
             <span className="ml5">{title}</span>
           </h3>
           <p className="rel">
