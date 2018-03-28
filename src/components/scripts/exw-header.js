@@ -15,7 +15,7 @@ export default class extends Component {
     return (
       <Header className="rel lrfix_ ">
         <div className="login-logo">
-          <img className="login-logo-img" src={logoImg}/>
+          <img src={logoImg}/>
         </div>
         <div className="right">
           <Icon type="user"/>
