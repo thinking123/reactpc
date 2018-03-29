@@ -72,8 +72,8 @@ export default class extends Component {
           </Col>
           <Col span="6">
             <div className="pt20 pb10 shadow-1 bd">
-              <h3 className="c-gray">违规扣分总计</h3>
-              <p className="b f48">90</p>
+              <h3 className="c-gray">违规条数</h3>
+              <p className="b f48">3</p>
             </div>
           </Col>
         </Row>

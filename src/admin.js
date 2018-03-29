@@ -23,12 +23,11 @@ export default class extends React.Component {
     const {sidebarCollapsed, footer, tabId} = AppBase.$.memory;
     return (
       <Layout className="admin-view">
-        <Header>
-          <ExwHeader/>
-        </Header>
-        <Layout>
+        <ExwHeader/>
+        <Layout className="app-col auto layout-view">
           <Sider
             width="200">
+            <div className="blank-20" />
             <ExwSideMenu />
           </Sider>
           <Content className="rel">

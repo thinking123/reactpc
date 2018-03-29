@@ -4,7 +4,7 @@
   background: rgba(235, 240, 244, 1);
 
   &.ant-menu-inline {
-    &-collapsed{
+    &-collapsed {
       width: auto;
     }
   }
@@ -15,11 +15,9 @@
     }
   }
 
-
   .ant-menu-submenu {
     border-bottom: 1px solid #000;
   }
-
 
   .ant-menu-item-group {
     padding-left: 10px;
@@ -33,7 +31,6 @@
 
   .ant-menu-item {
     //background: #2F3846;
-
 
     &,
     .ant-badge {
@@ -50,7 +47,7 @@
 }
 
 .ant-layout-header {
-  background: #fff  !important;
+  background: #fff !important;
   padding: 0 !important;
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
   z-index: 999;
@@ -62,29 +59,29 @@
   }
 }
 
-.ant-badge {
-  color: #fff;
-}
-
 .ant-layout {
-  background: #fff !important;
+  background: #EBF0F4;
+  &-content {
+    background: #fff;
+  }
 }
 
 .ant-layout-sider {
   background: #ebf0f4 !important;
 }
 
-.ant-menu.ant-menu-dark .ant-menu-item-selected{
-  background-color: rgba(255, 255, 255,1) !important;
+.ant-menu.ant-menu-dark .ant-menu-item-selected {
+  background-color: rgba(255, 255, 255, 1) !important;
   border-radius: 3px;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   color: #0075C2;
 }
 
-.ant-menu-inline .ant-menu-item{
+.ant-menu-inline .ant-menu-item {
   margin-top: 0 !important;
   float: right !important;
   width: 90% !important;
 }
+
 /**_override  End**/

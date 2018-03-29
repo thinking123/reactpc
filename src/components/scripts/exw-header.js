@@ -13,15 +13,17 @@ export default class extends Component {
   render() {
     //const {sidebarCollapsed} = AppBase.$.memory;
     return (
-      <Header className="rel lrfix_ ">
-        <div className="login-logo">
-          <img className="wp-10" src={logoImg}/>
-        </div>
-        <div className="right">
-          <Icon type="user"/>
-          <span className="mr10">Hello Admin</span>
-          <a href="#">Logout</a>
-        </div>
+      <Header>
+        <nav className="app-col auto rel lrfix_ ">
+          <div className="login-logo">
+            <img className="wp-10" src={logoImg}/>
+          </div>
+          <div className="right">
+            <Icon type="user"/>
+            <span className="mr10">Hello Admin</span>
+            <a href="#">Logout</a>
+          </div>
+        </nav>
       </Header>
     )
   }
