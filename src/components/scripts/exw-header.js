@@ -15,7 +15,7 @@ export default class extends Component {
     return (
       <Header className="rel lrfix_ ">
         <div className="login-logo">
-          <img src={logoImg}/>
+          <img className="wp-10" src={logoImg}/>
         </div>
         <div className="right">
           <Icon type="user"/>
