@@ -2,56 +2,28 @@
 
 .ant-menu-dark {
   background: rgba(235, 240, 244, 1);
-
-  &.ant-menu-inline {
-    &-collapsed {
-      width: auto;
-    }
-  }
-
-  .ant-menu-inline {
-    &.ant-menu-sub {
-      background: #303845;
-    }
-  }
-
-  .ant-menu-submenu {
-    border-bottom: 1px solid #000;
-  }
-
-  .ant-menu-item-group {
-    padding-left: 10px;
-    &-list {
-      margin-left: -10px;
-    }
-    &-title {
-      @extend .c-gray;
-    }
-  }
-
   .ant-menu-item {
-    //background: #2F3846;
-
-    &,
-    .ant-badge {
-      @extend .c-gray, .f14;
+    &:hover {
+      color: #187AC2;
     }
     &-selected {
-      > *,
-      .ant-badge {
-
-      }
+      background-color: rgba(255, 255, 255, 1) !important;
+      border-radius: 3px;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      color: #0075C2;
+    }
+    & {
+      @extend .c-gray, .f14;
     }
   }
-
 }
 
 .ant-layout-header {
-  background: #fff !important;
-  padding: 0 !important;
-  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
+  background: #fff;
+  padding: 0;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
   z-index: 999;
-
   &,
   a {
     font-size: 14px;
@@ -64,24 +36,9 @@
   &-content {
     background: #fff;
   }
-}
-
-.ant-layout-sider {
-  background: #ebf0f4 !important;
-}
-
-.ant-menu.ant-menu-dark .ant-menu-item-selected {
-  background-color: rgba(255, 255, 255, 1) !important;
-  border-radius: 3px;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  color: #0075C2;
-}
-
-.ant-menu-inline .ant-menu-item {
-  margin-top: 0 !important;
-  float: right !important;
-  width: 90% !important;
+  &-sider {
+    background: #ebf0f4;
+  }
 }
 
 /**_override  End**/
