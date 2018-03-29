@@ -14,12 +14,12 @@ export default class extends Component {
         </div>
         <div className="bottom">
           <div className="item item-left">
-            <span className="span">违规扣分</span>
-            <span className="span span-bottom">{score}</span>
+            <p className="span">违规扣分</p>
+            <p className="span span-bottom">{score}</p>
           </div>
           <div className="item">
-            <span className="span">违规条数</span>
-            <span className="span span-bottom">{count}</span>
+            <p className="span">违规条数</p>
+            <p className="span span-bottom">{count}</p>
           </div>
         </div>
       </div>
