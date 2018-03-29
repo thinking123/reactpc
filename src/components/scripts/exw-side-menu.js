@@ -44,15 +44,15 @@ export default class extends Component {
         </Menu.ItemGroup>
 
         <Menu.ItemGroup title="" theme="dark">
-          <Menu.Item key="/admin/illegal-records/index">
+          <Menu.Item key="/admin/notifications/index">
             <Icon type="notification"/>
             <span className="nav-text">通知</span>
           </Menu.Item>
-          <Menu.Item key="/admin/certificate-records/index">
+          <Menu.Item key="/admin/illegal-records/index">
             <Icon type="exception"/>
             <span className="nav-text">违规记录</span>
           </Menu.Item>
-          <Menu.Item key="/admin/notifications/index">
+          <Menu.Item key="/admin/notifications1/index">
             <Icon type="setting"/>
             <span className="nav-text">账号设置</span>
           </Menu.Item>
