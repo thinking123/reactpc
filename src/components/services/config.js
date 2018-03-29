@@ -34,8 +34,9 @@ export default class {
     '/admin/account-settings/index',
     '/admin/certificate-records/index',
     '/admin/dashboards/index',
+
     '/admin/illegal-records/index',
-    '/admin/newspaper-offices/index',
+    '/admin/illegal-records/show',
 
     '/admin/notifications/index',
     '/admin/notifications/show',
