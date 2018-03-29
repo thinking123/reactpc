@@ -3,7 +3,7 @@ import bgImg from 'images/bg.jpg';
 import logoImg from 'images/logo.png';
 import ReactAntForm from 'react-ant-form';
 import AppBase, {
-  $api, $route, $app
+  $api, $route, $app, $config,
 } from 'components/scripts/index';
 export default Form.create()(class extends React.Component {
 
@@ -39,7 +39,7 @@ export default Form.create()(class extends React.Component {
   render() {
     return (
       <section className="login-view h100">
-        <div className="login-left">
+        <div className="rel login-left">
           <div className="login-logo">
               <img className="login-logo-img" src={logoImg}/>
           </div>
@@ -62,6 +62,12 @@ export default Form.create()(class extends React.Component {
               <a href="#">忘记密码？</a>
             </footer>
           </div>
+
+
+          <footer className="abs b0 wp-10 lh-20 mb20 tc">
+            <p>版权所有：北京国机联创广告有限公司</p>
+            <p>ICP备案号：{$config.ICP_INFO}</p>
+          </footer>
         </div>
         <div className="login-right">
             <lable className="login-lable1">
