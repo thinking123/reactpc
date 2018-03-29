@@ -31,7 +31,7 @@ export default class extends React.PureComponent {
           </label>
           <label className="item">
             <strong  className="dib wp-2">&nbsp;</strong>
-            <img src="http://placeholder.qiniudn.com/400x300" alt=""/>
+            <span><img src="http://placeholder.qiniudn.com/400x300" alt=""/></span>
           </label>
         </section>
       </div>
