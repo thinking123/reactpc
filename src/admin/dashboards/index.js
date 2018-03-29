@@ -42,13 +42,13 @@ export default class extends AntAbstractControllerIndex {
           <Col span="6">
               <Row gutter={20}>
                   <Col span="24">
-                    <ExwInfoCardItemWelcome img={card4} count="112" title="李华" apply/>
+                    <ExwInfoCardItemWelcome username="李华" time="10:30 am"/>
                   </Col>
                </Row>
 
                 <Row gutter={20}>
                   <Col span="24">
-                      <ExwInfoCardItemException img={card4} count="112" title="违规记录" apply/>
+                      <ExwInfoCardItemException img={card4} count="112" title="违规记录"/>
                   </Col>
                 </Row>
           </Col>

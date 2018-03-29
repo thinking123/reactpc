@@ -1,6 +1,7 @@
 .exw-info-card-item {
   height: 160px;
   margin-bottom: 20px;
+  position: relative;
 
   .info-card-layout{
     width:50%;
@@ -55,11 +56,25 @@
   }
 
   .card-welcome-text1{
-
+    position: absolute;
+    left: 10%;
+    top: 20%;
+    white-space: nowrap;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 24px;
+    color: #98A2B5;
   }
 
-  .card-welcome-text1{
-
+  .card-welcome-text2{
+    position: absolute;
+    left: 10%;
+    top: 45%;
+    white-space: nowrap;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    color: #98A2B5;
   }
 
 }
