@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import classNames from 'classnames';
+import {Row, Col, Menu, Icon} from 'antd';
 
 export default class extends Component {
 
@@ -9,7 +10,10 @@ export default class extends Component {
       <div data-depth="2" data-hover="true" className={ classNames("bdr-3 webkit-sassui-shadow-box bg-f rel exw-info-card-item", className) } {...props}>
 
           <div className="info-card-layout">
-              <img className="info-card-layout-img" src={img}/>
+            <div  className="info-card-layout-img">
+              <img src={img}/>
+            </div>
+
           </div>
           <div className="info-card-layout-right">
             <div className="info-card-layout-text">
