@@ -35,12 +35,24 @@ export default class extends AntAbstractControllerIndex {
     return [
       {
         state: '1',
-        component: <span>待审核(12)</span>
+        component: <span>拒绝(12)</span>
       },
       {
         state: '2',
-        component: <span>已审核(213)</span>
-      }
+        component: <span>未提交(213)</span>
+      },
+       {
+         state: '3',
+           component: <span>待审核(12)</span>
+       },
+        {
+          state: '4',
+            component: <span>审核中(213)</span>
+        },
+       {
+         state: '5',
+           component: <span>通过(213)</span>
+       }
     ];
   }
 }
