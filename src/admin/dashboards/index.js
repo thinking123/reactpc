@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Row, Col, Menu, Icon} from 'antd';
 import AppBase, {
-  $api, $store, ExwInfoCardItem, ExwInfoCardItemWelcome, ExwInfoCardItemException,AntAbstractControllerIndex
+  $api, $store, ExwInfoCardItem, ExwInfoCardItemWelcome, ExwInfoCardItemException,ExwMyExhibition, AntAbstractControllerIndex
 } from 'components/scripts/index';
 
 import card1 from 'images/card1.png';
@@ -38,6 +38,8 @@ export default class extends AntAbstractControllerIndex {
               <ExwInfoCardItem img={card5} count="3"   title="汇款水单和发票" apply/>
             </Col>
             </Row>
+
+            <ExwMyExhibition/>
           </Col>
           <Col span="7">
               <Row gutter={20}>
@@ -53,10 +55,6 @@ export default class extends AntAbstractControllerIndex {
                 </Row>
           </Col>
         </Row>
-
-
-
-        <h3 className="f16 b">申请展位最多的搭建商历史记录</h3>
       </div>
     )
   }
