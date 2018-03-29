@@ -25,8 +25,8 @@ export default class {
     '/admin/building-businesses/index',
     '/admin/building-businesses/show/:id',
 
-    '/admin/newspaper-offices/index',
-    '/admin/newspaper-offices/show/:id',
+    '/admin/worker/index',
+    '/admin/worker/show/:id',
 
     '/admin/builders/index',
     '/admin/builders/show/:id',

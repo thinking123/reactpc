@@ -12,20 +12,15 @@ export default class extends AntAbstractControllerIndex {
       {
         key: 'id',
         dataIndex: 'id',
-        title: '展位'
+        title: '施工人员（个）'
       }, {
         key: 'name',
         dataIndex: 'name',
-        title: '参展商'
+        title: '保险单(个)'
       }, {
         key: 'data',
         dataIndex: 'data',
-        title: '搭建商'
-      },
-      {
-        key: 'time',
-        dataIndex: 'time',
-        title: '提交时间'
+        title: '上次修改时间'
       }
     ]
   }
@@ -42,21 +37,19 @@ export default class extends AntAbstractControllerIndex {
     const data = [
       {
         id: 1,
-        name: '参展商1',
-        data: '搭建商1',
-        time: '2018-03-21'
+        name: '10',
+        data: '昨天',
       },
       {
         id: 2,
-        name: '参展商2',
-        data: '搭建商2',
-        time: '2018-03-25'
+        name: '10',
+        data: '3天前',
       }
     ];
 
     setTimeout(() => {
       this.setState({data, total: 2});
-    }, 10);
+    }, 100);
   }
 
   componentWillUnmount() {
@@ -64,7 +57,7 @@ export default class extends AntAbstractControllerIndex {
   }
 
   onRowClick = inRecord => {
-    $route.push(`/admin/newspaper-offices/show/${inRecord.id}`)
+    $route.push(`/admin/worker/show/${inRecord.id}`)
   };
 
   pureLayout() {

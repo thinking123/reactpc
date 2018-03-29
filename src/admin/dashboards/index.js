@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Row, Col, Menu, Icon} from 'antd';
 import AppBase, {
-  $api, $store, ExwInfoCardItem, ExwInfoCardItemWelcome, ExwInfoCardItemException,ExwMyExhibition, AntAbstractControllerIndex
+  $api, $store, ExwInfoCardItem, ExwInfoCardItemWelcome, ExwInfoCardItemException,ExwDashboardMyExhibition, AntAbstractControllerIndex
 } from 'components/scripts/index';
 
 import card1 from 'images/card1.png';
@@ -39,7 +39,7 @@ export default class extends AntAbstractControllerIndex {
             </Col>
             </Row>
 
-            <ExwMyExhibition/>
+            <ExwDashboardMyExhibition/>
           </Col>
           <Col span="7">
               <Row gutter={20}>

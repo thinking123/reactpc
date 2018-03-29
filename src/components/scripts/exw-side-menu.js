@@ -28,7 +28,7 @@ export default class extends Component {
           <Icon type="hdd"/>
           <span className="nav-text">我的报馆</span>
         </Menu.Item>
-        <Menu.Item key="/admin/newspaper-offices/index">
+        <Menu.Item key="/admin/worker/index/1">
           <Icon type="tool"/>
           <span className="nav-text">施工人员</span>
         </Menu.Item>

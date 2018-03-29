@@ -10,8 +10,11 @@ export default class extends AntAbstractControllerIndex {
   layout = 'tabs';
 
   get extra() {
+    const {params} = AppBase.$.memory;
+    const {state} = params;
     return (
       <div className="lfix_ ml10_ ml__ extra">
+        {state == '1' && <Button type="primary" icon="add">添加施工人员</Button>}
         <Input.Search className="dib" style={{width: 220}} enterButton placeholder="do search"/>
       </div>
     )
@@ -19,12 +22,13 @@ export default class extends AntAbstractControllerIndex {
 
   get route() {
     return {
-      path: '/admin/newspaper-offices/index/:state',
-      component: require('admin/newspaper-offices/index-status').default
+      path: '/admin/worker/index/:state',
+      component: require('admin/worker/index-status').default
     };
   }
 
   componentDidMount() {
+    //TODO:
   }
 
   get header() {
