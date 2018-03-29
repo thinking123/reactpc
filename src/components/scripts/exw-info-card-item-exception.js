@@ -5,34 +5,25 @@ import {Row, Col, Menu, Icon} from 'antd';
 export default class extends Component {
 
   render() {
-    const {className, img, title, count, agree, reject,apply, ...props} = this.props;
+    const {className, icon, title, score, count, ...props} = this.props;
     return (
-      <div data-depth="2" data-hover="true" className={ classNames("bdr-3 webkit-sassui-shadow-box bg-f rel exw-info-card-item", className) } {...props}>
-
-          <div className="info-card-layout">
-            <div  className="info-card-layout-img">
-              <img src={img}/>
-            </div>
-
+      <div data-depth="2" data-hover="true" className={ classNames("bdr-3 webkit-sassui-shadow-box bg-f rel exw-info-card-item-exception", className) } {...props}>
+        <div className="top">
+            <Icon type={icon}/>
+            <span className="ml5">{title}</span>
+        </div>
+        <div className="bottom">
+          <div className="item item-left">
+            <span className="span">违规扣分</span>
+            <span className="span span-bottom">{score}</span>
           </div>
-          <div className="info-card-layout-right">
-            <div className="info-card-layout-text">
-              <div className="mb7  b">
-                  <span className="card-text1">{title}</span>
-              </div>
-              <div className="mb7  b">
-                  <span className="card-text2">{count}</span>
-                {apply && <em className="abs c-red wp-10">未读</em>}
-              </div>
-              <div className="mb7  b">
-                {agree && <span className="card-text3">{agree} 通过 </span>}
-                {reject && <span className="card-text4">{reject} 拒绝 </span>}
-              </div>
-
-            </div>
+          <div className="item">
+            <span className="span">违规条数</span>
+            <span className="span span-bottom">{count}</span>
           </div>
-
+        </div>
       </div>
+
     )
   }
 }

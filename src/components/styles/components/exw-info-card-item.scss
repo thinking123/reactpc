@@ -29,52 +29,26 @@
     .info-card-layout-text{
       width:78px;
       height:70px;
+      color: #98A2B5;
+      white-space: nowrap;
+      font-weight: 400;
 
       .card-text1{
-        color: #98A2B5;
         font-size: 14px;
-        white-space: nowrap;
       }
       .card-text2{
-        color: #98A2B5;
-        font-weight: 400;
         font-size: 32px;
         text-align: left;
       }
       .card-text3{
         color: #429F49;
         font-size: 12px;
-        white-space: nowrap;
       }
       .card-text4{
         color: #F54C3F;
         font-size: 12px;
-        white-space: nowrap;
       }
     }
-
-  }
-
-  .card-welcome-text1{
-    position: absolute;
-    left: 10%;
-    top: 20%;
-    white-space: nowrap;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 24px;
-    color: #98A2B5;
-  }
-
-  .card-welcome-text2{
-    position: absolute;
-    left: 10%;
-    top: 45%;
-    white-space: nowrap;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 14px;
-    color: #98A2B5;
   }
 
 }
