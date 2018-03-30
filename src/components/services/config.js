@@ -41,7 +41,8 @@ export default class {
     '/admin/notifications/index',
     '/admin/notifications/show',
 
-    '/admin/truck-infomations/index',
+    '/admin/tickets/index',
+    '/admin/tickets/show',
   ];
 }
 

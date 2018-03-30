@@ -36,7 +36,7 @@ export default class extends Component {
           <Icon type="pay-circle"/>
           <span className="nav-text">付款通知单</span>
         </Menu.Item>
-        <Menu.Item key="/admin/truck-infomations/index">
+        <Menu.Item key="/admin/tickets/index/1">
           <Icon type="barcode"/>
           <span className="nav-text">汇款水单和发票</span>
         </Menu.Item>
