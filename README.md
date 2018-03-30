@@ -8,7 +8,8 @@ npm run dev
 ```
 
 ## preview + docs:
-
++ http://t2.ooclab.com:9029/
++ http://t2.ooclab.com:8917/
 
 
 ## features:

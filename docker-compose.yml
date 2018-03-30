@@ -6,4 +6,4 @@ services:
         - ./deploy/nginx/conf.d:/etc/nginx/conf.d
         - ./dist:/www
       ports:
-        - "9023:80"
+        - "9029:80"
