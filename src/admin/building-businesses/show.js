@@ -47,7 +47,18 @@ export default class extends React.Component {
 
   childView() {
     return (
-      <div className="abs trbl0 p20 bg-f building-businesses-show-view">
+      <div className="abs trbl0 p20 bg-f my-exhibition-show-view">
+        <h3 className="mb10">
+          <a href="javascript:;" onClick={$route.back}>
+            <Icon type="left" />
+            <span>返回列表</span>
+          </a>
+        </h3>
+        <h2 className="f20 mb20 b">报馆详情</h2>
+        <h3 className="sub-title">
+          <span className="b f14">有部分材料申请被拒绝，请修改并重新提交</span>
+        </h3>
+
         <dl className="item">
           <dt className="mb20 b">个人信息 { JSON.stringify(this.params)}</dt>
           <dd>
