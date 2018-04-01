@@ -47,104 +47,145 @@ export default class extends React.Component {
 
   childView() {
     return (
-      <div className="abs trbl0 p20 bg-f building-businesses-show-view">
+      <div className="abs trbl0 p20 bg-f my-exhibition-show-view">
+        <h3 className="mb10">
+          <a href="javascript:;" onClick={$route.back}>
+            <Icon type="left" />
+            <span>返回列表</span>
+          </a>
+        </h3>
+        <h2 className="f20 mb20 b">银行汇款水单详情</h2>
+        {/*<h3 className="sub-title">*/}
+          {/*<span className="b f14">有部分材料申请被拒绝，请修改并重新提交</span>*/}
+        {/*</h3>*/}
+
         <dl className="item">
-          <dt className="mb20 b">个人信息 { JSON.stringify(this.params)}</dt>
+          {/*<dt className="mb20 b">展位信息 { JSON.stringify(this.params)}</dt>*/}
           <dd>
             <ul className="lfix_">
               <li>
-                <strong>姓名:</strong>
-                <em>afei</em>
+                <strong>支付的展位:</strong>
+                <em>A103B</em>
               </li>
+
               <li>
-                <strong>职位:</strong>
-                <em className="c-9">未填写</em>
+                <strong></strong>
+                <em>A103B</em>
               </li>
+
+            </ul>
+          </dd>
+        </dl>
+        <dl className="item">
+          <dt className="mb20 b">银行汇款水单信息</dt>
+          <h3 className="sub-title">
+          <span className="b f14">通过
+
+上次处理时间: 2018年1月4日</span>
+          </h3>
+          <dd>
+            <ul className="lfix_">
               <li>
-                <strong>身份证:</strong>
-                <em>123456789012345678</em>
+                <strong>汇款公司名称:</strong>
+                <em className="c-9">公司名称</em>
               </li>
-              <li>
-                <strong>微信号:</strong>
-                <em className="c-9">未填写</em>
+              <li >
+                <strong>开户行:</strong>
+                <em className="c-9">开户行</em>
               </li>
               <li style={{width: '100%'}}>
-                <strong>邮寄地址:</strong>
-                <em className="c-9">未填写</em>
+                <strong>汇款公司账号:</strong>
+                <em className="c-9">W8DSJH298FHLKJFJKN2</em>
               </li>
-              <li style={{width: '100%'}}  className="mt10">
-                <strong>身份证扫描件:</strong>
-                <em className="c-9">
-                  <ReactSmartPhoto group="id" items={[
-                    {
-                      href: 'http://placeholder.qiniudn.com/180x180',
-                      src: 'http://placeholder.qiniudn.com/80x80',
-                      caption: '身份证'
-                    }
-                  ]}/>
-                </em>
+              <li>
+                <strong>汇款总额(￥):</strong>
+                <em className="c-9">50,000</em>
+              </li>
+              <li >
+                <strong>押金金额(￥):</strong>
+                <em className="c-9">30,000</em>
+              </li>
+              <li style={{width: '100%'}}>
+                <strong>开票金额(￥):</strong>
+                <em className="c-9">20,000</em>
+              </li>
+              <li style={{width: '100%'}}>
+                <strong>银行汇款水单</strong>
+                <em className="c-9">20,000</em>
               </li>
             </ul>
           </dd>
         </dl>
 
-        <hr className="my20"/>
-
         <dl className="item">
-          <dt className="mb20 b">公司信息</dt>
+          <dt className="mb20 b">发票信息</dt>
+          <h3 className="sub-title">
+          <span className="b f14">通过
+
+上次处理时间: 2018年1月4日</span>
+          </h3>
           <dd>
             <ul className="lfix_">
               <li>
-                <strong>公司名称:</strong>
-                <em>公司名称</em>
+                <strong>发票类型:</strong>
+                <em className="c-9">增值税专用发票</em>
+              </li>
+              <li >
+                <strong>汇款公司名称:</strong>
+                <em className="c-9">名称</em>
               </li>
               <li>
-                <strong>传真:</strong>
-                <em className="c-9">123-456-7899</em>
-              </li>
-              <li style={{width: '100%'}}>
-                <strong>办公地址:</strong>
-                <em>办公地址</em>
+                <strong>金额(￥):</strong>
+                <em className="c-9">30,000</em>
               </li>
               <li>
-                <strong>法人姓名:</strong>
-                <em className="c-9">法人姓名</em>
+                <strong>汇款公司账号:</strong>
+                <em className="c-9">2938472983749827</em>
               </li>
-              <li style={{width: '100%'}}>
-                <strong>法人手机号:</strong>
-                <em className="c-9">12345678901</em>
-              </li>
-              <li>
-                <strong>法人身份证号:</strong>
-                <em className="c-9">123456789012345678</em>
+              <li >
+                <strong>一般人纳税证明:</strong>
+                <em className="c-9"></em>
               </li>
               <li>
-                <strong>法人座机:</strong>
-                <em className="c-9">未填写</em>
+                <strong>开户行:</strong>
+                <em className="c-9">开户行</em>
               </li>
-              <li style={{width: '100%'}}  className="mt10">
-                <strong>法人身份证扫描件:</strong>
-                <em className="c-9">
-                  <ReactSmartPhoto group="cid" items={[
-                    {
-                      href: 'http://placeholder.qiniudn.com/180x180',
-                      src: 'http://placeholder.qiniudn.com/80x80',
-                      caption: '法人身份证扫描件'
-                    }
-                  ]}/>
-                </em>
+              <li>
+                <strong>纳税人识别号</strong>
+                <em className="c-9">识别号</em>
               </li>
-              <li style={{width: '100%'}} className="mt10">
-                <strong>公司营业执照:</strong>
-                <em className="c-9">
-                  <ReactSmartPhoto group="cid" items={[
-                    {
-                      href: 'http://placeholder.qiniudn.com/180x180',
-                      src: 'http://placeholder.qiniudn.com/80x80',
-                      caption: '公司营业执照'
-                    }
-                  ]}/>
-                </em>
+              <li>
+                <strong>电话</strong>
+                <em className="c-9">13000000000</em>
+              </li>
+              <li>
+                <strong>地址</strong>
+                <em className="c-9">地址</em>
+              </li>
+            </ul>
+          </dd>
+        </dl>
+
+        <dl className="item">
+          <dt className="mb20 b">发票收件人信息</dt>
+          <h3 className="sub-title">
+          <span className="b f14">通过
+
+上次处理时间: 2018年1月4日</span>
+          </h3>
+          <dd>
+            <ul className="lfix_">
+              <li>
+                <strong>收件人姓名:</strong>
+                <em className="c-9">姓名</em>
+              </li>
+              <li >
+                <strong>收件人手机号:</strong>
+                <em className="c-9">12345678909</em>
+              </li>
+              <li>
+                <strong>收件人地址:</strong>
+                <em className="c-9">地址</em>
               </li>
             </ul>
           </dd>

@@ -145,7 +145,7 @@ export default class extends Component {
         render: () => {
           return (
             <div className="actions">
-              <Button size="small" onClick={$route.push.bind(null, '/admin/building-businesses/index/1')}>查看</Button>
+              <Button size="small" onClick={$route.push.bind(null, '/')}>查看</Button>
             </div>
           )
         }
