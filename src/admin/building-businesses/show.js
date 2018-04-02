@@ -2,11 +2,11 @@ import  AppBase, {
   $api, $route, $modal,
   AntAbstractControllerIndex
 } from 'components/scripts/index';
-import {Row, Col, Tag, Icon} from 'antd';
+import {Row, Col, Tag, Icon,Tabs,Tab} from 'antd';
 import ReactSmartPhoto from 'react-smart-photo';
 
 @mixin(['pure-layout', 'match'])
-export default class extends React.Component {
+export default class extends AntAbstractControllerIndex {
 
   layout = 'pure';
 
@@ -28,6 +28,9 @@ export default class extends React.Component {
   // };
 
   footerView() {
+    const {tabId} = AppBase.$.memory;
+    const statusList = ['info', 'list'];
+
     return (
       <div className="lrfix_">
         <label className="left" style={{lineHeight: '34px'}}>
@@ -50,6 +53,8 @@ export default class extends React.Component {
   }
 
   childView() {
+    const {tabId} = AppBase.$.memory;
+
     return (
       <div className="abs trbl0 p20 bg-f my-exhibition-show-view">
         <h3 className="mb10">
