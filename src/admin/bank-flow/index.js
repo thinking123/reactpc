@@ -1,5 +1,5 @@
 import AppBase, {
-  $api, $store, $app, $config,
+  $api, $store, $app, $config,$route,
   AntAbstractControllerIndex
 } from 'components/scripts/index';
 import {Table, Icon, Card, Input, Button, Tabs} from 'antd';
@@ -14,7 +14,15 @@ export default class extends AntAbstractControllerIndex {
     const {state} = params;
     return (
       <div className="lfix_ ml10_ ml__ extra">
-        {state == '1' && <Button type="primary" icon="add">新增银行汇款水单</Button>}
+        {/*{state == '1' && <Button type="primary" icon="add">新增银行汇款水单</Button>}*/}
+        <Button
+          type="primary"
+          size="large"
+          icon="plus"
+          onClick={$route.push.bind(null, "/admin/bank-flow/add")}
+        >
+          新增银行汇款水单
+        </Button>
         <Input.Search className="dib" style={{width: 220}} enterButton placeholder="do search"/>
       </div>
     )

@@ -21,11 +21,14 @@ export default class {
 
   static ROUTES = [
     '/admin/orders/index',
+
     '/admin/my-exhibition/index',
     '/admin/my-exhibition/show/:id',
+    '/admin/my-exhibition/add',
 
     '/admin/worker/index',
     '/admin/worker/show/:id',
+    '/admin/worker/add',
 
     '/admin/payment-notice/index',
     '/admin/payment-notice/show/:id',
@@ -42,6 +45,7 @@ export default class {
 
     '/admin/bank-flow/index',
     '/admin/bank-flow/show',
+    '/admin/bank-flow/add',
   ];
 }
 
