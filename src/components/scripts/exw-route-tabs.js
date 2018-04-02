@@ -15,8 +15,8 @@ export default class extends Component {
 
   static defaultProps = {
     route: {
-      path: '/admin/building-businesses/index/:state',
-      component: require('admin/building-businesses/index-status').default
+      path: '/admin/my-exhibition/index/:state',
+      component: require('admin/my-exhibition/index-status').default
     },
     header: [
       {
@@ -40,7 +40,7 @@ export default class extends Component {
     console.log(inItem);
     AppBase.$.memory = {
       activeState: inItem.state,
-      activeRoute: `/admin/building-businesses/index/${inItem.state}`
+      activeRoute: `/admin/my-exhibition/index/${inItem.state}`
     };
   };
 

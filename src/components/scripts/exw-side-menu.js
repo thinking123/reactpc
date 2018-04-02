@@ -24,7 +24,7 @@ export default class extends Component {
           <Icon type="appstore-o"/>
           <span className="nav-text">首页</span>
         </Menu.Item>
-        <Menu.Item key={`/admin/building-businesses/index/${activeState || 1}`}>
+        <Menu.Item key={`/admin/my-exhibition/index/${activeState || 1}`}>
           <Icon type="hdd"/>
           <span className="nav-text">我的报馆</span>
         </Menu.Item>

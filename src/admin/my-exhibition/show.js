@@ -20,7 +20,7 @@ export default class extends AntAbstractControllerIndex {
   //       $route.back();
   //       break;
   //     case 'refuse':
-  //       $modal.show('building-businesses-refuse');
+  //       $modal.show('my-exhibition-refuse');
   //       break;
   //     default:
   //       AppBase.notify(`You Click status: => ${inStatus}`);

@@ -8,7 +8,7 @@ import AppBase, {
 export default class extends Component {
 
   _onClose = e => {
-    $modal.hide('building-businesses-refuse');
+    $modal.hide('my-exhibition-refuse');
   };
 
   render() {
@@ -19,7 +19,7 @@ export default class extends Component {
              onOk={this._onClose}
              onCancel={this._onClose}
              visible={modalBuildingBusinessesRefuse}
-             className={ classNames("exw-modal-building-businesses-refuse", className) }>
+             className={ classNames("exw-modal-my-exhibition-refuse", className) }>
         <Input.TextArea placeholder="请填写拒绝申请的理由"/>
       </Modal>
     )

@@ -22,8 +22,8 @@ export default class extends AntAbstractControllerIndex {
 
   get route() {
     return {
-      path: '/admin/building-businesses/index/:state',
-      component: require('admin/building-businesses/index-status').default
+      path: '/admin/my-exhibition/index/:state',
+      component: require('admin/my-exhibition/index-status').default
     };
   }
 

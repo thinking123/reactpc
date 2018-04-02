@@ -21,8 +21,8 @@ export default class {
 
   static ROUTES = [
     '/admin/orders/index',
-    '/admin/building-businesses/index',
-    '/admin/building-businesses/show/:id',
+    '/admin/my-exhibition/index',
+    '/admin/my-exhibition/show/:id',
 
     '/admin/worker/index',
     '/admin/worker/show/:id',

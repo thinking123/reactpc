@@ -35,7 +35,7 @@ export const ExwEntryItem=require('./exw-entry-item').default;
 export const ExwSloganSwitch=require('./exw-slogan-switch').default;
 
 export const ExwModalSelectExhibition=require('./modals/exw-modal-select-exhibition').default;
-export const ExwModalBuildingBusinessesRefuse=require('./modals/exw-modal-building-businesses-refuse').default;
+export const ExwModalBuildingBusinessesRefuse=require('./modals/exw-modal-my-exhibition-refuse').default;
 
 /*===components end===*/
 
