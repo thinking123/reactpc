@@ -22,8 +22,8 @@ export default class extends AntAbstractControllerIndex {
 
   get route() {
     return {
-      path: '/admin/tickets/index/:state',
-      component: require('admin/tickets/index-status').default
+      path: '/admin/bank-flow/index/:state',
+      component: require('admin/bank-flow/index-status').default
     };
   }
 

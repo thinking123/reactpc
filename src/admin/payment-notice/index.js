@@ -61,7 +61,7 @@ export default class extends Component {
         render: () => {
           return (
             <div className="actions">
-              <Button size="small" onClick={$route.push.bind(null, '/admin/builders/show')}>再次下载</Button>
+              <Button size="small" onClick={$route.push.bind(null, '/admin/payment-notice/show')}>再次下载</Button>
             </div>
           )
         }

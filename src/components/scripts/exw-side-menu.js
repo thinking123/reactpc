@@ -32,11 +32,11 @@ export default class extends Component {
           <Icon type="tool"/>
           <span className="nav-text">施工人员</span>
         </Menu.Item>
-        <Menu.Item key="/admin/builders/index">
+        <Menu.Item key="/admin/payment-notice/index">
           <Icon type="pay-circle"/>
           <span className="nav-text">付款通知单</span>
         </Menu.Item>
-        <Menu.Item key="/admin/tickets/index/1">
+        <Menu.Item key="/admin/bank-flow/index/1">
           <Icon type="barcode"/>
           <span className="nav-text">汇款水单和发票</span>
         </Menu.Item>
