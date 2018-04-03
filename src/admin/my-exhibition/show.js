@@ -221,7 +221,235 @@ export default class extends AntAbstractControllerIndex {
               </dd>
             </dl>
           </Tabs.TabPane>
-          <Tabs.TabPane tab="费用清单" key="list">Content of Tab Pane 2</Tabs.TabPane>
+          <Tabs.TabPane tab="费用清单" key="list">
+            <div>
+              <div className="dotted-bottom wp-8 f14 c-0">
+                <Row>
+                  <Col span={9}>
+                    <span>展期用电</span>
+                  </Col>
+                  <Col span={5}>
+                    <em className="c-9">单价</em>
+                  </Col>
+                  <Col span={5}>
+                    <em className="c-9">数量</em>
+                  </Col>
+                  <Col span={5}>
+                    <em className="c-9">金额</em>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col span={9}>
+                    <span>用电类型</span>
+                  </Col>
+                  <Col span={5}>
+                    <span>300</span>
+                  </Col>
+                  <Col span={5}>
+                    <span>1</span>
+                  </Col>
+                  <Col span={5}>
+                    <span>3000</span>
+                  </Col>
+                </Row>
+              </div>
+              <div className="dotted-bottom wp-8 f14 c-0">
+                <Row>
+                  <Col span={9}>
+                    <span>临时搭建用电</span>
+                  </Col>
+                  <Col span={5}>
+                    <em className="c-9">单价</em>
+                  </Col>
+                  <Col span={5}>
+                    <em className="c-9">数量</em>
+                  </Col>
+                  <Col span={5}>
+                    <em className="c-9">金额</em>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col span={9}>
+                    <span>临时搭建用电类型</span>
+                  </Col>
+                  <Col span={5}>
+                    <span>300</span>
+                  </Col>
+                  <Col span={5}>
+                    <span>1</span>
+                  </Col>
+                  <Col span={5}>
+                    <span>3000</span>
+                  </Col>
+                </Row>
+              </div>
+              <div className="dotted-bottom wp-8 f14 c-0">
+                <Row>
+                  <Col span={9}>
+                    <span>用水、电服务</span>
+                  </Col>
+                  <Col span={5}>
+                    <em className="c-9">单价</em>
+                  </Col>
+                  <Col span={5}>
+                    <em className="c-9">数量</em>
+                  </Col>
+                  <Col span={5}>
+                    <em className="c-9">金额</em>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col span={9}>
+                    <span>用水、电服务类型</span>
+                  </Col>
+                  <Col span={5}>
+                    <span>300</span>
+                  </Col>
+                  <Col span={5}>
+                    <span>1</span>
+                  </Col>
+                  <Col span={5}>
+                    <span>3000</span>
+                  </Col>
+                </Row>
+              </div>
+              <div className="dotted-bottom wp-8 f14 c-0">
+                <Row>
+                  <Col span={9}>
+                    <span>有线网络</span>
+                  </Col>
+                  <Col span={5}>
+                    <em className="c-9">单价</em>
+                  </Col>
+                  <Col span={5}>
+                    <em className="c-9">数量</em>
+                  </Col>
+                  <Col span={5}>
+                    <em className="c-9">金额</em>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col span={9}>
+                    <span>有线网络类型</span>
+                  </Col>
+                  <Col span={5}>
+                    <span>300</span>
+                  </Col>
+                  <Col span={5}>
+                    <span>1</span>
+                  </Col>
+                  <Col span={5}>
+                    <span>3000</span>
+                  </Col>
+                </Row>
+              </div>
+              <div className="dotted-bottom wp-8 f14 c-0">
+                <Row>
+                  <Col span={19}>
+                    <span>施工管理费</span>
+                  </Col>
+                  <Col span={5}>
+                    <em className="c-9">金额</em>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col span={19}>
+                    <em className="c-9">按展位实际面积计算，申请的展位面积为：20㎡</em>
+                  </Col>
+                  <Col span={5}>
+                    <span>3000</span>
+                  </Col>
+                </Row>
+              </div>
+              <div className="dotted-bottom wp-8 f14 c-0">
+                <Row>
+                  <Col span={9}>
+                    <span>施工证</span>
+                  </Col>
+                  <Col span={5}>
+                    <em className="c-9">单价</em>
+                  </Col>
+                  <Col span={5}>
+                    <em className="c-9">数量</em>
+                  </Col>
+                  <Col span={5}>
+                    <em className="c-9">金额</em>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col span={9}>
+                    <em className="c-9">辆/限3小时，超过时间按照200元/小时收延时费。<br />（车证押金为600元/张，未退回将扣除全部车证押金）</em>
+                  </Col>
+                  <Col span={5}>
+                    <span>300</span>
+                  </Col>
+                  <Col span={5}>
+                    <span>1</span>
+                  </Col>
+                  <Col span={5}>
+                    <span>3000</span>
+                  </Col>
+                </Row>
+              </div>
+              <div className="dotted-bottom wp-8 f14 c-0">
+                <Row>
+                  <Col span={9}>
+                    <span>安全员袖章</span>
+                  </Col>
+                  <Col span={5}>
+                    <em className="c-9">单价</em>
+                  </Col>
+                  <Col span={5}>
+                    <em className="c-9">数量</em>
+                  </Col>
+                  <Col span={5}>
+                    <em className="c-9">金额</em>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col span={9}>
+                    <em className="c-9">100㎡以下（含），1名安全员<br />安全员展会期间必须在展位，负责展位安全，监督施工人员安全作业，配合主场管理。</em>
+                  </Col>
+                  <Col span={5}>
+                    <span>300</span>
+                  </Col>
+                  <Col span={5}>
+                    <span>1</span>
+                  </Col>
+                  <Col span={5}>
+                    <span>3000</span>
+                  </Col>
+                </Row>
+              </div>
+
+              <div className="dotted-bottom wp-8 f14 c-0">
+                <Row>
+                  <Col span={9}>
+                    <span>滞纳金</span>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col span={9}>
+                    <em className="c-9">当前未超过截止时间，不需要缴纳</em>
+                  </Col>
+                </Row>
+              </div>
+
+              <div className="dotted-bottom wp-8 f14 c-0">
+                <Row>
+                  <Col span={9}>
+                    <span>施工押金</span>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col span={9}>
+                    <em className="c-9">按展位实际面积计算，申请的展位面积为：20㎡</em>
+                  </Col>
+                </Row>
+              </div>
+
+            </div>
+          </Tabs.TabPane>
         </Tabs>
 
 
