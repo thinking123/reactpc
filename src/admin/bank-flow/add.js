@@ -173,6 +173,18 @@ export default class extends Component {
             </Col>
           </Row>
 
+          <Dragger
+            multiple
+            beforeUpload={()=> { return false; }}
+            onChange={() => { console.log("选择附件") }}
+          >
+            <p className="ant-upload-hint">
+              上传银行汇款水单
+              <Button size="large">添加文件</Button>
+            </p>
+          </Dragger>
+          <p>注意：请上传银行汇款水单，单个文件不超过1M，仅限JPG格式。</p>
+
         </div>
         <div className="footer">
           <Button size="large">取消</Button>
