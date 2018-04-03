@@ -54,6 +54,8 @@ export default class {
     '/admin/bank-flow/index',
     '/admin/bank-flow/show',
     '/admin/bank-flow/add',
+
+    '/admin/user-company/index',
   ];
 }
 

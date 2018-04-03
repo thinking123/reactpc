@@ -52,7 +52,7 @@ export default class extends Component {
           <Icon type="setting"/>
           <span className="nav-text">账号设置</span>
         </Menu.Item>
-        <Menu.Item key="/admin/account-settings11/index">
+        <Menu.Item key="/admin/user-company/index">
           <Icon type="user"/>
           <span className="nav-text">个人和公司</span>
         </Menu.Item>
