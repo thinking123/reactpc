@@ -18,8 +18,7 @@ export default class extends AntAbstractControllerIndex {
           type="primary"
           size="large"
           icon="plus"
-          onClick={$route.push.bind(null, "/admin/bank-flow/add")}
-        >
+          onClick={$route.push.bind(null, "/admin/worker/add")}>
           添加施工人员
         </Button>
         <Input.Search className="dib" style={{width: 220}} enterButton placeholder="do search"/>
