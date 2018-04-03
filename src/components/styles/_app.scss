@@ -45,3 +45,16 @@ button {
 .app-col{
   width: 100%;
 }
+
+.dotted-bottom {
+  border-bottom: 1px dotted #ccc;
+  .ant-row {
+    padding: 12px;
+    &:first-child {
+      padding-bottom: 0;
+    }
+  }
+  .ant-col-5 {
+    text-align: right;
+  }
+}
