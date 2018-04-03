@@ -119,9 +119,8 @@ export default class extends Component {
           </Row>
 
         </div>
-        <div className="footer">
-          <Button size="large">取消</Button>
-          <Button size="large" type="primary">保存，下一步</Button>
+        <div>
+          <Button size="large" type="primary">下一步</Button>
         </div>
       </div>
     )
