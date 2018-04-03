@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 import { Button, Input, Icon, Row, Col, Select, Divider, Upload } from "antd";
+import  AppBase, {
+  $api, $route, $modal,
+  AntAbstractControllerIndex
+} from 'components/scripts/index';
 
 let { Option } = Select;
 let { Dragger } = Upload;
@@ -105,24 +109,74 @@ export default class extends Component {
     return (
       <div className="illegal-records-add">
         <div className="content">
+          <h3 className="mb10">
+            <a href="javascript:;" onClick={$route.back}>
+              <Icon type="left" />
+              <span>返回列表</span>
+            </a>
+          </h3>
+          <h2 className="f20 mb20 b">新增银行汇款水单</h2>
+
+
+
           <Row>
-            {this.renderSubCol("展馆")}
-            {this.renderSubCol("展位")}
+            <Col span={3}>
+              <strong>汇款公司名称:</strong>
+            </Col>
+            <Col span={7}>
+              <Input placeholder="例："  />
+            </Col>
           </Row>
+
           <Row>
-            {this.renderSubCol("参展商")}
-            {this.renderSubCol("搭建商")}
+            <Col span={3}>
+              <strong>汇款公司账号:</strong>
+            </Col>
+            <Col span={7}>
+              <Input placeholder="例："  />
+            </Col>
           </Row>
-          <Divider />
-          {this.state.records}
-          <div className="add-record" onClick={() => { this.addNewRecord(); }}>
-            <Icon type="plus" />
-            添加记录
-          </div>
+
+          <Row>
+            <Col span={3}>
+              <strong>开户行:</strong>
+            </Col>
+            <Col span={7}>
+              <Input placeholder="例："  />
+            </Col>
+          </Row>
+
+          <Row>
+            <Col span={3}>
+              <strong>汇款总额(￥):</strong>
+            </Col>
+            <Col span={7}>
+              <Input placeholder="例：12,000.00"  />
+            </Col>
+          </Row>
+
+          <Row>
+            <Col span={3}>
+              <strong>押金(￥):</strong>
+            </Col>
+            <Col span={7}>
+              <Input placeholder="例：12,000.00"  />
+            </Col>
+          </Row>
+
+          <Row>
+            <Col span={3}>
+              <strong>服务费(￥):</strong>
+            </Col>
+            <Col span={7}>
+              <lable>0</lable>
+            </Col>
+          </Row>
+
         </div>
         <div className="footer">
           <Button size="large">取消</Button>
-          <Button size="large" type="primary">保存</Button>
+          <Button size="large" type="primary">提交</Button>
         </div>
       </div>
     )
