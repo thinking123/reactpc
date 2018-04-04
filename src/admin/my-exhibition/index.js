@@ -14,7 +14,7 @@ export default class extends AntAbstractControllerIndex {
     const {state} = params;
     return (
       <div className="lfix_ ml10_ ml__ extra">
-        {/*{state == '1' && <Button type="primary" icon="add">新增报馆</Button>}*/}
+
         <Button
           type="primary"
           size="large"
