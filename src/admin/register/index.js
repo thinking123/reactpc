@@ -4,6 +4,7 @@ import AppBase, {
   $api, $route, $modal,
   AntAbstractControllerIndex
 } from 'components/scripts/index';
+import {$app} from "../../components/scripts";
 
 const Step = Steps.Step;
 const RadioGroup = Radio.Group;
@@ -172,68 +173,134 @@ export default class extends Component {
                       </Col>
                     </Row>
 
+                    <Row>
+                      <Col span={24}>
+                        <strong>个人身份证扫描件：</strong>
+                      </Col>
+                    </Row>
+
+                    <Dragger
+                      multiple
+                      beforeUpload={()=> { return false; }}
+                      onChange={() => { console.log("选择附件") }}
+                    >
+                      <p className="ant-upload-hint">
+                        上传展位图纸
+                        <Button size="large">添加法人身份证</Button>
+                      </p>
+                    </Dragger>
+                    <p>注意：请上传法人身份证的正反面扫描件，最多不超过5个文件，单个图片不超过1M，支持JPG和PDF格式。</p>
                   </dl>
 
                   <Divider />
 
-                  <p className="text">
-                    文件
-                  </p>
-                  <Row>
-                    <Col span={3}>
-                      展台结构类型:</Col>
-                    <Col span={21}>
-                      <RadioGroup onChange={this.onChangeRadio} value={this.state.value}>
-                        <Radio value={1}>室内单层</Radio>
-                        <Radio value={2}>室内双层</Radio>
-                        <Radio value={3}>室外钢木结构</Radio>
-                        <Radio value={4}>室外简易结构(如: 纯桁架结构等)</Radio>
-                      </RadioGroup>
-                    </Col>
-                  </Row>
+                  <dl className="item">
+                    <dt className="b">公司信息</dt>
+                    <Row>
+                      <Col span={3}>
+                        <strong>公司名称：</strong>
+                      </Col>
+                      <Col span={7}>
+                        <Input placeholder="公司名称"  />
+                      </Col>
+                      <Col span={2}>
+                      </Col>
+                      <Col span={3}>
+                        <strong>传真：</strong>
+                      </Col>
+                      <Col span={7}>
+                        <Input placeholder="123-456-7890"  />
+                      </Col>
+                      <Col span={2}>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col span={3}>
+                        <strong>身办公地址：</strong>
+                      </Col>
+                      <Col span={21}>
+                        <Input placeholder="办公地址"  />
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col span={3}>
+                        <strong>法人姓名：</strong>
+                      </Col>
+                      <Col span={7}>
+                        <Input placeholder="法人姓名"  />
+                      </Col>
+                      <Col span={2}>
+                      </Col>
+                      <Col span={3}>
+                        <strong>法人手机：</strong>
+                      </Col>
+                      <Col span={7}>
+                        <Input placeholder="12345678901"  />
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col span={3}>
+                        <strong>身份证号：</strong>
+                      </Col>
+                      <Col span={7}>
+                        <Input placeholder="123456789012345678"  />
+                      </Col>
+                      <Col span={2}>
+                      </Col>
+                      <Col span={3}>
+                        <strong>法人座机：</strong>
+                      </Col>
+                      <Col span={7}>
+                        <Input placeholder="法人座机（选填）"  />
+                      </Col>
+                    </Row>
 
+                    <h3 className="sub-title">
+                      <span className="b f14">法人身份证扫描件：</span>
+                    </h3>
+                    <Dragger
+                      multiple
+                      beforeUpload={()=> { return false; }}
+                      onChange={() => { console.log("选择附件") }}
+                    >
+                      <p className="ant-upload-hint">
+                        上传法人身份证扫描件
+                        <Button size="large">添加文件</Button>
+                      </p>
+                    </Dragger>
+                    <p>注意：请上传法人身份证的正反面扫描件，最多不超过5个文件，单个图片不超过1M，支持JPG和PDF格式。</p>
+                  </dl>
+
+                  <h3 className="sub-title">
+                    <span className="b f14">公司营业执照扫描件：</span>
+                  </h3>
                   <Dragger
                     multiple
                     beforeUpload={()=> { return false; }}
                     onChange={() => { console.log("选择附件") }}
                   >
                     <p className="ant-upload-hint">
-                      上传展位图纸
+                      上传公司营业执照扫描件
                       <Button size="large">添加文件</Button>
                     </p>
                   </Dragger>
-                  <p>注意：请上传效果图、施工图、材质说明图、电路图、细部结构图等所有相关图纸，单个文件不超过1M，仅限JPG格式。</p>
+                  <p>注意：请上传营业执照扫描件，最多不超过5个文件，单个图片不超过1M，支持JPG和PDF格式。</p>
 
+                  <h3 className="sub-title">
+                    <span className="b f14">公司其他资质扫描件：</span>
+                  </h3>
                   <Dragger
                     multiple
                     beforeUpload={()=> { return false; }}
                     onChange={() => { console.log("选择附件") }}
                   >
                     <p className="ant-upload-hint">
-                      上传展位细部结构图及审计报告
+                      上传公司其他资质扫描件
                       <Button size="large">添加文件</Button>
                     </p>
                   </Dragger>
-                  <p>注意：请上传营业执照扫描件，最多不超过5个文件，单个图片不超过1M，仅限JPG，DWG，RAR格式。</p>
+                  <p>注意：请上传其他资质扫描件，最多不超过5个文件，单个图片不超过1M，支持JPG和PDF格式。</p>
 
-                  <Row>
-                    <Col span={3}>
-                      <strong>设计院全称：</strong>
-                    </Col>
-                    <Col span={7}>
-                      <Input placeholder="例："  />
-                    </Col>
-                    <Col span={2}>
-                    </Col>
-                    <Col span={3}>
-                      <strong>办公电话：</strong>
-                    </Col>
-                    <Col span={7}>
-                      <Input placeholder="设计院办公电话"  />
-                    </Col>
-                    <Col span={2}>
-                    </Col>
-                  </Row>
 
                 </div>
 
@@ -243,20 +310,14 @@ export default class extends Component {
               {
                 this.state.current < steps.length - 1
                 &&
-                <Button type="primary" onClick={() => this.next()}>Next</Button>
+                <Button type="primary" onClick={() => this.next()}>下一步</Button>
               }
               {
                 this.state.current === steps.length - 1
                 &&
-                <Button type="primary" onClick={() => message.success('Processing complete!')}>Done</Button>
+                <Button type="primary" onClick={this._onSubmit}>提交</Button>
               }
-              {
-                this.state.current > 0
-                &&
-                <Button style={{marginLeft: 8}} onClick={() => this.prev()}>
-                  Previous
-                </Button>
-              }
+
             </div>
           </div>
 
@@ -267,7 +328,9 @@ export default class extends Component {
     )
   };
 
-
+  _onSubmit = (e) => {
+    $app.successPush('注册成功', '/admin/dashboards/index');
+  };
 
 
 
