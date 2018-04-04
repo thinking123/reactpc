@@ -68,7 +68,7 @@ export default class extends Component {
           <span className="b f14">报馆截止时间为{endTime}</span>
         </header>
         <Table bordered rowKey={'id'} columns={columns} dataSource={data} size="middle"/>
-        <Button type="primary" icon="add">新增报馆</Button>
+        <Button type="primary" icon="add" onClick={$route.push.bind(null, '/admin/my-exhibition/add')}>新增报馆</Button>
       </div>
     )
   }

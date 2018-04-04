@@ -55,7 +55,7 @@ export default class extends Component {
           <h2 className="f20 mb20 b">注册新用户</h2>
 
           <div>
-            <Steps current={current}>
+            <Steps current={current}  style={{width: '50%'}}>
               {steps.map(item => <Step key={item.title} title={item.title}/>)}
             </Steps>
 
@@ -185,7 +185,7 @@ export default class extends Component {
                       onChange={() => { console.log("选择附件") }}
                     >
                       <p className="ant-upload-hint">
-                        上传展位图纸
+                        添加法人身份证
                         <Button size="large">添加法人身份证</Button>
                       </p>
                     </Dragger>
