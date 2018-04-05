@@ -23,6 +23,7 @@ $width-list: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 @include generator-box($margin-list, mb);
 @include generator-box($margin-list, ml);
 @include generator-box($margin-list, my);
+@include generator-box($margin-list, mx);
 @include generator-width-w1($width-list);
 @include generator-width-wp($width-list);
 @include generator-font-size($font-size-list, '.f');
