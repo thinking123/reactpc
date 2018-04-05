@@ -36,11 +36,11 @@ export default class extends Component {
 
   render() {
     return (
-      <Header>
+      <Header className="z3 rel">
         <nav className="app-col auto rel h100 lrfix_ ">
-          <div className="login-logo">
+          <a href="/" className="login-logo">
             <img className="wp-10" src={logoImg}/>
-          </div>
+          </a>
           <div className="h100 lh-20 webkit-sassui-vim-center mr30 right">
             <div className="webkit-sassui-icon-text" style={{width: '246px'}}>
               <Icon type="environment-o" className="mr10 dtbc" style={{fontSize: '40px'}}/>
