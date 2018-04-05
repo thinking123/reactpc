@@ -264,7 +264,32 @@ export default class extends Component {
               <Col span={19}>
                 <Input placeholder="地址："  />
               </Col>
+            </Row>
 
+            <h2 className="b">发票收件人信息</h2>
+            <Row>
+              <Col span={3}>
+                <strong>收件人姓名:</strong>
+              </Col>
+              <Col span={7}>
+                <Input placeholder="收件人姓名"  />
+              </Col>
+              <Col span={2}>
+              </Col>
+              <Col span={3}>
+                <strong>收件人手机号:</strong>
+              </Col>
+              <Col span={7}>
+                <Input placeholder="收件人手机号"  />
+              </Col>
+            </Row>
+            <Row>
+              <Col span={3}>
+                <strong>收件人地址:</strong>
+              </Col>
+              <Col span={19}>
+                <Input placeholder="收件人地址"  />
+              </Col>
             </Row>
 
             </div>}
