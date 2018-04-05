@@ -20,12 +20,12 @@ export default class extends AntAbstractControllerIndex {
       }, {
         key: 'data',
         dataIndex: 'data',
-        title: '搭建商'
+        title: '拒绝材料'
       },
       {
         key: 'time',
         dataIndex: 'time',
-        title: '提交时间'
+        title: '上次处理时间'
       }
     ]
   }
@@ -41,16 +41,16 @@ export default class extends AntAbstractControllerIndex {
     //TODO: will be removed
     const data = [
       {
-        id: 1,
+        id: '展位号',
         name: '参展商1',
-        data: '搭建商1',
-        time: '2018-03-21'
+        data: '搭建委托书，展商保证书等2项',
+        time: '昨天'
       },
       {
-        id: 2,
+        id: '展位号2',
         name: '参展商2',
-        data: '搭建商2',
-        time: '2018-03-25'
+        data: '搭建委托书，展商保证书等2项',
+        time: '今天'
       }
     ];
 

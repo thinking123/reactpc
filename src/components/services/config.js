@@ -15,11 +15,19 @@ export default class {
         'banner_create': ['post', '/banner'],
         'banner_delete': ['delete', '/banner/{id}'],
         'banner_update': ['put', '/banner/{id}'],
+      },
+      '/register': {
+        'banner_index': ['get', '/banners'],
+        'banner_create': ['post', '/banner'],
+        'banner_delete': ['delete', '/banner/{id}'],
+        'banner_update': ['put', '/banner/{id}'],
       }
     }
   };
 
   static ROUTES = [
+    '/register/index',
+
     '/admin/orders/index',
 
     '/admin/my-exhibition/index',
@@ -46,6 +54,8 @@ export default class {
     '/admin/bank-flow/index',
     '/admin/bank-flow/show',
     '/admin/bank-flow/add',
+
+    '/admin/user-company/index',
   ];
 }
 

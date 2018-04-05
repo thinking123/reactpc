@@ -7,7 +7,8 @@ import AppBase, {
 
 import Login from './login';
 import Admin from './admin';
-import Main from './main';
+// import Main from './main';
+import Register from './admin/register';
 
 export default class extends AppBase {
 
@@ -62,13 +63,14 @@ export default class extends AppBase {
         <section className="route-wrapper">
           <Route exact path="/" component={Login}/>
           <Route path="/admin" component={Admin}/>
-          <Route path="/main" component={Main}/>
-          <section className="modal-container">
-            {/*<MODAL_START />*/}
-            <ExwModalSelectExhibition />
-            <ExwModalBuildingBusinessesRefuse/>
-            {/*<MODAL_END />*/}
-          </section>
+          <Route path="/register/index" component={Register}/>
+          {/*<Route path="/main" component={Main}/>*/}
+          {/*<section className="modal-container">*/}
+            {/*/!*<MODAL_START />*!/*/}
+            {/*<ExwModalSelectExhibition />*/}
+            {/*<ExwModalBuildingBusinessesRefuse/>*/}
+            {/*/!*<MODAL_END />*!/*/}
+          {/*</section>*/}
         </section>
       </Router>
     );

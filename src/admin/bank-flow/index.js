@@ -19,8 +19,7 @@ export default class extends AntAbstractControllerIndex {
           type="primary"
           size="large"
           icon="plus"
-          onClick={$route.push.bind(null, "/admin/bank-flow/add")}
-        >
+          onClick={$route.push.bind(null, "/admin/bank-flow/add")}>
           新增银行汇款水单
         </Button>
         <Input.Search className="dib" style={{width: 220}} enterButton placeholder="do search"/>

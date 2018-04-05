@@ -77,33 +77,31 @@ export default class extends Component {
           <h3 className="mb10">
             <a href="javascript:;" onClick={$route.back}>
               <Icon type="left" />
-              <span>返回账号设置</span>
+              <span>返回列表</span>
             </a>
           </h3>
-          <h2 className="f20 mb20 b">修改密码</h2>
+          <h2 className="f20 mb20 b">添加施工人员</h2>
 
-          <Row>
-            <Col span={3}>
-              <strong>新密码:</strong>
-            </Col>
-            <Col span={7}>
-              <Input placeholder=""  />
-            </Col>
-          </Row>
+          <p className="text">
+            施工人数(0)
+          </p>
 
-          <Row>
-            <Col span={3}>
-              <strong>再次输入新密码:</strong>
-            </Col>
-            <Col span={7}>
-              <Input placeholder=""  />
-            </Col>
-          </Row>
+          <Dragger
+            multiple
+            beforeUpload={()=> { return false; }}
+            onChange={() => { console.log("选择附件") }}
+          >
+            <p className="ant-upload-hint">
+              上传施工人员表格
+              <Button size="large">添加文件</Button>
+            </p>
+          </Dragger>
+          <p>请点击这里下载施工人员表格模板填写。</p>
 
         </div>
         <div className="footer">
           <Button size="large">取消</Button>
-          <Button size="large" type="primary">保存</Button>
+          <Button size="large" type="primary">保存，下一步</Button>
         </div>
       </div>
     )

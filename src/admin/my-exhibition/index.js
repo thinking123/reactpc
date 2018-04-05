@@ -14,13 +14,12 @@ export default class extends AntAbstractControllerIndex {
     const {state} = params;
     return (
       <div className="lfix_ ml10_ ml__ extra">
-        {/*{state == '1' && <Button type="primary" icon="add">新增报馆</Button>}*/}
+
         <Button
           type="primary"
           size="large"
           icon="plus"
-          onClick={$route.push.bind(null, "/admin/bank-flow/add")}
-        >
+          onClick={$route.push.bind(null, "/admin/my-exhibition/add")}>
           新增报馆
         </Button>
         <Input.Search className="dib" style={{width: 220}} enterButton placeholder="do search"/>

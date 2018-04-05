@@ -1,9 +1,14 @@
+import React, { Component } from "react";
+import { Button, Input, Icon, Row, Col, Select, Divider, Upload, Radio, Tabs, Tab, Table, Tag} from "antd";
 import  AppBase, {
   $api, $route, $modal,
   AntAbstractControllerIndex
 } from 'components/scripts/index';
-import {Row, Col, Table,Button, Tag, Icon,Tabs,Tab} from 'antd';
-import ReactSmartPhoto from 'react-smart-photo';
+
+const RadioGroup = Radio.Group;
+
+let { Option } = Select;
+let { Dragger } = Upload;
 
 @mixin(['pure-layout', 'match'])
 export default class extends AntAbstractControllerIndex {
@@ -124,10 +129,23 @@ export default class extends AntAbstractControllerIndex {
         </header>
 
         <Tabs activeKey={tabId} onChange={this._onChange}>
-          <Tabs.TabPane tab="展位和搭建商信息" key="info">
+          <Tabs.TabPane tab="施工人员信息" key="info">
             <Table bordered rowKey={'id'} columns={columns} dataSource={data} size="middle"/>
           </Tabs.TabPane>
-          <Tabs.TabPane tab="费用清单" key="list">Content of Tab Pane 2</Tabs.TabPane>
+          <Tabs.TabPane tab="保险单" key="list">
+            <Dragger
+              multiple
+              beforeUpload={()=> { return false; }}
+              onChange={() => { console.log("选择附件") }}
+            >
+              <p className="ant-upload-hint">
+                添加保险单
+                <Button size="large">添加保险单</Button>
+              </p>
+            </Dragger>
+            <p>注意：请上传施工人员保险单，单个图片不超过1M，仅限JPG格式。</p>
+
+          </Tabs.TabPane>
         </Tabs>
       </div>
     )

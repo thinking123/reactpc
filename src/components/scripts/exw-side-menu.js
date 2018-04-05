@@ -48,11 +48,11 @@ export default class extends Component {
           <Icon type="exception"/>
           <span className="nav-text">违规记录</span>
         </Menu.Item>
-        <Menu.Item key="/admin/notifications1/index">
+        <Menu.Item key="/admin/account-settings/index">
           <Icon type="setting"/>
           <span className="nav-text">账号设置</span>
         </Menu.Item>
-        <Menu.Item key="/admin/account-settings/index">
+        <Menu.Item key="/admin/user-company/index">
           <Icon type="user"/>
           <span className="nav-text">个人和公司</span>
         </Menu.Item>
