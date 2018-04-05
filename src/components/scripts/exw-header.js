@@ -2,18 +2,18 @@ import React, {Component} from 'react';
 import classNames from 'classnames';
 import {Layout, Menu, Icon, Badge, Divider, Dropdown} from 'antd';
 const {Header, Content, Footer, Sider} = Layout;
-import AppBase, {$api, $store} from 'components/scripts/index';
+import AppBase, {$api, $store, $route} from 'components/scripts/index';
 import logoImg from 'images/logo.png';
 
 export default class extends Component {
 
   get overlayView() {
     return (
-      <Menu>
-        <Menu.Item>
+      <Menu onClick={this.cmd}>
+        <Menu.Item key="user">
           用户中心
         </Menu.Item>
-        <Menu.Item>
+        <Menu.Item key="logout">
           注销
         </Menu.Item>
       </Menu>
@@ -23,6 +23,16 @@ export default class extends Component {
   msg = () => {
     AppBase.msg('msg!');
   };
+
+  cmd = inEvent => {
+    const {key} = inEvent;
+    switch (key) {
+      case 'logout':
+        $route.push('/');
+        break;
+    }
+  };
+
 
   render() {
     return (
