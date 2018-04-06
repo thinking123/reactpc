@@ -124,7 +124,45 @@ export default class extends Component {
           </h3>
           <h2 className="f20 mb20 b">新增银行汇款水单</h2>
 
-
+          <dl className="item">
+            {/* <dt className="mb20 b">个人信息 { JSON.stringify(this.params)}</dt> */}
+            <dd>
+              <ul className="lfix_">
+                <li style={{width: '100%'}}>
+                  <strong>支付的展位：</strong>
+                  <div className="table-like bordered wp-10">
+                    <Row className="table-like__header">
+                      <Col span={6}>展位号</Col>
+                      <Col span={6}>参展商</Col>
+                      <Col span={4}>费用合计</Col>
+                      <Col span={4}>押金</Col>
+                      <Col span={4}>服务费</Col>
+                    </Row>
+                    <Row>
+                      <Col span={6}>A101</Col>
+                      <Col span={6}>参展商</Col>
+                      <Col span={4}>30000</Col>
+                      <Col span={4}>10000</Col>
+                      <Col span={4}>20000</Col>
+                    </Row>
+                    <Row>
+                      <Col span={6}>A103</Col>
+                      <Col span={6}>参展商</Col>
+                      <Col span={4}>30000</Col>
+                      <Col span={4}>5000</Col>
+                      <Col span={4}>25000</Col>
+                    </Row>
+                    <Row className="table-like__footer">
+                      <Col span={6}>合计</Col>
+                      <Col span={4} offset={6}>60000</Col>
+                      <Col span={4}>15000</Col>
+                      <Col span={4}>45000</Col>
+                    </Row>
+                  </div>
+                </li>
+              </ul>
+            </dd>
+          </dl>
 
           <Row>
             <Col span={3}>
