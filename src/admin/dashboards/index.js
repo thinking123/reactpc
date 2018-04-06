@@ -16,7 +16,7 @@ export default class extends AntAbstractControllerIndex {
 
   childView() {
     return (
-      <div className="p20 dashboard-view">
+      <div className="trbl0 abs p20 dashboard-view">
         <Row gutter={30}>
           <Col span="17">
               <Row gutter={20}>

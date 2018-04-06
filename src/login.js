@@ -58,7 +58,7 @@ export default Form.create()(class extends React.Component {
                           onSubmit={this._onSubmit}
                           items={this.state.formItems}/>
             <footer className="tc mt10 lrfix_ ft">
-              <span>还没有账号 <a href="#/register/index">注册</a></span>
+              <span>还没有账号 <a href="#/registers/step1">注册</a></span>
               <a href="#">忘记密码？</a>
             </footer>
           </div>
