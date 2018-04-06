@@ -11,6 +11,12 @@ npm run dev
 + http://t2.ooclab.com:9029/
 + http://t2.ooclab.com:8917/
 
+## todo:
+- [ ] remove `register` module
+- [ ] user-componay -> `companies`
+- [ ] worker-> `workers`
+- [ ] payment-notice + s
+- [ ] bank-flow + s
 
 ## features:
 + [x] spa 
