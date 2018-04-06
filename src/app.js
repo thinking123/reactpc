@@ -11,6 +11,7 @@ import Admin from './admin';
 import Register from './admin/register';
 import RegisterStep1 from './admin/registers/step1';
 import RegisterStep2 from './admin/registers/step2';
+import NxDomEvent from 'next-dom-event';
 
 export default class extends AppBase {
 
@@ -51,12 +52,26 @@ export default class extends AppBase {
     };
     //TODO: remove
     window.$ = AppBase.$;
+    this.attachGlobalEvents();
+  }
+
+  componentWillUnmount() {
+    this._hashRes.destroy();
   }
 
   command(inName, inData) {
     AppBase.$.memory = {
       [nx.camelize(inName)]: inData
     };
+  }
+
+  attachGlobalEvents() {
+    this._hashRes = NxDomEvent.on(nx.GLOBAL, 'hashchange', () => {
+      const hash = location.hash;
+      AppBase.$.memory = {
+        activeRoute: hash.slice(1)
+      };
+    })
   }
 
   render() {
@@ -69,10 +84,10 @@ export default class extends AppBase {
           <Route path="/registers/step2" component={RegisterStep2}/>
           {/*<Route path="/main" component={Main}/>*/}
           {/*<section className="modal-container">*/}
-            {/*/!*<MODAL_START />*!/*/}
-            {/*<ExwModalSelectExhibition />*/}
-            {/*<ExwModalBuildingBusinessesRefuse/>*/}
-            {/*/!*<MODAL_END />*!/*/}
+          {/*/!*<MODAL_START />*!/*/}
+          {/*<ExwModalSelectExhibition />*/}
+          {/*<ExwModalBuildingBusinessesRefuse/>*/}
+          {/*/!*<MODAL_END />*!/*/}
           {/*</section>*/}
         </section>
       </Router>
