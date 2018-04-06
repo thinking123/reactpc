@@ -1,0 +1,21 @@
+/**register Start**/
+.register {
+  &-view{
+    &.step1{
+      height:100%;
+      @extend .bg-gray-z;
+
+      >.bd{
+        left: 50%;
+        top: 64px;
+      }
+    }
+
+    &.step2{
+      min-height:100%;
+      @extend .bg-gray-z;
+    }
+  }
+}
+
+/**register  End**/

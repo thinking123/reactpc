@@ -28,6 +28,9 @@ export default class {
   static ROUTES = [
     '/register/index',
 
+    '/registers/step1',
+    '/registers/step2',
+
     '/admin/orders/index',
 
     '/admin/my-exhibition/index',
