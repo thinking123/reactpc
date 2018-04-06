@@ -10,11 +10,11 @@ export default class extends Component {
   get overlayView() {
     return (
       <Menu onClick={this.cmd}>
-        <Menu.Item key="user">
-          用户中心
+        <Menu.Item key="manage">
+          管理中心
         </Menu.Item>
         <Menu.Item key="logout">
-          注销
+          退出登录
         </Menu.Item>
       </Menu>
     );
@@ -29,6 +29,9 @@ export default class extends Component {
     switch (key) {
       case 'logout':
         $route.push('/');
+        break;
+      case 'manage':
+        $route.push('/admin/dashboards/index');
         break;
     }
   };
