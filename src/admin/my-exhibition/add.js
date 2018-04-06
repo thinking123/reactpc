@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import { Button, Input, Icon, Row, Col, Select, Divider, Upload, Radio, Steps, Cascader} from "antd";
-import  AppBase, {
+import React, {Component} from "react";
+import {Button, Input, Icon, Row, Col, Select, Divider, Upload, Radio, Steps, Cascader, InputNumber} from "antd";
+import AppBase, {
   $api, $route, $modal,
   AntAbstractControllerIndex
 } from 'components/scripts/index';
@@ -9,8 +9,8 @@ import {$app} from "../../components/scripts";
 const Step = Steps.Step;
 const RadioGroup = Radio.Group;
 
-let { Option } = Select;
-let { Dragger } = Upload;
+let {Option} = Select;
+let {Dragger} = Upload;
 
 const steps = [{
   title: '填写展位和搭建商信息'
@@ -19,7 +19,7 @@ const steps = [{
 }];
 
 export default class extends Component {
-  constructor(){
+  constructor() {
     super();
 
     this.state = {
@@ -40,23 +40,23 @@ export default class extends Component {
     this.setState({current});
   }
 
-  addNewRecord(shouldSetState = true){
+  addNewRecord(shouldSetState = true) {
     var records = this.state.records;
 
     // records.push(
     //   this.renderRecord()
     // );
 
-    if(shouldSetState){
-      this.setState({ records });
+    if (shouldSetState) {
+      this.setState({records});
     }
   };
 
-  filterOption(input, option){
+  filterOption(input, option) {
     return option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0;
   };
 
-  renderSubRow(text, detail, double){
+  renderSubRow(text, detail, double) {
     return (
       <Row>
         <Col className="title" span={double ? 4 : 2}>{text}</Col>
@@ -65,7 +65,7 @@ export default class extends Component {
     );
   };
 
-  renderSubCol(text){
+  renderSubCol(text) {
     return (
       <Col span="12">{
         this.renderSubRow(
@@ -88,7 +88,7 @@ export default class extends Component {
   };
 
 
-  render(){
+  render() {
     const {current} = this.state;
 
     return (
@@ -97,18 +97,11 @@ export default class extends Component {
         <div className="content">
           <h3 className="mb10">
             <a href="javascript:;" onClick={$route.back}>
-              <Icon type="left" />
+              <Icon type="left"/>
               <span>返回列表</span>
             </a>
           </h3>
           <h2 className="f20 mb20 b">新增报馆</h2>
-
-
-
-
-
-
-
 
 
           <div>
@@ -140,7 +133,7 @@ export default class extends Component {
                         <strong>现场负责人：</strong>
                       </Col>
                       <Col span={7}>
-                        <Input placeholder="例："  />
+                        <Input placeholder="例："/>
                       </Col>
                       <Col span={2}>
                       </Col>
@@ -148,7 +141,7 @@ export default class extends Component {
                         <strong>负责人手机号：</strong>
                       </Col>
                       <Col span={7}>
-                        <Input placeholder="例：13000000000"  />
+                        <Input placeholder="例：13000000000"/>
                       </Col>
                       <Col span={2}>
                       </Col>
@@ -156,7 +149,7 @@ export default class extends Component {
 
                   </dl>
 
-                  <Divider />
+                  <Divider/>
 
                   <p className="text">
                     文件
@@ -176,8 +169,12 @@ export default class extends Component {
 
                   <Dragger
                     multiple
-                    beforeUpload={()=> { return false; }}
-                    onChange={() => { console.log("选择附件") }}
+                    beforeUpload={() => {
+                      return false;
+                    }}
+                    onChange={() => {
+                      console.log("选择附件")
+                    }}
                   >
                     <p className="ant-upload-hint">
                       上传展位图纸
@@ -188,8 +185,12 @@ export default class extends Component {
 
                   <Dragger
                     multiple
-                    beforeUpload={()=> { return false; }}
-                    onChange={() => { console.log("选择附件") }}
+                    beforeUpload={() => {
+                      return false;
+                    }}
+                    onChange={() => {
+                      console.log("选择附件")
+                    }}
                   >
                     <p className="ant-upload-hint">
                       上传展位细部结构图及审计报告
@@ -203,7 +204,7 @@ export default class extends Component {
                       <strong>设计院全称：</strong>
                     </Col>
                     <Col span={7}>
-                      <Input placeholder="例："  />
+                      <Input placeholder="例："/>
                     </Col>
                     <Col span={2}>
                     </Col>
@@ -211,7 +212,7 @@ export default class extends Component {
                       <strong>办公电话：</strong>
                     </Col>
                     <Col span={7}>
-                      <Input placeholder="设计院办公电话"  />
+                      <Input placeholder="设计院办公电话"/>
                     </Col>
                     <Col span={2}>
                     </Col>
@@ -222,7 +223,7 @@ export default class extends Component {
                       <strong>出图工程师：</strong>
                     </Col>
                     <Col span={7}>
-                      <Input placeholder="出图工程师姓名"  />
+                      <Input placeholder="出图工程师姓名"/>
                     </Col>
                     <Col span={2}>
                     </Col>
@@ -230,7 +231,7 @@ export default class extends Component {
                       <strong>手机号：</strong>
                     </Col>
                     <Col span={7}>
-                      <Input placeholder="出图工程师手机号"  />
+                      <Input placeholder="出图工程师手机号"/>
                     </Col>
                     <Col span={2}>
                     </Col>
@@ -238,8 +239,12 @@ export default class extends Component {
 
                   <Dragger
                     multiple
-                    beforeUpload={()=> { return false; }}
-                    onChange={() => { console.log("选择附件") }}
+                    beforeUpload={() => {
+                      return false;
+                    }}
+                    onChange={() => {
+                      console.log("选择附件")
+                    }}
                   >
                     <p className="ant-upload-hint">
                       上传出图工程师资质证书
@@ -250,8 +255,12 @@ export default class extends Component {
 
                   <Dragger
                     multiple
-                    beforeUpload={()=> { return false; }}
-                    onChange={() => { console.log("选择附件") }}
+                    beforeUpload={() => {
+                      return false;
+                    }}
+                    onChange={() => {
+                      console.log("选择附件")
+                    }}
                   >
                     <p className="ant-upload-hint">
                       上传电工证
@@ -262,8 +271,12 @@ export default class extends Component {
 
                   <Dragger
                     multiple
-                    beforeUpload={()=> { return false; }}
-                    onChange={() => { console.log("选择附件") }}
+                    beforeUpload={() => {
+                      return false;
+                    }}
+                    onChange={() => {
+                      console.log("选择附件")
+                    }}
                   >
                     <p className="ant-upload-hint">
                       上传特装站台搭建委托书
@@ -274,8 +287,12 @@ export default class extends Component {
 
                   <Dragger
                     multiple
-                    beforeUpload={()=> { return false; }}
-                    onChange={() => { console.log("选择附件") }}
+                    beforeUpload={() => {
+                      return false;
+                    }}
+                    onChange={() => {
+                      console.log("选择附件")
+                    }}
                   >
                     <p className="ant-upload-hint">
                       上传押金扣除标准
@@ -288,9 +305,112 @@ export default class extends Component {
 
               }
               {
-                this.state.current === 1
+                this.state.current === 1 &&
+                <dl className="item">
+                  <dd>
+                    <ul className="lfix_">
 
+                      <li style={{width: '100%'}}>
+                        <div className="wp-10">
+                          <div className="table-like">
+                            <Row>
+                              <Col span={8}>
+                                <strong>展期用电</strong>
+                              </Col>
+                              <Col span={4}>
+                                <strong className="c-9">单价</strong>
+                              </Col>
+                              <Col span={4}>
+                                <strong className="c-9">数量</strong>
+                              </Col>
+                              <Col span={4}>
+                                <strong className="c-9">金额</strong>
+                              </Col>
+                            </Row>
+                            <Row>
+                              <Col span={8}>
+                                <Select defaultValue="1" style={{width: 200}}>
+                                  <Option value="1">用电</Option>
+                                </Select>
+                              </Col>
+                              <Col span={4}>
+                                <strong className="c-9">121</strong>
+                              </Col>
+                              <Col span={4}>
+                                <InputNumber min={1} defaultValue={1}/>
+                              </Col>
+                              <Col span={4}>
+                                <strong className="c-9">121</strong>
+                              </Col>
+                              <Col span={4}>
+                                <Icon type="close"/>
+                              </Col>
+                            </Row>
+                            <Row>
+                              <Col span={8}>
+                                <Select defaultValue="1" style={{width: 200}}>
+                                  <Option value="1">用电</Option>
+                                </Select>
+                              </Col>
+                              <Col span={4}>
+                                <strong className="c-9">123</strong>
+                              </Col>
+                              <Col span={4}>
+                                <InputNumber min={1} defaultValue={1}/>
+                              </Col>
+                              <Col span={4}>
+                                <strong className="c-9">123</strong>
+                              </Col>
+                              <Col span={4}>
+                                <Icon type="close"/>
+                              </Col>
+                            </Row>
+                            <Button className="text-button" icon="plus">添加</Button>
+                          </div>
+                          <div className="table-like">
+                            <Row>
+                              <Col span={8}>
+                                <strong>临时搭建用电</strong>
+                              </Col>
+                              <Col span={4}>
+                                <strong className="c-9">单价</strong>
+                              </Col>
+                              <Col span={4}>
+                                <strong className="c-9">数量</strong>
+                              </Col>
+                              <Col span={4}>
+                                <strong className="c-9">金额</strong>
+                              </Col>
+                            </Row>
+                            <Row>
+                              <Col span={8}>
+                                <Select defaultValue="1" style={{width: 200}}>
+                                  <Option value="1">用电</Option>
+                                </Select>
+                              </Col>
+                              <Col span={4}>
+                                <strong className="c-9">121</strong>
+                              </Col>
+                              <Col span={4}>
+                                <InputNumber min={1} defaultValue={1}/>
+                              </Col>
+                              <Col span={4}>
+                                <strong className="c-9">121</strong>
+                              </Col>
+                              <Col span={4}>
+                                <Icon type="close"/>
+                              </Col>
+                            </Row>
+                            <Button className="text-button" icon="plus">添加</Button>
+                          </div>
+                          <div className="table-like">
 
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </dd>
+                </dl>
               }
             </div>
             <div className="steps-action">
@@ -311,24 +431,16 @@ export default class extends Component {
           </div>
 
 
-
-
-
-
-
-
-
-
         </div>
         {/*<div className="footer">*/}
-          {/*<Button size="large">取消</Button>*/}
-          {/*<Button size="large" type="primary">保存，下一步</Button>*/}
+        {/*<Button size="large">取消</Button>*/}
+        {/*<Button size="large" type="primary">保存，下一步</Button>*/}
         {/*</div>*/}
       </div>
     )
   };
 
-  onChangeRadio(){
+  onChangeRadio() {
 
   }
 };
