@@ -13,12 +13,11 @@ export default class extends Component {
   };
 
   render() {
-    const {className, children, ...props} = this.props;
     const {activeRoute, activeState} = AppBase.$.memory;
 
     return (
       <Menu theme="dark" mode="inline" className="f14"
-            defaultSelectedKeys={[activeRoute]}
+            selectedKeys={[activeRoute]}
             onClick={this._onMenuClick}>
         <Menu.Item key="/admin/dashboards/index">
           <Icon type="appstore-o"/>
