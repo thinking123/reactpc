@@ -38,7 +38,7 @@ export default class extends React.Component {
 
         <div className="wp-8 trbl0 abs p20 bg-f webkit-sassui-transform-center-x bd">
           <h3 className="mb10">
-            <a href="javascript:;" onClick={$route.back}>
+            <a href="javascript:;" onClick={$route.push.bind(null, '/')}>
               <Icon type="left"/>
               <span>返回登陆</span>
             </a>

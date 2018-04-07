@@ -1,4 +1,4 @@
-import {Button, Input, Icon, Row, Col, Select, Divider, Upload, Radio, Steps, Cascader, Layout} from "antd";
+import {Button, Input, Icon, Row, Alert, Col, Select, Divider, Upload, Radio, Steps, Cascader, Layout} from "antd";
 import  AppBase, {$api, $route, ExwHeader} from 'components/scripts/index';
 const Step = Steps.Step;
 const RadioGroup = Radio.Group;
@@ -19,7 +19,7 @@ export default class extends React.Component {
 
         <div className="wp-8 auto p20 bg-f bd">
           <h3 className="mb10">
-            <a href="javascript:;" onClick={$route.back}>
+            <a href="javascript:;" onClick={$route.push.bind(null, '/')}>
               <Icon type="left"/>
               <span>返回登陆</span>
             </a>
@@ -33,52 +33,41 @@ export default class extends React.Component {
 
           <div className="blank-20"/>
           <div className="mb20_ mb__ form-view">
-            <div className="blank-10"/>
-            <h3 className="sub-title">
-              <span className="b f14">请填写个人和公司信息，提交之后即可进入报馆系统平台。</span>
-            </h3>
+            <Alert message="请填写个人和公司信息，提交之后即可进入报馆系统平台。" banner/>
 
             <dl className="item">
               <dt className="b">个人信息</dt>
               <Row align={'middle'}>
                 <Col span={3}>
-                  <strong>姓名：</strong>
+                  <strong className="c-gray">姓名：</strong>
                 </Col>
                 <Col span={7}>
                   <Input placeholder="姓名"/>
                 </Col>
-                <Col span={2}>
-                </Col>
-                <Col span={3}>
-                  <strong>职务：</strong>
+                <Col span={3} offset={2}>
+                  <strong className="c-gray">职务：</strong>
                 </Col>
                 <Col span={7}>
                   <Input placeholder="职务(选填)"/>
                 </Col>
-                <Col span={2}>
-                </Col>
               </Row>
               <Row>
                 <Col span={3}>
-                  <strong>身份证号：</strong>
+                  <strong className="c-gray">身份证号：</strong>
                 </Col>
                 <Col span={7}>
                   <Input placeholder="123456789012345678"/>
                 </Col>
-                <Col span={2}>
-                </Col>
-                <Col span={3}>
-                  <strong>微信号：</strong>
+                <Col span={3} offset={2}>
+                  <strong className="c-gray">微信号：</strong>
                 </Col>
                 <Col span={7}>
                   <Input placeholder="微信号(选填)"/>
                 </Col>
-                <Col span={2}>
-                </Col>
               </Row>
               <Row>
                 <Col span={3}>
-                  <strong>邮箱：</strong>
+                  <strong className="c-gray">邮箱：</strong>
                 </Col>
                 <Col span={7}>
                   <Input placeholder="邮箱"/>
@@ -86,25 +75,21 @@ export default class extends React.Component {
               </Row>
               <Row>
                 <Col span={3}>
-                  <strong>邮寄地址：</strong>
+                  <strong className="c-gray">邮寄地址：</strong>
                 </Col>
                 <Col span={7}>
                   <span>控件Waiting...</span>
-                  {/*<Cascader options={options} placeholder="选择省市区"/>*/}
                 </Col>
               </Row>
               <Row>
-                <Col span={3}>
-                  <strong></strong>
-                </Col>
-                <Col span={21}>
+                <Col span={19} offset={3}>
                   <Input placeholder="邮寄地址(选填)"/>
                 </Col>
               </Row>
 
               <Row>
                 <Col span={24}>
-                  <strong>个人身份证扫描件：</strong>
+                  <strong className="c-gray">个人身份证扫描件：</strong>
                 </Col>
               </Row>
 
@@ -122,7 +107,7 @@ export default class extends React.Component {
                   <Button size="large">添加法人身份证</Button>
                 </p>
               </Dragger>
-              <p>注意：请上传法人身份证的正反面扫描件，最多不超过5个文件，单个图片不超过1M，支持JPG和PDF格式。</p>
+              <p className="f12 c-9">注意：请上传法人身份证的正反面扫描件，最多不超过5个文件，单个图片不超过1M，支持JPG和PDF格式。</p>
             </dl>
 
             <Divider />
@@ -131,15 +116,13 @@ export default class extends React.Component {
               <dt className="b">公司信息</dt>
               <Row>
                 <Col span={3}>
-                  <strong>公司名称：</strong>
+                  <strong className="c-gray">公司名称：</strong>
                 </Col>
                 <Col span={7}>
                   <Input placeholder="公司名称"/>
                 </Col>
-                <Col span={2}>
-                </Col>
-                <Col span={3}>
-                  <strong>传真：</strong>
+                <Col span={3} offset={2}>
+                  <strong className="c-gray">传真：</strong>
                 </Col>
                 <Col span={7}>
                   <Input placeholder="123-456-7890"/>
@@ -149,23 +132,21 @@ export default class extends React.Component {
               </Row>
               <Row>
                 <Col span={3}>
-                  <strong>身办公地址：</strong>
+                  <strong className="c-gray">身办公地址：</strong>
                 </Col>
-                <Col span={21}>
+                <Col span={19}>
                   <Input placeholder="办公地址"/>
                 </Col>
               </Row>
               <Row>
                 <Col span={3}>
-                  <strong>法人姓名：</strong>
+                  <strong className="c-gray">法人姓名：</strong>
                 </Col>
                 <Col span={7}>
                   <Input placeholder="法人姓名"/>
                 </Col>
-                <Col span={2}>
-                </Col>
-                <Col span={3}>
-                  <strong>法人手机：</strong>
+                <Col span={3} offset={2}>
+                  <strong className="c-gray">法人手机：</strong>
                 </Col>
                 <Col span={7}>
                   <Input placeholder="12345678901"/>
@@ -173,15 +154,13 @@ export default class extends React.Component {
               </Row>
               <Row>
                 <Col span={3}>
-                  <strong>身份证号：</strong>
+                  <strong className="c-gray">身份证号：</strong>
                 </Col>
                 <Col span={7}>
                   <Input placeholder="123456789012345678"/>
                 </Col>
-                <Col span={2}>
-                </Col>
-                <Col span={3}>
-                  <strong>法人座机：</strong>
+                <Col span={3} offset={2}>
+                  <strong className="c-gray">法人座机：</strong>
                 </Col>
                 <Col span={7}>
                   <Input placeholder="法人座机（选填）"/>
@@ -205,7 +184,7 @@ export default class extends React.Component {
                   <Button size="large">添加文件</Button>
                 </p>
               </Dragger>
-              <p>注意：请上传法人身份证的正反面扫描件，最多不超过5个文件，单个图片不超过1M，支持JPG和PDF格式。</p>
+              <p className="f12 c-9">注意：请上传法人身份证的正反面扫描件，最多不超过5个文件，单个图片不超过1M，支持JPG和PDF格式。</p>
             </dl>
 
             <h3 className="sub-title">
@@ -225,7 +204,7 @@ export default class extends React.Component {
                 <Button size="large">添加文件</Button>
               </p>
             </Dragger>
-            <p>注意：请上传营业执照扫描件，最多不超过5个文件，单个图片不超过1M，支持JPG和PDF格式。</p>
+            <p className="f12 c-9">注意：请上传营业执照扫描件，最多不超过5个文件，单个图片不超过1M，支持JPG和PDF格式。</p>
 
             <h3 className="sub-title">
               <span className="b f14">公司其他资质扫描件：</span>
@@ -244,9 +223,12 @@ export default class extends React.Component {
                 <Button size="large">添加文件</Button>
               </p>
             </Dragger>
-            <p>注意：请上传其他资质扫描件，最多不超过5个文件，单个图片不超过1M，支持JPG和PDF格式。</p>
+            <p className="f12 c-9">注意：请上传其他资质扫描件，最多不超过5个文件，单个图片不超过1M，支持JPG和PDF格式。</p>
           </div>
-          <Button type="primary" onClick={this._onSubmit}>提交</Button>
+          <footer className="mr10_ mr__">
+            <Button style={{width: '120px'}} type="default" onClick={$route.back}>上一步</Button>
+            <Button style={{width: '120px'}} type="primary" onClick={this._onSubmit}>提交</Button>
+          </footer>
         </div>
       </div>
     );
