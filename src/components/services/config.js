@@ -26,8 +26,6 @@ export default class {
   };
 
   static ROUTES = [
-    '/register/index',
-
     '/registers/step1',
     '/registers/step2',
 
@@ -35,7 +33,8 @@ export default class {
 
     '/admin/my-exhibition/index',
     '/admin/my-exhibition/show/:id',
-    '/admin/my-exhibition/add',
+    '/admin/my-exhibition/add-step1',
+    '/admin/my-exhibition/add-step2',
 
     '/admin/worker/index',
     '/admin/worker/show/:id',

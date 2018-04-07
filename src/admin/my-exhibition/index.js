@@ -19,7 +19,7 @@ export default class extends AntAbstractControllerIndex {
           type="primary"
           size="large"
           icon="plus"
-          onClick={$route.push.bind(null, "/admin/my-exhibition/add")}>
+          onClick={$route.push.bind(null, "/admin/my-exhibition/add-step1")}>
           新增报馆
         </Button>
         <Input.Search className="dib" style={{width: 220}} enterButton placeholder="do search"/>
