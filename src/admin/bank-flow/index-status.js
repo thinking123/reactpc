@@ -2,6 +2,7 @@ import  AppBase, {
   $api, $route,
   AntAbstractControllerIndex
 } from 'components/scripts/index';
+import {Row, Col, Menu, Icon, Table, Button, Input} from 'antd';
 
 @mixin(['active-state', 'match', 'pure-layout'])
 export default class extends AntAbstractControllerIndex {
@@ -29,7 +30,18 @@ export default class extends AntAbstractControllerIndex {
         key: 'kaipiaojine',
         dataIndex: 'kaipiaojine',
         title: '开票金额'
-      }
+      },
+        {
+          title: '操作',
+            key: 'action',
+          render: () => {
+          return (
+            <div className="actions">
+              <Button size="small" onClick={$route.push.bind(null, '/admin/notifications/show')}>查看</Button>
+            </div>
+          )
+        }
+        }
     ]
   }
 
