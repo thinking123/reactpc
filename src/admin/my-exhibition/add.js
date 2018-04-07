@@ -632,7 +632,7 @@ export default class extends Component {
                             </Row>
                             <Row>
                               <Col span={16}>
-                                <em className="c-9">当前未超过截止时间，不需要缴纳</em>
+                                <em className="c-9">按展位实际面积计算</em>
                               </Col>
                               <Col span={4}>
                                 <strong className="c-9">121</strong>
