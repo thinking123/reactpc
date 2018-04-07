@@ -57,6 +57,7 @@
     "react-ant-select": "github:afeiship/react-ant-select",
     "react-button": "github:afeiship/react-button",
     "react-condition-manager": "github:afeiship/react-condition-manager",
+    "react-countdown": "github:afeiship/react-countdown",
     "react-dom": "^15.6.1",
     "react-draggable-list": "github:afeiship/react-draggable-list",
     "react-dynamic-router": "github:afeiship/react-dynamic-router",
