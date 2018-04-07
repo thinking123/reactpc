@@ -33,7 +33,7 @@ export default class extends React.Component {
   render() {
     const {time} = this.state;
     return (
-      <div className="step1 register-view">
+      <div className="step1 illegal-records-add register-view">
         <ExwHeader />
 
         <div className="wp-8 trbl0 abs p20 bg-f webkit-sassui-transform-center-x bd">
