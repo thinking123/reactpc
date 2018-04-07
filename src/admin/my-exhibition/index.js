@@ -17,7 +17,6 @@ export default class extends AntAbstractControllerIndex {
 
         <Button
           type="primary"
-          size="large"
           icon="plus"
           onClick={$route.push.bind(null, "/admin/my-exhibition/add-step1")}>
           新增报馆

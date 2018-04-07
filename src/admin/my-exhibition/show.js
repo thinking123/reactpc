@@ -2,7 +2,7 @@ import  AppBase, {
   $api, $route, $modal,
   AntAbstractControllerIndex
 } from 'components/scripts/index';
-import {Row, Col, Tag, Icon,Tabs,Tab} from 'antd';
+import {Row, Col, Tag, Icon, Alert, Tabs, Tab} from 'antd';
 import ReactSmartPhoto from 'react-smart-photo';
 
 @mixin(['pure-layout', 'match'])
@@ -59,14 +59,12 @@ export default class extends AntAbstractControllerIndex {
       <div className="abs trbl0 p20 bg-f my-exhibition-show-view">
         <h3 className="mb10">
           <a href="javascript:;" onClick={$route.back}>
-            <Icon type="left" />
+            <Icon type="left"/>
             <span>返回列表</span>
           </a>
         </h3>
         <h2 className="f20 mb20 b">报馆详情</h2>
-        <h3 className="sub-title">
-          <span className="b f14">有部分材料申请被拒绝，请修改并重新提交</span>
-        </h3>
+        <Alert className="my10" message="有部分材料申请被拒绝，请修改并重新提交" type="warning"/>
 
         <Tabs activeKey={tabId} onChange={this._onChange}>
           <Tabs.TabPane tab="展位和搭建商信息" key="info">
@@ -128,7 +126,7 @@ export default class extends AntAbstractControllerIndex {
                     <em>室内双层</em>
                   </li>
 
-                  <li style={{width: '100%'}}  className="mt10">
+                  <li style={{width: '100%'}} className="mt10">
                     <strong>展位图纸:</strong>
                     <em className="c-9">
                       <ReactSmartPhoto group="cid" items={[

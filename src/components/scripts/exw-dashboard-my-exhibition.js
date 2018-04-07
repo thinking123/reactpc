@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
-import {Row, Col, Menu, Icon, Table, Button, Input} from 'antd';
+import {Row, Col, Menu, Icon, Alert, Table, Button, Input} from 'antd';
 import AppBase, {
   $api, $store, $route,
 } from 'components/scripts/index';
 
 export default class extends Component {
   state = {
-    endTime:'2018年3月26日18:00',
+    endTime: '2018年3月26日18:00',
     data: [
       {
         id: '1',
@@ -58,17 +58,15 @@ export default class extends Component {
   };
 
   render() {
-    const {endTime,columns, data} = this.state;
+    const {endTime, columns, data} = this.state;
     return (
       <div className="p20 my-exhibition-view bg-f">
         <header>
           <span className="b f18">我的报馆</span>
         </header>
-        <header className="sub-title">
-          <span className="b f14">报馆截止时间为{endTime}</span>
-        </header>
+        <Alert className="my10" message={`报馆截止时间为${endTime}`} type="warning"/>
         <Table bordered rowKey={'id'} columns={columns} dataSource={data} size="middle"/>
-        <Button type="primary" icon="add" onClick={$route.push.bind(null, '/admin/my-exhibition/add')}>新增报馆</Button>
+        <Button type="primary" icon="plus" onClick={$route.push.bind(null, '/admin/my-exhibition/add')}>新增报馆</Button>
       </div>
     )
   }

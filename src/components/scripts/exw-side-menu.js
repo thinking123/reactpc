@@ -6,7 +6,6 @@ import AppBase, {$config, $route} from 'components/scripts/index';
 
 export default class extends Component {
 
-
   _onMenuClick = e => {
     AppBase.$.memory = {activeRoute: e.key};
     $route.push(e.key);
@@ -27,7 +26,7 @@ export default class extends Component {
           <Icon type="hdd"/>
           <span className="nav-text">我的报馆</span>
         </Menu.Item>
-        <Menu.Item key="/admin/worker/index/1">
+        <Menu.Item key={`/admin/worker/index/${activeState || 1}`}>
           <Icon type="tool"/>
           <span className="nav-text">施工人员</span>
         </Menu.Item>
@@ -35,7 +34,7 @@ export default class extends Component {
           <Icon type="pay-circle"/>
           <span className="nav-text">付款通知单</span>
         </Menu.Item>
-        <Menu.Item key="/admin/bank-flow/index/1">
+        <Menu.Item key={`/admin/bank-flow/index/${activeState || 1}`}>
           <Icon type="barcode"/>
           <span className="nav-text">汇款水单和发票</span>
         </Menu.Item>
@@ -58,4 +57,5 @@ export default class extends Component {
       </Menu>
     )
   }
+
 }
