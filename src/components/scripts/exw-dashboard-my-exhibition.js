@@ -64,7 +64,7 @@ export default class extends Component {
         <header>
           <span className="b f18">我的报馆</span>
         </header>
-        <Alert className="my10" message={`报馆截止时间为${endTime}`} banner/>
+        <Alert className="my10" message={`报馆截止时间为${endTime}`} type="warning"/>
         <Table bordered rowKey={'id'} columns={columns} dataSource={data} size="middle"/>
         <Button type="primary" icon="plus" onClick={$route.push.bind(null, '/admin/my-exhibition/add')}>新增报馆</Button>
       </div>

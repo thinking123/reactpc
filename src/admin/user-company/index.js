@@ -2,7 +2,7 @@ import  AppBase, {
   $api, $route, $modal,
   AntAbstractControllerIndex
 } from 'components/scripts/index';
-import {Row, Col, Tag, Icon} from 'antd';
+import {Row, Col, Tag, Icon, Alert} from 'antd';
 import ReactSmartPhoto from 'react-smart-photo';
 
 @mixin(['pure-layout', 'match'])
@@ -50,10 +50,7 @@ export default class extends React.Component {
       <div className="abs trbl0 p20 bg-f my-exhibition-show-view">
 
         <h2 className="f20 mb20 b">个人和公司</h2>
-        <h3 className="sub-title">
-          <span className="b f14">信息正在审核中</span>
-        </h3>
-
+        <Alert className="mb10" message="信息正在审核中" type="warning" showIcon/>
         <dl className="item">
           <dt className="mb20 b">个人信息</dt>
 
@@ -90,6 +87,8 @@ export default class extends React.Component {
             </ul>
           </dd>
         </dl>
+
+        <div className="blank-20" />
 
         <dl className="item">
           <dt className="mb20 b">公司信息</dt>

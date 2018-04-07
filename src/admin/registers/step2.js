@@ -9,7 +9,7 @@ const {Dragger} = Upload;
 export default class extends React.Component {
 
   _onSubmit = e => {
-    console.log('submit!');
+    $route.push('/admin/dashboards/index');
   };
 
   render() {
@@ -33,7 +33,7 @@ export default class extends React.Component {
 
           <div className="blank-20"/>
           <div className="mb20_ mb__ form-view">
-            <Alert message="请填写个人和公司信息，提交之后即可进入报馆系统平台。" banner/>
+            <Alert message="请填写个人和公司信息，提交之后即可进入报馆系统平台。" type="warning"/>
 
             <dl className="item">
               <dt className="b">个人信息</dt>

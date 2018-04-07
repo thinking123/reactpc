@@ -124,7 +124,7 @@ export default class extends AntAbstractControllerIndex {
         <header>
           <span className="b f18">施工人员详情</span>
         </header>
-        <Alert className="my10" message="有部分施工人员申请被拒绝，请修改并重新提交" banner/>
+        <Alert className="my10" message="有部分施工人员申请被拒绝，请修改并重新提交" type="warning"/>
         <Tabs activeKey={tabId} onChange={this._onChange}>
           <Tabs.TabPane tab="施工人员信息" key="info">
             <Table bordered rowKey={'id'} columns={columns} dataSource={data} size="middle"/>

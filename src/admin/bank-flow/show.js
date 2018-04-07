@@ -2,7 +2,7 @@ import  AppBase, {
   $api, $route, $modal,
   AntAbstractControllerIndex
 } from 'components/scripts/index';
-import {Row, Col, Tag, Icon} from 'antd';
+import {Row, Col, Tag, Alert, Icon} from 'antd';
 import ReactSmartPhoto from 'react-smart-photo';
 
 @mixin(['pure-layout', 'match'])
@@ -50,13 +50,13 @@ export default class extends React.Component {
       <div className="abs trbl0 p20 bg-f my-exhibition-show-view">
         <h3 className="mb10">
           <a href="javascript:;" onClick={$route.back}>
-            <Icon type="left" />
+            <Icon type="left"/>
             <span>返回列表</span>
           </a>
         </h3>
         <h2 className="f20 mb20 b">银行汇款水单详情</h2>
         {/*<h3 className="sub-title">*/}
-          {/*<span className="b f14">有部分材料申请被拒绝，请修改并重新提交</span>*/}
+        {/*<span className="b f14">有部分材料申请被拒绝，请修改并重新提交</span>*/}
         {/*</h3>*/}
 
         <dl className="item">
@@ -78,11 +78,7 @@ export default class extends React.Component {
         </dl>
         <dl className="item">
           <dt className="mb20 b">银行汇款水单信息</dt>
-          <h3 className="sub-title">
-          <span className="b f14">通过
-
-上次处理时间: 2018年1月4日</span>
-          </h3>
+          <dd><Alert message="通过 上次处理时间: 2018年1月4日" type="success" showIcon/></dd>
           <dd>
             <ul className="lfix_">
               <li>
@@ -119,11 +115,9 @@ export default class extends React.Component {
 
         <dl className="item">
           <dt className="mb20 b">发票信息</dt>
-          <h3 className="sub-title">
-          <span className="b f14">通过
-
-上次处理时间: 2018年1月4日</span>
-          </h3>
+          <dd>
+            <Alert message="通过 上次处理时间: 2018年1月4日" type="success" showIcon/>
+          </dd>
           <dd>
             <ul className="lfix_">
               <li>
@@ -168,11 +162,9 @@ export default class extends React.Component {
 
         <dl className="item">
           <dt className="mb20 b">发票收件人信息</dt>
-          <h3 className="sub-title">
-          <span className="b f14">通过
-
-上次处理时间: 2018年1月4日</span>
-          </h3>
+          <dd>
+            <Alert message="未通过 上次处理时间: 2018年1月4日" type="error" showIcon/>
+          </dd>
           <dd>
             <ul className="lfix_">
               <li>

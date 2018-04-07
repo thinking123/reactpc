@@ -64,7 +64,7 @@ export default class extends AntAbstractControllerIndex {
           </a>
         </h3>
         <h2 className="f20 mb20 b">报馆详情</h2>
-        <Alert className="my10" message="有部分材料申请被拒绝，请修改并重新提交" banner/>
+        <Alert className="my10" message="有部分材料申请被拒绝，请修改并重新提交" type="warning"/>
 
         <Tabs activeKey={tabId} onChange={this._onChange}>
           <Tabs.TabPane tab="展位和搭建商信息" key="info">
