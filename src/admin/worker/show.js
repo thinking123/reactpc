@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { Button, Input, Icon, Row, Col, Select, Divider, Upload, Radio, Tabs, Tab, Table, Tag} from "antd";
+import React, {Component} from "react";
+import {Button, Input, Icon, Row, Col, Alert, Select, Divider, Upload, Radio, Tabs, Tab, Table, Tag} from "antd";
 import  AppBase, {
   $api, $route, $modal,
   AntAbstractControllerIndex
@@ -7,8 +7,8 @@ import  AppBase, {
 
 const RadioGroup = Radio.Group;
 
-let { Option } = Select;
-let { Dragger } = Upload;
+let {Option} = Select;
+let {Dragger} = Upload;
 
 @mixin(['pure-layout', 'match'])
 export default class extends AntAbstractControllerIndex {
@@ -17,35 +17,35 @@ export default class extends AntAbstractControllerIndex {
 
   state = {
     tabId: '1',
-    endTime:'2018年3月26日18:00',
+    endTime: '2018年3月26日18:00',
     data: [
       {
         id: '1',
         username: '施工人',
         idcardnumber: '参展商',
-        saomiaojian:'扫描件',
-        yicunzhaopian:'一寸照片',
+        saomiaojian: '扫描件',
+        yicunzhaopian: '一寸照片',
       },
       {
         id: '2',
         username: '施工人',
         idcardnumber: '参展商',
-        saomiaojian:'扫描件',
-        yicunzhaopian:'一寸照片',
+        saomiaojian: '扫描件',
+        yicunzhaopian: '一寸照片',
       },
       {
         id: '3',
         username: '施工人',
         idcardnumber: '参展商',
-        saomiaojian:'扫描件',
-        yicunzhaopian:'一寸照片',
+        saomiaojian: '扫描件',
+        yicunzhaopian: '一寸照片',
       },
       {
         id: '4',
         username: '施工人',
         idcardnumber: '参展商',
-        saomiaojian:'扫描件',
-        yicunzhaopian:'一寸照片',
+        saomiaojian: '扫描件',
+        yicunzhaopian: '一寸照片',
       }
 
     ],
@@ -111,23 +111,20 @@ export default class extends AntAbstractControllerIndex {
 
   childView() {
     const {tabId} = AppBase.$.memory;
-    const {endTime,columns, data} = this.state;
+    const {endTime, columns, data} = this.state;
 
     return (
       <div className="p20 my-exhibition-view bg-f">
         <h3 className="mb10">
           <a href="javascript:;" onClick={$route.back}>
-            <Icon type="left" />
+            <Icon type="left"/>
             <span>返回列表</span>
           </a>
         </h3>
         <header>
           <span className="b f18">施工人员详情</span>
         </header>
-        <header className="sub-title">
-          <span className="b f14">有部分施工人员申请被拒绝，请修改并重新提交</span>
-        </header>
-
+        <Alert className="my10" message="有部分施工人员申请被拒绝，请修改并重新提交" banner/>
         <Tabs activeKey={tabId} onChange={this._onChange}>
           <Tabs.TabPane tab="施工人员信息" key="info">
             <Table bordered rowKey={'id'} columns={columns} dataSource={data} size="middle"/>
@@ -135,8 +132,12 @@ export default class extends AntAbstractControllerIndex {
           <Tabs.TabPane tab="保险单" key="list">
             <Dragger
               multiple
-              beforeUpload={()=> { return false; }}
-              onChange={() => { console.log("选择附件") }}
+              beforeUpload={() => {
+                return false;
+              }}
+              onChange={() => {
+                console.log("选择附件")
+              }}
             >
               <p className="ant-upload-hint">
                 添加保险单

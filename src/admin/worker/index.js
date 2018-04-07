@@ -16,7 +16,6 @@ export default class extends AntAbstractControllerIndex {
         {/*{state == '1' && <Button type="primary" icon="add">添加施工人员</Button>}*/}
         <Button
           type="primary"
-          size="large"
           icon="plus"
           onClick={$route.push.bind(null, "/admin/worker/add")}>
           添加施工人员
