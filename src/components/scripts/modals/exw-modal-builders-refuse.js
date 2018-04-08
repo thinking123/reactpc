@@ -1,14 +1,47 @@
 import React, {Component} from 'react';
 import classNames from 'classnames';
-import {Modal, Input, Checkbox, Alert} from 'antd';
+import {Modal, Input, Checkbox, Alert, Row, Col, Select, Button, Upload} from 'antd';
 import AppBase, {
   $api, $store, $app, $config, $modal,
 } from 'components/scripts/index';
+
+let {Dragger} = Upload;
 
 export default class extends Component {
 
   _onClose = e => {
     $modal.hide('builders-refuse');
+  };
+
+  renderSubRow(text, detail, double){
+    return (
+      <Row>
+        <Col className="title" span={double ? 4 : 2}>{text}</Col>
+        <Col span={double ? 16 : 20}>{detail}</Col>
+      </Row>
+    );
+  };
+
+  renderSubCol(text){
+    return (
+      <Col span="12">{
+        this.renderSubRow(
+          text,
+          <Select
+            showSearch
+            placeholder={"选择" + text}
+            optionFilterProp="children"
+            filterOption={this.filterOption}
+            size="large"
+          >
+            <Option value="jack">Jack</Option>
+            <Option value="lucy">Lucy</Option>
+            <Option value="tom">Tom</Option>
+          </Select>,
+          true
+        )
+      }</Col>
+    );
   };
 
   render() {
@@ -26,44 +59,102 @@ export default class extends Component {
         <div className="my-exhibition-show-view">
         <dl className="item">
           <dd>
-            <ul className="lfix_">
-              <li>
-                <strong>发票类型:</strong>
-                <em className="c-9">增值税专用发票</em>
-              </li>
-              <li >
+            <Row>
+              {this.renderSubCol("发票类型")}
+            </Row>
+            <Row>
+              <Col span={3}>
                 <strong>汇款公司名称:</strong>
-                <em className="c-9">名称</em>
-              </li>
-              <li>
-                <strong>金额(￥):</strong>
-                <em className="c-9">30,000</em>
-              </li>
-              <li>
+              </Col>
+              <Col span={7}>
+                <Input placeholder="公司名称"  />
+              </Col>
+              <Col span={2}>
+              </Col>
+              <Col span={3}>
+                <strong>金额(服务费):</strong>
+              </Col>
+              <Col span={7}>
+                <label>10,000</label>
+              </Col>
+            </Row>
+            <Row>
+              <Col span={3}>
                 <strong>汇款公司账号:</strong>
-                <em className="c-9">2938472983749827</em>
-              </li>
-              <li >
-                <strong>一般人纳税证明:</strong>
-                <em className="c-9"></em>
-              </li>
-              <li>
+              </Col>
+              <Col span={7}>
+                <Input placeholder="例："  />
+              </Col>
+              <Col span={2}>
+              </Col>
+              <Col span={3}>
                 <strong>开户行:</strong>
-                <em className="c-9">开户行</em>
-              </li>
-              <li>
-                <strong>纳税人识别号</strong>
-                <em className="c-9">识别号</em>
-              </li>
-              <li>
-                <strong>电话</strong>
-                <em className="c-9">13000000000</em>
-              </li>
-              <li>
-                <strong>地址</strong>
-                <em className="c-9">地址</em>
-              </li>
-            </ul>
+              </Col>
+              <Col span={7}>
+                <Input placeholder="例："  />
+              </Col>
+            </Row>
+            <Dragger
+              multiple
+              beforeUpload={()=> { return false; }}
+              onChange={() => { console.log("选择附件") }}
+            >
+              <p className="ant-upload-hint">
+                上传一般纳税人证明
+                <Button size="large">添加文件</Button>
+              </p>
+            </Dragger>
+            <p>注意：请上传一般纳税人证明，单个文件不超过1M，仅限JPG格式。</p>
+            <Row>
+              <Col span={3}>
+                <strong>纳税人识别号:</strong>
+              </Col>
+              <Col span={7}>
+                <Input placeholder="例："  />
+              </Col>
+              <Col span={2}>
+              </Col>
+              <Col span={3}>
+                <strong>电话:</strong>
+              </Col>
+              <Col span={7}>
+                <Input placeholder="例：1300000000"  />
+              </Col>
+            </Row>
+            <Row>
+              <Col span={3}>
+                <strong>地址:</strong>
+              </Col>
+              <Col span={19}>
+                <Input placeholder="地址："  />
+              </Col>
+            </Row>
+
+            <h2 className="b">发票收件人信息</h2>
+            <Row>
+              <Col span={3}>
+                <strong>收件人姓名:</strong>
+              </Col>
+              <Col span={7}>
+                <Input placeholder="收件人姓名"  />
+              </Col>
+              <Col span={2}>
+              </Col>
+              <Col span={3}>
+                <strong>收件人手机号:</strong>
+              </Col>
+              <Col span={7}>
+                <Input placeholder="收件人手机号"  />
+              </Col>
+            </Row>
+            <Row>
+              <Col span={3}>
+                <strong>收件人地址:</strong>
+              </Col>
+              <Col span={19}>
+                <Input placeholder="收件人地址"  />
+              </Col>
+            </Row>
           </dd>
         </dl>
           </div>
