@@ -58,13 +58,11 @@ export default class extends Component {
       {
         title: '付款通知单',
         key: 'action',
-        render: () => {
-          return (
-            <div className="actions">
-              <Button size="small" onClick={$route.push.bind(null, '/admin/payment-notice/show')}>再次下载</Button>
-            </div>
-          )
-        }
+        render: (text, record) => (
+          <span>
+                  <a href={`#/admin/payment-notice/show/${record.key}`}>再次下载</a>
+                </span>
+        ),
       }
     ]
   };

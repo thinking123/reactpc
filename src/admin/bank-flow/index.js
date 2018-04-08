@@ -63,9 +63,9 @@ export default class extends Component {
               key: 'action',
               render: (text, record) => (
                 <span>
-                  <a href="/admin/bank-flow/show/{record.key}">开发票</a>
+                  <a href={`#/admin/bank-flow/show/${record.key}`}>开发票</a>
                   <Divider type="vertical" />
-                  <a href="/admin/bank-flow/show/{record.key}">修改</a>
+                  <a href={`#/admin/bank-flow/show/${record.key}`}>修改</a>
                 </span>
 
               ),

@@ -61,7 +61,7 @@ export default class extends Component {
               key: 'action',
               render: (text, record) => (
                 <span>
-                  <a href="/admin/my-exhibition/show/{record.key}">查看</a>
+                  <a href={`#/admin/my-exhibition/show/${record.key}`}>查看</a>
                 </span>
               ),
             }
