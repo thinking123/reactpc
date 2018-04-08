@@ -77,7 +77,7 @@ export default class extends Component {
           onRow={(data) => {
             return {
               onClick: () => {
-                $route.push("/admin/my-exhibition/show/" + data.id);
+                $route.push("/admin/bank-flow/show/" + data.id);
               }
             };
           }}
@@ -99,7 +99,7 @@ export default class extends Component {
             <Toolbar.Button
               text="新增银行汇款水单"
               onClick={() => {
-                $route.push("/admin/my-exhibition/add-step1");
+                $route.push("/admin/bank-flow/add");
               }}
             />
           }
