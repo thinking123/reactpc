@@ -1,0 +1,40 @@
+.toolbar-component {
+	padding: 12px 28px;
+	background-color: #EAF0F5;
+
+	.ant-layout-content {
+		line-height: 40px;
+		font-size: 14px;
+		color: #98A2B5;
+	}
+
+	.ant-tabs-tab {
+		font-size: 18px;
+	}
+
+	.ant-layout-sider {
+		background-color: transparent;
+		box-shadow: none !important;
+
+		.ant-row > * {
+			float: right;
+		}
+
+		.ant-row > *:empty {
+			display: none;
+		}
+
+		.ant-input-prefix {
+			left: 8px;
+		}
+
+		.anticon-search {
+			font-size: 18px;
+			font-weight: bold;
+		}
+
+		button {
+			width: 100%;
+		}
+	}
+}

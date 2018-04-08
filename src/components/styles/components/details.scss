@@ -1,0 +1,87 @@
+.details-component {
+	padding: 30px;
+	font-size: 14px;
+	line-height: 32px;
+	background-color: #fff;
+
+	.details-component-draggerinfo {
+		.ant-upload-drag {
+			padding: 38px 0;
+
+			.ant-upload-hint {
+				font-size: 14px !important;
+			}
+
+			.ant-btn {
+				margin-left: 6px;
+			}
+		}
+	}
+
+	.details-component-textareainfo {
+		.ant-input {
+			line-height: inherit;
+			font-size: inherit;
+		}
+	}
+
+	.details-component-title {
+		color: #222;
+	}
+
+	.details-component-info > :first-child {
+		color: #98a2b5;
+
+		&:not(:empty)::after {
+			content: ":";
+		}
+	}
+
+	.details-component-info {
+		margin-bottom: 16px;
+	}
+
+	.details-component-selectorinfo {
+		.ant-select {
+			width: 100%;
+			color: inherit;
+		}
+	}
+
+	.details-component-devider {
+		background-color: #ccc;
+	}
+
+	.details-component-tools {
+		padding: 8px 26px;
+		text-align: right;
+		background-color: #EAF0F5;
+		margin: 126px -30px -30px -30px;
+		border-top: 1px solid #CCC;
+
+		> * {
+			margin-left: 8px;
+		}
+	}
+
+	.details-component-image {
+		background-color: #ccc;
+		border: 3px solid transparent;
+		box-sizing: border-box;
+		background: #ccc no-repeat center;
+		background-size: contain;
+		display: inline-block;
+		width: 52px;
+		height: 58px;
+
+		&.large-size {
+			display: block;
+			padding: 28px;
+			
+			&, img {
+				width: 100%;
+				height: auto;
+			}
+		}
+	}
+}
