@@ -88,7 +88,7 @@ export default class extends Component {
       <div className="p20 notification-view">
         <Toolbar
           title={
-            <Toolbar.Text className="b f20" text='我的报馆' />
+            <Toolbar.Text className="b f24" text='我的报馆' />
           }
           button={
             <Toolbar.Button
