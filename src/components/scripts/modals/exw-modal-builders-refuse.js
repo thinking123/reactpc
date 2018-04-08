@@ -20,7 +20,9 @@ export default class extends Component {
              onCancel={this._onClose}
              okText="确认"
              cancelText="取消"
+             visible={modalBuildersRefuse}
              className={ classNames("exm-modal-builders-refuse", className) }>
+
         <div className="my-exhibition-show-view">
         <dl className="item">
           <dd>
