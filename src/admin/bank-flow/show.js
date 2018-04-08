@@ -2,7 +2,7 @@ import  AppBase, {
   $api, $route, $modal,
   AntAbstractControllerIndex
 } from 'components/scripts/index';
-import {Row, Col, Tag, Alert, Icon} from 'antd';
+import {Row, Col, Tag, Alert, Icon, Button} from 'antd';
 import ReactSmartPhoto from 'react-smart-photo';
 
 @mixin(['pure-layout', 'match'])
@@ -182,6 +182,14 @@ export default class extends React.Component {
             </ul>
           </dd>
         </dl>
+
+        <footer className="tl">
+          <Row>
+            <Col span={7}>
+              <Button style={{width: '120px'}} type="primary" onClick={this._writeReceipt}>开发票</Button>
+            </Col>
+          </Row>
+        </footer>
       </div>
     );
   }
@@ -194,6 +202,10 @@ export default class extends React.Component {
 
   render() {
     return this.pureLayout();
+  }
+
+  _writeReceipt(){
+    $modal.show('builders-refuse');
   }
 }
 
