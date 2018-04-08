@@ -57,7 +57,7 @@ export default class extends Component {
             new ColumnData("拒绝材料", "refuse"),
             new ColumnData("上次处理时间", "lasttime"),
             {
-              title: 'Action',
+              title: '',
               key: 'action',
               render: (text, record) => (
                 <span>
