@@ -57,7 +57,7 @@ export default class extends Component {
              className={ classNames("exm-modal-builders-refuse", className) }>
 
         <div className="my-exhibition-show-view">
-        <dl className="item">
+        <dl>
           <dd>
             <Row>
               {this.renderSubCol("发票类型")}
