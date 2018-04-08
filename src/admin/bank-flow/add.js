@@ -125,7 +125,6 @@ export default class extends Component {
           <h2 className="f20 mb20 b">新增银行汇款水单</h2>
 
           <dl className="item">
-            {/* <dt className="mb20 b">个人信息 { JSON.stringify(this.params)}</dt> */}
             <dd>
               <ul className="lfix_">
                 <li style={{width: '100%'}}>

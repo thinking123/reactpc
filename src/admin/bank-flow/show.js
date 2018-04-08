@@ -59,23 +59,46 @@ export default class extends React.Component {
         {/*<span className="b f14">有部分材料申请被拒绝，请修改并重新提交</span>*/}
         {/*</h3>*/}
 
-        <dl className="item">
-          {/*<dt className="mb20 b">展位信息 { JSON.stringify(this.params)}</dt>*/}
-          <dd>
-            <ul className="lfix_">
-              <li>
-                <strong>支付的展位:</strong>
-                <em>A103B</em>
-              </li>
 
-              <li>
-                <strong></strong>
-                <em>A103B</em>
-              </li>
+          <dl className="item">
+            <dd>
+              <ul className="lfix_">
+                <li style={{width: '100%'}}>
+                  <strong>支付的展位：</strong>
+                  <div className="table-like bordered wp-10">
+                    <Row className="table-like__header">
+                      <Col span={6}>展位号</Col>
+                      <Col span={6}>参展商</Col>
+                      <Col span={4}>费用合计</Col>
+                      <Col span={4}>押金</Col>
+                      <Col span={4}>服务费</Col>
+                    </Row>
+                    <Row>
+                      <Col span={6}>A101</Col>
+                      <Col span={6}>参展商</Col>
+                      <Col span={4}>30000</Col>
+                      <Col span={4}>10000</Col>
+                      <Col span={4}>20000</Col>
+                    </Row>
+                    <Row>
+                      <Col span={6}>A103</Col>
+                      <Col span={6}>参展商</Col>
+                      <Col span={4}>30000</Col>
+                      <Col span={4}>5000</Col>
+                      <Col span={4}>25000</Col>
+                    </Row>
+                    <Row className="table-like__footer">
+                      <Col span={6}>合计</Col>
+                      <Col span={4} offset={6}>60000</Col>
+                      <Col span={4}>15000</Col>
+                      <Col span={4}>45000</Col>
+                    </Row>
+                  </div>
+                </li>
+              </ul>
+            </dd>
+          </dl>
 
-            </ul>
-          </dd>
-        </dl>
         <dl className="item">
           <dt className="mb20 b">银行汇款水单信息</dt>
           <dd><Alert message="通过 上次处理时间: 2018年1月4日" type="success" showIcon/></dd>
