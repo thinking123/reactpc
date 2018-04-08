@@ -69,7 +69,7 @@ export default class extends AntAbstractControllerIndex {
         <Tabs activeKey={tabId} onChange={this._onChange}>
           <Tabs.TabPane tab="展位和搭建商信息" key="info">
             <dl className="item">
-              <dt className="mb20 b">展位信息 { JSON.stringify(this.params)}</dt>
+              <dt className="mb20 b">展位信息</dt>
               <dd>
                 <ul className="lfix_">
                   <li>
@@ -99,18 +99,6 @@ export default class extends AntAbstractControllerIndex {
                     <strong>现场负责人手机号:</strong>
                     <em className="c-9">12345678909</em>
                   </li>
-                  {/*<li style={{width: '100%'}}  className="mt10">*/}
-                  {/*<strong>身份证扫描件:</strong>*/}
-                  {/*<em className="c-9">*/}
-                  {/*<ReactSmartPhoto group="id" items={[*/}
-                  {/*{*/}
-                  {/*href: 'http://placeholder.qiniudn.com/180x180',*/}
-                  {/*src: 'http://placeholder.qiniudn.com/80x80',*/}
-                  {/*caption: '身份证'*/}
-                  {/*}*/}
-                  {/*]}/>*/}
-                  {/*</em>*/}
-                  {/*</li>*/}
                 </ul>
               </dd>
             </dl>

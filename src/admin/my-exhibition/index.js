@@ -61,7 +61,7 @@ export default class extends Component {
               key: 'action',
               render: (text, record) => (
                 <span>
-                  <a href="/admin/my-exhibition/show/undefined">查看</a>
+                  <a href="/admin/my-exhibition/show/{record.key}">查看</a>
                 </span>
               ),
             }
@@ -72,7 +72,7 @@ export default class extends Component {
           onRow={(data) => {
             return {
               onClick: () => {
-                $route.push("/admin/my-exhibition/show/" + data.id);
+                $route.push("/admin/my-exhibition/show/" + data.key);
               }
             };
           }}
