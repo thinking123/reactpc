@@ -5,6 +5,10 @@ import  AppBase, {
   AntAbstractControllerIndex
 } from 'components/scripts/index';
 
+
+import Details from "components/mixins/details";
+let { Info } = Details;
+
 const RadioGroup = Radio.Group;
 
 let {Option} = Select;
@@ -73,13 +77,15 @@ export default class extends AntAbstractControllerIndex {
       {
         title: '',
         key: 'action',
-        render: () => {
-          return (
-            <div className="actions">
-              <Button size="small" onClick={$route.push.bind(null, '/')}>查看</Button>
-            </div>
-          )
-        }
+        render: (text, record) => (
+          <span>
+              <a href={`#/admin/worker/show/${record.key}`}>拒绝</a>
+              <Divider type="vertical" />
+              <a href={`#/admin/worker/show/${record.key}`}>修改</a>
+              <Divider type="vertical" />
+              <a href={`#/admin/worker/show/${record.key}`}>删除</a>
+          </span>
+        ),
       }
     ]
   };
@@ -124,6 +130,9 @@ export default class extends AntAbstractControllerIndex {
         <header>
           <span className="b f18">施工人员详情</span>
         </header>
+
+        <Info text="提交时间:">2017年12月20日</Info>
+
         <Alert className="my10" message="有部分施工人员申请被拒绝，请修改并重新提交" type="warning"/>
         <Tabs activeKey={tabId} onChange={this._onChange}>
           <Tabs.TabPane tab="施工人员信息" key="info">
