@@ -38,7 +38,7 @@ export default class extends Component {
         <h3 className="mb10">
           <a href="javascript:;" onClick={$route.back}>
             <Icon type="left" />
-            <span>返回</span>
+            <span>返回列表</span>
           </a>
         </h3>
         <h2 className="f20 mb20 b">违规记录详情</h2>
