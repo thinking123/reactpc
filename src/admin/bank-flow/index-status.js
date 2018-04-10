@@ -2,7 +2,7 @@ import  AppBase, {
   $api, $route,
   AntAbstractControllerIndex
 } from 'components/scripts/index';
-import {Row, Col, Menu, Icon, Table, Button, Input} from 'antd';
+import {Row, Col, Menu, Icon, Table, Button, Input,  Divider} from 'antd';
 
 @mixin(['active-state', 'match', 'pure-layout'])
 export default class extends AntAbstractControllerIndex {
@@ -31,17 +31,20 @@ export default class extends AntAbstractControllerIndex {
         dataIndex: 'kaipiaojine',
         title: '开票金额'
       },
-        {
-          title: '操作',
-            key: 'action',
-          render: () => {
-          return (
-            <div className="actions">
-              <Button size="small" onClick={$route.push.bind(null, '/admin/notifications/show')}>查看</Button>
-            </div>
-          )
-        }
-        }
+      {
+        title: '',
+        key: 'action',
+        render: (text, record) => (
+          <span>
+                  {/*<a href={`#/admin/bank-flow/show/${record.key}`}>开发票</a>*/}
+            <a href="javascript:;" onClick={this._openTicket}>开发票</a>
+
+                  <Divider type="vertical" />
+                  <a href={`#/admin/bank-flow/show/${record.key}`}>修改</a>
+                </span>
+
+        ),
+      }
     ]
   }
 
@@ -86,6 +89,11 @@ export default class extends AntAbstractControllerIndex {
 
   pureLayout() {
     return this.tableView();
+  }
+
+  _openTicket(){
+    $route.push("/admin/bank-flow/show/" );
+    $modal.show('builders-refuse');
   }
 }
 
