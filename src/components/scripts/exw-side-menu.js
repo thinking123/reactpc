@@ -20,7 +20,8 @@ export default class extends Component {
     const {activeRoute, activeState} = AppBase.$.memory;
 
     return (
-      <Menu theme="dark" mode="inline" className="f14"
+      <Menu theme="dark" mode="inline"
+            className="f14 mt10"
             selectedKeys={[activeRoute]}
             onClick={this._onMenuClick}>
         <Menu.Item key="/admin/dashboards/index">

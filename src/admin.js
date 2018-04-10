@@ -24,7 +24,7 @@ export default class extends React.Component {
     return (
       <Layout className="admin-view">
         <ExwHeader/>
-        <Layout className="mt10 app-col auto layout-view">
+        <Layout className="app-col auto layout-view">
           <Sider
             width="200">
             <ExwSideMenu />
