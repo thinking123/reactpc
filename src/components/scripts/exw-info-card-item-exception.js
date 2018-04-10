@@ -7,19 +7,20 @@ export default class extends Component {
   render() {
     const {className, icon, title, score, count, ...props} = this.props;
     return (
-      <div data-depth="2" data-hoverable="true" className={ classNames("bdr-3 webkit-sassui-shadow-box bg-f rel exw-info-card-item-exception", className) } {...props}>
+      <div data-depth="2" data-hoverable="true"
+           className={classNames("bdr-3 webkit-sassui-shadow-box bg-f exw-info-card-item-exception", className)} {...props}>
         <div className="top">
-            <Icon type={icon}/>
-            <span className="ml5">{title}</span>
+          <Icon type={icon}/>
+          <span className="ml5">{title}</span>
         </div>
-        <div className="bottom">
-          <div className="item item-left">
-            <p className="span">违规扣分</p>
-            <p className="span span-bottom">{score}</p>
+        <div className="lfix_ mt14 bottom">
+          <div className="wp-5 item-left">
+            <header className="f14 pb10 hd">违规扣分</header>
+            <p className='f32'>{score}</p>
           </div>
-          <div className="item">
-            <p className="span">违规条数</p>
-            <p className="span span-bottom">{count}</p>
+          <div className="wp-5">
+            <header className="f14 pb10 hd">违规条数</header>
+            <p className='f32'>{count}</p>
           </div>
         </div>
       </div>
