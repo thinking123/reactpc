@@ -39,7 +39,8 @@ export default class {
 
     '/admin/worker/index',
     '/admin/worker/show/:id',
-    '/admin/worker/add',
+    '/admin/worker/add-step1',
+    '/admin/worker/add-step2',
 
     '/admin/payment-notice/index',
     '/admin/payment-notice/show/:id',

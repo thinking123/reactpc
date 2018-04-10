@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-import { Button, Input, Icon, Row, Col, Select, Divider, Upload, Radio} from "antd";
+import { Button, Input, Icon, Row, Col, Select, Divider, Upload, Radio, Steps} from "antd";
 import  AppBase, {
   $api, $route, $modal,
   AntAbstractControllerIndex
 } from 'components/scripts/index';
 
 const RadioGroup = Radio.Group;
+const Step = Steps.Step;
 
 let { Option } = Select;
 let { Dragger } = Upload;
@@ -15,7 +16,8 @@ export default class extends Component {
     super();
 
     this.state = {
-      records: []
+      records: [],
+      current: 0,
     };
 
     this.addNewRecord(false);
@@ -70,6 +72,8 @@ export default class extends Component {
 
 
   render(){
+    const {current} = this.state;
+
     return (
       <div className="illegal-records-add">
 
@@ -81,6 +85,11 @@ export default class extends Component {
             </a>
           </h3>
           <h2 className="f20 mb20 b">添加施工人员</h2>
+
+          <Steps current={0} style={{width: '50%'}}>
+            <Steps.Step title="上传施工人员信息"/>
+            <Steps.Step title="上传保险单"/>
+          </Steps>
 
           <p className="text">
             施工人数(0)
@@ -101,7 +110,7 @@ export default class extends Component {
         </div>
         <div className="footer">
           <Button size="large">取消</Button>
-          <Button size="large" type="primary">保存，下一步</Button>
+          <Button size="large" type="primary" onClick={this._onSubmit}>保存，下一步</Button>
         </div>
       </div>
     )
@@ -110,4 +119,9 @@ export default class extends Component {
   onChangeRadio(){
 
   }
+
+  _onSubmit = e => {
+    $route.push('/admin/worker/add-step2');
+  };
+
 };

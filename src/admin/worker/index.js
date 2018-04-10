@@ -92,7 +92,7 @@ export default class extends Component {
             <Toolbar.Button
               text="添加施工人员"
               onClick={() => {
-                $route.push("/admin/worker/add");
+                $route.push("/admin/worker/add-step1");
               }}
             />
           }
