@@ -3,6 +3,11 @@ import classNames from 'classnames';
 import {Layout, Menu, Icon, Badge} from 'antd';
 import AppBase, {$config, $route} from 'components/scripts/index';
 
+//Private Component:
+const ErrorIcon = (inProps) => (
+  <Icon type="close-circle-o" className="webkit-sassui-transform-center-y r0 mr10 c-red" />
+);
+
 
 export default class extends Component {
 
@@ -22,9 +27,10 @@ export default class extends Component {
           <Icon type="appstore-o"/>
           <span className="nav-text">首页</span>
         </Menu.Item>
-        <Menu.Item key={`/admin/my-exhibition/index/${activeState || 1}`}>
+        <Menu.Item className="rel" key={`/admin/my-exhibition/index/${activeState || 1}`}>
           <Icon type="hdd"/>
           <span className="nav-text">我的报馆</span>
+          <ErrorIcon />
         </Menu.Item>
         <Menu.Item key={`/admin/worker/index/${activeState || 1}`}>
           <Icon type="tool"/>

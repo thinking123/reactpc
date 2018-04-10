@@ -69,7 +69,7 @@ export class InputInfo extends Component {
 export class OptionData {
 	key = "";
 	text = "";
-	
+
 	constructor(key, text){
 		this.key = key;
 		this.text = text.toString();
