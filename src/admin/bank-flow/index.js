@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import AppBase, { $route } from "components/scripts/index";
+import AppBase, {$modal,  $route } from "components/scripts/index";
 import Table from "components/mixins/table";
 import Toolbar from "components/mixins/toolbar";
 import {Divider} from 'antd';
@@ -35,6 +35,11 @@ export default class extends Component {
     this.state = { table: null }
   };
 
+  _openTicket(){
+    $route.push("/admin/bank-flow/show/" );
+    $modal.show('builders-refuse');
+  }
+
   focusTab(tabIndex){
     let dataSource = [];
 
@@ -63,7 +68,9 @@ export default class extends Component {
               key: 'action',
               render: (text, record) => (
                 <span>
-                  <a href={`#/admin/bank-flow/show/${record.key}`}>开发票</a>
+                  {/*<a href={`#/admin/bank-flow/show/${record.key}`}>开发票</a>*/}
+                  <a href="javascript:;" onClick={this._openTicket}>开发票</a>
+
                   <Divider type="vertical" />
                   <a href={`#/admin/bank-flow/show/${record.key}`}>修改</a>
                 </span>
