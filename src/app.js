@@ -1,7 +1,7 @@
 import {HashRouter as Router, Route, Switch} from 'react-router-dom';
 import AppBase, {
   $api, $store,
-  ExwModalBuildingBusinessesRefuse, ExwModalAddCost
+  ExwModalAdd, ExwModalAddCost
 } from 'components/scripts/index';
 
 import Login from './login';
@@ -83,7 +83,7 @@ export default class extends AppBase {
           <Route path="/registers/step2" component={RegisterStep2}/>
           <section className="modal-container">
           {/*<MODAL_START />*/}
-          <ExwModalBuildingBusinessesRefuse/>
+          <ExwModalAdd/>
             <ExwModalAddCost/>
           {/*<MODAL_END />*/}
           </section>
