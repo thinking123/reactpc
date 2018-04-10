@@ -6,7 +6,7 @@ export default class extends Component {
   render() {
     const {className, img, title, count, agree, reject,apply, ...props} = this.props;
     return (
-      <div data-depth="2" data-hover="true" className={ classNames("bdr-3 webkit-sassui-shadow-box bg-f rel exw-info-card-item", className) } {...props}>
+      <div data-depth="2" data-hoverable="true" className={ classNames("bdr-3 webkit-sassui-shadow-box bg-f rel exw-info-card-item", className) } {...props}>
 
           <div className="info-card-layout">
               <img className="info-card-layout-img" src={img}/>
