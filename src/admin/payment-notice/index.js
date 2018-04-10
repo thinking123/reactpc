@@ -60,7 +60,7 @@ export default class extends Component {
         key: 'action',
         render: (text, record) => (
           <span>
-                  <a href={`#/admin/payment-notice/show/${record.key}`}>再次下载</a>
+                  <a href="#">再次下载</a>
                 </span>
         ),
       }
