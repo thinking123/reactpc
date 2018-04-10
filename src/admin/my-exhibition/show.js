@@ -272,6 +272,12 @@ export default class extends AntAbstractControllerIndex {
           </Tabs.TabPane>
           <Tabs.TabPane tab="费用清单" key="list">
             <div>
+              <Row>
+                <Col span={7}>
+                  <Button style={{width: '120px'}} type="primary" onClick={this._addMount}>添加费用清单</Button>
+                </Col>
+              </Row>
+
               <div className="dotted-bottom wp-8 f14 c-0">
                 <Row>
                   <Col span={9}>
@@ -502,6 +508,12 @@ export default class extends AntAbstractControllerIndex {
 
           <Tabs.TabPane tab="多个费用清单（临时展示在这里）" key="lists">
             <div>
+              <Row>
+                <Col span={7}>
+                  <Button style={{width: '120px'}} type="primary" onClick={this._addMount}>添加费用清单</Button>
+                </Col>
+              </Row>
+
               <Collapse className="collapse" bordered={false}>
                 {this.state.multipleLists.map((list, index) =>
                   <Panel
@@ -693,6 +705,10 @@ export default class extends AntAbstractControllerIndex {
     AppBase.$.memory = {footer: this.footerView()};
   }
 
+  _addMount(){
+    $modal.show('add-cost');
+    $modal.show('modal-add-cost');
+  }
 
   _onClick = inStatus => {
     switch (inStatus) {

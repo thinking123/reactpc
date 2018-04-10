@@ -1,7 +1,7 @@
 import {HashRouter as Router, Route, Switch} from 'react-router-dom';
 import AppBase, {
   $api, $store,
-  ExwModalBuildingBusinessesRefuse
+  ExwModalBuildingBusinessesRefuse, ExwModalAddCost
 } from 'components/scripts/index';
 
 import Login from './login';
@@ -84,6 +84,7 @@ export default class extends AppBase {
           <section className="modal-container">
           {/*<MODAL_START />*/}
           <ExwModalBuildingBusinessesRefuse/>
+            <ExwModalAddCost/>
           {/*<MODAL_END />*/}
           </section>
         </section>
