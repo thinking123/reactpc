@@ -15,7 +15,7 @@ export default class extends React.Component {
   render() {
     return (
       <div className="step2 illegal-records-add register-view">
-        <ExwHeader />
+        <ExwHeader aside={false} />
 
         <div className="wp-8 auto p20 bg-f bd">
           <h3 className="mb10">

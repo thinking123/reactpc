@@ -1,11 +1,16 @@
 import React, {Component} from 'react';
 import classNames from 'classnames';
 import {Layout, Menu, Icon, Badge, Divider, Dropdown} from 'antd';
+
 const {Header, Content, Footer, Sider} = Layout;
 import AppBase, {$api, $store, $route} from 'components/scripts/index';
 import logoImg from 'images/logo.png';
 
 export default class extends Component {
+
+  static defaultProps = {
+    aside: true
+  };
 
   get overlayView() {
     return (
@@ -38,13 +43,14 @@ export default class extends Component {
 
 
   render() {
+    const {aside} = this.props;
     return (
       <Header className="z3 rel">
         <nav className="app-col auto rel h100 lrfix_ ">
           <a href="/" className="login-logo">
             <img className="wp-10" src={logoImg}/>
           </a>
-          <div className="h100 lh-20 webkit-sassui-vim-center mr30 right">
+          <div hidden={!aside} className="h100 lh-20 webkit-sassui-vim-center mr30 right">
             <div className="webkit-sassui-icon-text" style={{width: '246px'}}>
               <Icon type="environment-o" className="mr10 dtbc" style={{fontSize: '40px'}}/>
               <span className="dtbc">2018中国（广州）国际机器人、智能装备及制造技术展</span>

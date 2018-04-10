@@ -34,7 +34,7 @@ export default class extends React.Component {
     const {time} = this.state;
     return (
       <div className="step1 illegal-records-add register-view">
-        <ExwHeader />
+        <ExwHeader aside={false} />
 
         <div className="wp-8 trbl0 abs p20 bg-f webkit-sassui-transform-center-x bd">
           <h3 className="mb10">
