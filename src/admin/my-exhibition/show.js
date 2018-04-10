@@ -522,13 +522,10 @@ export default class extends AntAbstractControllerIndex {
                           list.status !== 'pending' ?
                             <Col span={4}>
                               <div className={`collapse__status ` + (list.status === 'approved' ? 'c-green' : 'c-red')}>
-                                <Icon type={ list.status === 'approved' ? 'check-circle-o' : 'close-circle-o' } />
-                                <span>{list.status === 'approved' ? '通过' : '拒绝'}</span>
+                                <Icon type={ list.status === 'approved' ? 'check-circle-o' : '' } />
+                                <span>{list.status === 'approved' ? '通过' : '审核中'}</span>
                               </div>
-                              <Row>
-                                <Col span={12}><strong className="c-gray">操作人: </strong></Col>
-                                <Col span={12}><em>{list.handler}</em></Col>
-                              </Row>
+
                               <Row>
                                 <Col span={12}><strong className="c-gray">上次处理时间: </strong></Col>
                                 <Col span={12}><em>{list.handleTime}</em></Col>
