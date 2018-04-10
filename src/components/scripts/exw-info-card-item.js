@@ -13,14 +13,14 @@ export default class extends Component {
           </div>
           <div className="info-card-layout-right">
             <div className="info-card-layout-text">
-              <div className="mb7  b">
+              <div className="mb8 b">
                   <span className="card-text1">{title}</span>
               </div>
-              <div className="mb7  b">
+              <div className="mb8 b">
                   <span className="card-text2">{count}</span>
-                {apply && <em className="abs c-red wp-10">未读</em>}
+                {apply && <em className="ml5 abs c-red wp-10">未读</em>}
               </div>
-              <div className="mb7  b">
+              <div className="mb8 mt5_ mr__ b">
                 {agree && <span className="card-text3">{agree} 通过 </span>}
                 {reject && <span className="card-text4">{reject} 拒绝 </span>}
               </div>

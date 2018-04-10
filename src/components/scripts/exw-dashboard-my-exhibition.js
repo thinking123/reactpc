@@ -49,7 +49,7 @@ export default class extends Component {
         render: () => {
           return (
             <div className="actions">
-              <Button size="small" onClick={$route.push.bind(null, '/admin/my-exhibition/index/1')}>查看</Button>
+              <a href={'javascript:;'} onClick={$route.push.bind(null, '/admin/my-exhibition/index/1')}>查看</a>
             </div>
           )
         }
@@ -65,8 +65,14 @@ export default class extends Component {
           <span className="b f18">我的报馆</span>
         </header>
         <Alert className="my10" message={`报馆截止时间为${endTime}`} type="warning"/>
-        <Table bordered rowKey={'id'} columns={columns} dataSource={data} size="middle"/>
-        <Button type="primary" icon="plus" onClick={$route.push.bind(null, '/admin/my-exhibition/add')}>新增报馆</Button>
+        <Table
+          className='table-component p0'
+          rowKey={'id'} columns={columns}
+          pagination={false}
+          dataSource={data} size="middle"/>
+        <footer className={'mt10'}>
+          <Button type="primary" icon="plus" onClick={$route.push.bind(null, '/admin/my-exhibition/add')}>新增报馆</Button>
+        </footer>
       </div>
     )
   }
