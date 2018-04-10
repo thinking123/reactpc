@@ -13,7 +13,7 @@ npm run dev
 
 ## todo:
 - [ ] remove `register` module
-- [ ] user-componay -> `companies`
+- [ ] user-componay -> `companies` [individuals-and-companies]
 - [ ] worker-> `workers`
 - [ ] payment-notice + s
 - [ ] bank-flow + s
