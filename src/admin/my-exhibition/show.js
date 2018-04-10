@@ -2,8 +2,18 @@ import  AppBase, {
   $api, $route, $modal,
   AntAbstractControllerIndex
 } from 'components/scripts/index';
-import {Row, Col, Tag, Icon, Alert, Tabs, Tab} from 'antd';
+// import {Row, Col, Tag, Icon, Alert, Tabs, Tab} from 'antd';
 import ReactSmartPhoto from 'react-smart-photo';
+
+import { Row, Col, Button, Icon, Alert, Tabs, Tab, Tag, Collapse, Radio} from 'antd';
+// import { $route } from 'components/scripts/index';
+// import Toolbar from 'components/mixins/toolbar';
+import Details from 'components/mixins/details';
+import { SelectorInfo } from '../../components/mixins/details';
+//
+// let { Tabs, Tabs: { Tab } } = Toolbar;
+let { Merger, Info, InputInfo, Divider, Title, Tools, Image } = Details;
+let { Panel } = Collapse;
 
 @mixin(['pure-layout', 'match'])
 export default class extends AntAbstractControllerIndex {
@@ -11,7 +21,46 @@ export default class extends AntAbstractControllerIndex {
   layout = 'pure';
 
   state = {
-    tabId: '1'
+    tabId: '1',
+    selectedList: null,
+    multipleLists: [{
+      status: 'approved',
+      total: 55000,
+      applyTime: '2018年1月4日',
+      handleTime: '2018年1月4日',
+      handler: '工作人员',
+      usage: [{ type: '类型', unit: 121, amount: 1, price: 121 }],
+      temp: [{ type: '类型', unit: 121, amount: 1, price: 121 }],
+      waterAndGas: [{ type: '类型', unit: 121, amount: 1, price: 121 }],
+      network: [{ type: '类型', unit: 121, amount: 1, price: 121 }]
+    }, {
+      status: 'pending',
+      total: 15000,
+      applyTime: '2018年1月4日',
+      usage: [{ type: '类型', unit: 121, amount: 1, price: 121 }],
+      temp: [{ type: '类型', unit: 121, amount: 1, price: 121 }],
+      waterAndGas: [{ type: '类型', unit: 121, amount: 1, price: 121 }],
+      network: [{ type: '类型', unit: 121, amount: 1, price: 121 }]
+    }, {
+      status: 'rejected',
+      reason: '被拒原因',
+      total: 35000,
+      applyTime: '2018年1月4日',
+      handleTime: '2018年1月4日',
+      handler: '工作人员',
+      usage: [{ type: '类型', unit: 121, amount: 1, price: 121 }],
+      temp: [{ type: '类型', unit: 121, amount: 1, price: 121 }],
+      waterAndGas: [{ type: '类型', unit: 121, amount: 1, price: 121 }],
+      network: [{ type: '类型', unit: 121, amount: 1, price: 121 }]
+    }, {
+      status: 'pending',
+      total: 15000,
+      applyTime: '2018年1月4日',
+      usage: [{ type: '类型', unit: 121, amount: 1, price: 121 }],
+      temp: [{ type: '类型', unit: 121, amount: 1, price: 121 }],
+      waterAndGas: [{ type: '类型', unit: 121, amount: 1, price: 121 }],
+      network: [{ type: '类型', unit: 121, amount: 1, price: 121 }]
+    }],
   };
 
   // _onClick = inStatus => {
@@ -52,8 +101,22 @@ export default class extends AntAbstractControllerIndex {
     );
   }
 
+  onSelectList(index) {
+    console.log(index);
+    // let { secondTab } = this.state;
+    // secondTab.selectedList = index;
+    // this.setState({ secondTab });
+  };
+
   childView() {
     const {tabId} = AppBase.$.memory;
+    let { dataList } = this;
+    let {
+      usage, temp, waterAndGas, network, manage, cert, safety
+    } = this.state;
+    const infoSpans = { text: 6, content: 18 };
+    const halfSpans = { text: 3, content: 21 };
+
 
     return (
       <div className="abs trbl0 p20 bg-f my-exhibition-show-view">
@@ -436,6 +499,187 @@ export default class extends AntAbstractControllerIndex {
 
             </div>
           </Tabs.TabPane>
+
+          <Tabs.TabPane tab="多个费用清单（临时展示在这里）" key="lists">
+            <div>
+              <Collapse className="collapse" bordered={false}>
+                {this.state.multipleLists.map((list, index) =>
+                  <Panel
+                    key={index}
+                    header={(
+                      <Row>
+                        <Col span={20}>
+                          <div className="collapse__title">
+                            <strong className="c-gray">费用合计：</strong>
+                            <span className="c-blue-a">{list.total}</span>
+                          </div>
+                          <div className="collapse__apply-time">
+                            <strong className="c-gray">提交时间：</strong>
+                            <span>{list.applyTime}</span>
+                          </div>
+                        </Col>
+                        {
+                          list.status !== 'pending' ?
+                            <Col span={4}>
+                              <div className={`collapse__status ` + (list.status === 'approved' ? 'c-green' : 'c-red')}>
+                                <Icon type={ list.status === 'approved' ? 'check-circle-o' : 'close-circle-o' } />
+                                <span>{list.status === 'approved' ? '通过' : '拒绝'}</span>
+                              </div>
+                              <Row>
+                                <Col span={12}><strong className="c-gray">操作人: </strong></Col>
+                                <Col span={12}><em>{list.handler}</em></Col>
+                              </Row>
+                              <Row>
+                                <Col span={12}><strong className="c-gray">上次处理时间: </strong></Col>
+                                <Col span={12}><em>{list.handleTime}</em></Col>
+                              </Row>
+                            </Col>
+                            :
+                            <Radio
+                              checked={this.state.selectedList === index}
+                              onChange={this.onSelectList.bind(this, index)} />
+                        }
+                      </Row>
+                    )}>
+                    <div className="collapse__panel">
+                      {
+                        list.status === 'rejected' && <Alert type="error" className="custom mb10" message={list.reason} />
+                      }
+                      <div className="table-like">
+                        <Row>
+                          <Col span={8}>
+                            <strong>展期用电</strong>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-gray">单价</strong>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-gray">数量</strong>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-gray">金额</strong>
+                          </Col>
+                        </Row>
+                        {list.usage.map((item, index) =>
+                          <Row key={index}>
+                            <Col span={8}>
+                              <span>{item.type}</span>
+                            </Col>
+                            <Col span={4}>
+                              <span>{item.unit}</span>
+                            </Col>
+                            <Col span={4}>
+                              <span>{item.amount}</span>
+                            </Col>
+                            <Col span={4}>
+                              <span>{item.unit * item.amount}</span>
+                            </Col>
+                          </Row>
+                        )}
+                      </div>
+                      <div className="table-like">
+                        <Row>
+                          <Col span={8}>
+                            <strong>展期用电</strong>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-gray">单价</strong>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-gray">数量</strong>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-gray">金额</strong>
+                          </Col>
+                        </Row>
+                        {list.temp.map((item, index) =>
+                          <Row key={index}>
+                            <Col span={8}>
+                              <span>{item.type}</span>
+                            </Col>
+                            <Col span={4}>
+                              <span>{item.unit}</span>
+                            </Col>
+                            <Col span={4}>
+                              <span>{item.amount}</span>
+                            </Col>
+                            <Col span={4}>
+                              <span>{item.unit * item.amount}</span>
+                            </Col>
+                          </Row>
+                        )}
+                      </div>
+                      <div className="table-like">
+                        <Row>
+                          <Col span={8}>
+                            <strong>用水、气服务</strong>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-gray">单价</strong>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-gray">数量</strong>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-gray">金额</strong>
+                          </Col>
+                        </Row>
+                        {list.waterAndGas.map((item, index) =>
+                          <Row key={index}>
+                            <Col span={8}>
+                              <span>{item.type}</span>
+                            </Col>
+                            <Col span={4}>
+                              <span>{item.unit}</span>
+                            </Col>
+                            <Col span={4}>
+                              <span>{item.amount}</span>
+                            </Col>
+                            <Col span={4}>
+                              <span>{item.unit * item.amount}</span>
+                            </Col>
+                          </Row>
+                        )}
+                      </div>
+                      <div className="table-like">
+                        <Row>
+                          <Col span={8}>
+                            <strong>有线网络</strong>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-gray">单价</strong>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-gray">数量</strong>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-gray">金额</strong>
+                          </Col>
+                        </Row>
+                        {list.network.map((item, index) =>
+                          <Row key={index}>
+                            <Col span={8}>
+                              <span>{item.type}</span>
+                            </Col>
+                            <Col span={4}>
+                              <span>{item.unit}</span>
+                            </Col>
+                            <Col span={4}>
+                              <span>{item.amount}</span>
+                            </Col>
+                            <Col span={4}>
+                              <span>{item.unit * item.amount}</span>
+                            </Col>
+                          </Row>
+                        )}
+                      </div>
+                    </div>
+                  </Panel>
+                )}
+              </Collapse>
+            </div>
+          </Tabs.TabPane>
+
         </Tabs>
 
 
