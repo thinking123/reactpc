@@ -7,6 +7,10 @@ import {Table, Icon, Card, Input, Button, Tabs} from 'antd';
 
 @mixin(['tabs-layout'])
 export default class extends AntAbstractControllerIndex {
+  static defaultProps = {
+    className: 'p20'
+  };
+
   layout = 'tabs';
 
   get route() {
@@ -47,7 +51,7 @@ export default class extends AntAbstractControllerIndex {
 
   topView() {
     return (
-      <div className="px14 pt20 lrfix_ top-view">
+      <div className="lrfix_ top-view">
         <h3 className="f20 b left">
           我的报馆
         </h3>

@@ -6,34 +6,18 @@ import {Table, Icon, Card, Input, Button, Tabs} from 'antd';
 
 @mixin(['tabs-layout'])
 export default class extends AntAbstractControllerIndex {
-  layout = 'tabs';
 
-  get extra() {
-    const {params} = AppBase.$.memory;
-    const {state} = params;
-    return (
-      <div className="lfix_ ml10_ ml__ extra">
-        {/*{state == '1' && <Button type="primary" icon="add">添加施工人员</Button>}*/}
-        <Button
-          type="primary"
-          icon="plus"
-          onClick={$route.push.bind(null, "/admin/worker/add")}>
-          添加施工人员
-        </Button>
-        <Input.Search className="dib" style={{width: 220}} enterButton placeholder="do search"/>
-      </div>
-    )
-  }
+  static defaultProps = {
+    className: 'p20'
+  };
+
+  layout = 'tabs';
 
   get route() {
     return {
       path: '/admin/worker/index/:state',
       component: require('admin/worker/index-status').default
     };
-  }
-
-  componentDidMount() {
-    //TODO:
   }
 
   get header() {
@@ -59,5 +43,30 @@ export default class extends AntAbstractControllerIndex {
            component: <span>通过(213)</span>
        }
     ];
+  }
+
+
+  componentDidMount() {
+    //TODO:
+  }
+
+
+  topView() {
+    return (
+      <div className="lrfix_ top-view">
+        <h3 className="f20 b left">
+          我的报馆
+        </h3>
+        <div className="ml10_ ml__ right">
+          <Button
+            type="primary"
+            icon="plus"
+            onClick={$route.push.bind(null, "/admin/worker/add")}>
+            添加施工人员
+          </Button>
+          <Input.Search className="dib" style={{width: 220}} enterButton placeholder="do search"/>
+        </div>
+      </div>
+    )
   }
 }

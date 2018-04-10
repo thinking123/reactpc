@@ -49,13 +49,13 @@ export default class extends Component {
     return (
       <div className={classNames("abs trbl0 webkit-sassui-flex-fixed-bdauto exw-route-tabs", className)}>
         { topView }
-        <nav className="rel px14 lrfix_ hd">
+        <nav className="rel mb14 lrfix_ hd">
           <ul className="left">
             {
               header.map((item) => {
                 return (
-                  <li onClick={this._onClick.bind(this, item)} key={item.state}><NavLink activeClassName='active'
-                                                                                         to={`${matchUrl}/${item.state}`}>{item.component}</NavLink>
+                  <li onClick={this._onClick.bind(this, item)} key={item.state}>
+                    <NavLink activeClassName='active' to={`${matchUrl}/${item.state}`}>{item.component}</NavLink>
                   </li>
                 )
               })
@@ -66,7 +66,7 @@ export default class extends Component {
           </aside>
         </nav>
 
-        <section className="rel p14 bd ovs-y">
+        <section className="rel bd ovs-y">
           <Route {...route}/>
         </section>
 
