@@ -228,7 +228,6 @@ export default class extends React.Component {
   }
 
   _writeReceipt(){
-    alert('haha');
     $modal.show('builders-refuse');
   }
 }
