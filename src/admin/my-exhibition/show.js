@@ -706,8 +706,8 @@ export default class extends AntAbstractControllerIndex {
   }
 
   _addMount(){
-    $modal.show('add-cost');
-    $modal.show('modal-add-cost');
+    // $modal.show('add-cost');
+    // $modal.show('modal-add-cost');
   }
 
   _onClick = inStatus => {
