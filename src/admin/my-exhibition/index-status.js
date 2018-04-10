@@ -26,6 +26,14 @@ export default class extends AntAbstractControllerIndex {
         key: 'time',
         dataIndex: 'time',
         title: '上次处理时间'
+      } ,{
+        title: '',
+        key: 'action',
+        render: (text, record) => (
+          <span>
+                  <a href={`#/admin/my-exhibition/show/${record.key}`}>查看</a>
+                </span>
+        ),
       }
     ]
   }
