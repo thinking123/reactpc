@@ -71,7 +71,7 @@ export default class extends Component {
           pagination={false}
           dataSource={data} size="middle"/>
         <footer className={'mt10'}>
-          <Button type="primary" icon="plus" onClick={$route.push.bind(null, '/admin/my-exhibition/add')}>新增报馆</Button>
+          <Button type="primary" icon="plus" onClick={$route.push.bind(null, '/admin/my-exhibition/add-step1')}>新增报馆</Button>
         </footer>
       </div>
     )
