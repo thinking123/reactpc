@@ -1,0 +1,73 @@
+.my-worker-add {
+  font-size: 14px;
+  line-height: 38px;
+
+  .content {
+    padding: 30px;
+  }
+
+  .ant-row {
+    margin-bottom: 16px;
+  }
+
+  .ant-select {
+    width: 100%;
+  }
+
+  .ant-divider {
+    background-color: #ccc;
+  }
+
+  .score-input {
+    width: 60px;
+  }
+
+  .ant-upload-drag {
+    padding: 38px 0;
+
+    .ant-upload-hint {
+      font-size: 14px !important;
+    }
+
+    .ant-btn {
+      margin-left: 6px;
+    }
+  }
+
+  .add-record  {
+    color: #169BD5;
+    cursor: pointer;
+
+    .anticon {
+      margin-right: 3px;
+    }
+  }
+
+  .ant-upload-list-item-info {
+    line-height: 20px;
+  }
+
+  .title {
+    color: #98a2b5;
+
+    &::after {
+      content: ":";
+    }
+  }
+
+  .footer {
+    padding: 8px 26px;
+    text-align: right;
+    background-color: #EAF0F5;
+    margin-top: 176px;
+    border-top: 1px solid #CCC;
+
+    .ant-btn {
+      margin-left: 8px;
+    }
+  }
+
+  .link_button {
+    color: #169BD5;
+  }
+}

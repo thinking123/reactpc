@@ -1,15 +1,19 @@
 import React, { Component } from "react";
-import { Button, Input, Icon, Row, Col, Select, Divider, Upload, Radio, Steps} from "antd";
+import { Button, Input, Icon, Row, Col, Select, Divider, Upload, Radio, Steps, Table as AntTable} from "antd";
 import  AppBase, {
   $api, $route, $modal,
   AntAbstractControllerIndex
 } from 'components/scripts/index';
+import Table from "components/mixins/table";
+import arrowDownImg from 'images/arrow.png';
+import arrowUpImg from 'images/arrow2.png';
 
 const RadioGroup = Radio.Group;
 const Step = Steps.Step;
 
 let { Option } = Select;
 let { Dragger } = Upload;
+let { ColumnData } = Table;
 
 export default class extends Component {
   constructor(){
@@ -18,7 +22,23 @@ export default class extends Component {
     this.state = {
       records: [],
       current: 0,
+      showDownArrow:true,
+      dataSource: [],
+      dataSource2: []
     };
+
+    for(var i = 0; i < 8;i++){
+      this.state.dataSource.push({
+        key: i,
+        username: `姓名${i}`,
+        cardId: `身份证号${i}`
+      });
+      this.state.dataSource2.push({
+        key: i,
+        username: `姓名${i}`,
+        cardId: `身份证号${i}`
+      });
+    }
 
     this.addNewRecord(false);
   };
@@ -70,12 +90,34 @@ export default class extends Component {
     );
   };
 
+  columns = [
+    new ColumnData("姓名", "username"),
+    new ColumnData("身份证号", "cardId")
+  ];
+
+  columns2 = [
+    new ColumnData("姓名", "username"),
+    new ColumnData("身份证号", "cardId"),
+    {
+      title: '',
+      key: 'action',
+      render: (text, record) => (
+        <span>
+          <a href="javascript:;" onClick={() => this._modifyWorker()}>修改</a>
+          <Divider type="vertical" />
+          <a href="javascript:;" onClick={() => this._deleteWorker()}>删除</a>
+        </span>
+
+      ),
+    }
+  ];
 
   render(){
-    const {current} = this.state;
+    const {current, showDownArrow} = this.state;
+    let { columns, columns2, state: {dataSource, dataSource2} } = this;
 
     return (
-      <div className="illegal-records-add">
+      <div className="my-worker-add">
 
         <div className="content">
           <h3 className="mb10">
@@ -90,6 +132,32 @@ export default class extends Component {
             <Steps.Step title="上传施工人员信息"/>
             <Steps.Step title="上传保险单"/>
           </Steps>
+
+          {showDownArrow && <p className="link_button" onClick={() =>  this.setState({showDownArrow:false})}>
+            显示历史施工人员
+            <img src={arrowDownImg} />
+          </p>}
+          {!showDownArrow && <div>
+            <p className="link_button" onClick={() =>  this.setState({showDownArrow:true})}>
+                隐藏历史施工人员
+                <img src={arrowUpImg} />
+            </p>
+
+            <p>
+              <Input size="large" />
+            </p>
+            <AntTable
+              columns={columns}
+              bordered={true}
+              dataSource={dataSource}
+              pagination={false}
+              rowSelection={{
+                onChange: (selectedRowKeys, selectedRows) => {
+                  this.onSelectTargets(selectedRowKeys, selectedRows);
+                }
+              }}
+            />
+            </div>}
 
           <p className="text">
             施工人数(0)
@@ -109,6 +177,18 @@ export default class extends Component {
             这里
           </a>下载施工人员表格模板填写。</p>
 
+          <AntTable
+            columns={columns2}
+            bordered={true}
+            dataSource={dataSource2}
+            pagination={false}
+            rowSelection={{
+              onChange: (selectedRowKeys, selectedRows) => {
+                this.onSelectTargets2(selectedRowKeys, selectedRows);
+              }
+            }}
+          />
+
         </div>
         <div className="footer">
           <Button size="large">取消</Button>
@@ -125,5 +205,21 @@ export default class extends Component {
   _onSubmit = e => {
     $route.push('/admin/worker/add-step2');
   };
+
+  onSelectTargets(selectedRowKeys, selectedRows){
+    console.log(`selectedRowKeys: ${selectedRowKeys}`, 'selectedRows: ', selectedRows);
+  };
+
+  onSelectTargets2(selectedRowKeys, selectedRows){
+    console.log(`selectedRowKeys: ${selectedRowKeys}`, 'selectedRows: ', selectedRows);
+  };
+
+  _modifyWorker(){
+      alert('modify');
+  }
+
+  _deleteWorker(){
+    alert('delete');
+  }
 
 };
