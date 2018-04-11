@@ -105,7 +105,9 @@ export default class extends Component {
               <Button size="large">添加文件</Button>
             </p>
           </Dragger>
-          <p>请点击这里下载施工人员表格模板填写。</p>
+          <p>请点击<a href='/#' target="_blank">
+            这里
+          </a>下载施工人员表格模板填写。</p>
 
         </div>
         <div className="footer">
