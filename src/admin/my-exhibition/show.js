@@ -5,15 +5,18 @@ import  AppBase, {
 // import {Row, Col, Tag, Icon, Alert, Tabs, Tab} from 'antd';
 import ReactSmartPhoto from 'react-smart-photo';
 
-import { Row, Col, Button, Icon, Alert, Tabs, Tab, Tag, Collapse, Radio} from 'antd';
+import { Row, Col, Button, Icon, Alert, Tabs, Tab, Tag, Collapse, Radio, Modal, Select,Input,Upload,InputNumber} from 'antd';
 // import { $route } from 'components/scripts/index';
 // import Toolbar from 'components/mixins/toolbar';
 import Details from 'components/mixins/details';
 import { SelectorInfo } from '../../components/mixins/details';
+import classNames from "classnames";
+// import {Upload} from "antd/lib/index";
 //
 // let { Tabs, Tabs: { Tab } } = Toolbar;
 let { Merger, Info, InputInfo, Divider, Title, Tools, Image } = Details;
 let { Panel } = Collapse;
+let {Dragger} = Upload;
 
 @mixin(['pure-layout', 'match'])
 export default class extends AntAbstractControllerIndex {
@@ -23,6 +26,7 @@ export default class extends AntAbstractControllerIndex {
   state = {
     tabId: '1',
     selectedList: null,
+    modalVisible: false,
     multipleLists: [{
       status: 'approved',
       total: 55000,
@@ -274,7 +278,9 @@ export default class extends AntAbstractControllerIndex {
             <div>
               <Row>
                 <Col span={7}>
-                  <Button style={{width: '120px'}} type="primary" onClick={this._addMount}>添加费用清单</Button>
+                  <Button style={{width: '120px'}} type="primary" onClick={() => {
+                    this.setState({ modalVisible: true });
+                  }}>添加费用清单</Button>
                 </Col>
               </Row>
 
@@ -510,7 +516,9 @@ export default class extends AntAbstractControllerIndex {
             <div>
               <Row>
                 <Col span={7}>
-                  <Button style={{width: '120px'}} type="primary" onClick={this._addMount}>添加费用清单</Button>
+                  <Button style={{width: '120px'}} type="primary" onClick={() => {
+                    this.setState({ modalVisible: true });
+                  }}>添加费用清单</Button>
                 </Col>
               </Row>
 
@@ -691,6 +699,208 @@ export default class extends AntAbstractControllerIndex {
 
         </Tabs>
 
+        <Modal title={'新增费用清单'}
+               onOk={() => {
+                 this.setState({ modalVisible: false });
+               }}
+               onCancel={() => {
+                 this.setState({ modalVisible: false });
+               }}
+               okText="确认"
+               cancelText="取消"
+               visible={this.state.modalVisible}
+               className="">
+          <div className="my-exhibition-show-view">
+            <dl className="item">
+              <dd>
+                <ul className="lfix_">
+
+                  <li style={{width: '100%'}}>
+                    <div className="wp-10">
+                      <div className="table-like">
+                        <Row>
+                          <Col span={8}>
+                            <strong>展期用电</strong>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-9">单价</strong>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-9">数量</strong>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-9">金额</strong>
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col span={8}>
+                            <Select defaultValue="1" style={{width: 200}}>
+                              <Option value="1">用电</Option>
+                            </Select>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-9">121</strong>
+                          </Col>
+                          <Col span={4}>
+                            <InputNumber min={1} defaultValue={1}/>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-9">121</strong>
+                          </Col>
+                          <Col span={4}>
+                            <Icon type="close"/>
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col span={8}>
+                            <Select defaultValue="1" style={{width: 200}}>
+                              <Option value="1">用电</Option>
+                            </Select>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-9">123</strong>
+                          </Col>
+                          <Col span={4}>
+                            <InputNumber min={1} defaultValue={1}/>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-9">123</strong>
+                          </Col>
+                          <Col span={4}>
+                            <Icon type="close"/>
+                          </Col>
+                        </Row>
+                        <Button className="text-button" icon="plus">添加</Button>
+                      </div>
+                      <div className="table-like">
+                        <Row>
+                          <Col span={8}>
+                            <strong>临时搭建用电</strong>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-9">单价</strong>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-9">数量</strong>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-9">金额</strong>
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col span={8}>
+                            <Select defaultValue="1" style={{width: 200}}>
+                              <Option value="1">用电</Option>
+                            </Select>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-9">121</strong>
+                          </Col>
+                          <Col span={4}>
+                            <InputNumber min={1} defaultValue={1}/>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-9">121</strong>
+                          </Col>
+                          <Col span={4}>
+                            <Icon type="close"/>
+                          </Col>
+                        </Row>
+                        <Button className="text-button" icon="plus">添加</Button>
+                      </div>
+
+
+
+
+
+
+
+
+                      <div className="table-like">
+                        <Row>
+                          <Col span={8}>
+                            <strong>用水、气服务</strong>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-9">单价</strong>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-9">数量</strong>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-9">金额</strong>
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col span={8}>
+                            <Select defaultValue="1" style={{width: 200}}>
+                              <Option value="1">用电</Option>
+                            </Select>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-9">121</strong>
+                          </Col>
+                          <Col span={4}>
+                            <InputNumber min={1} defaultValue={1}/>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-9">121</strong>
+                          </Col>
+                          <Col span={4}>
+                            <Icon type="close"/>
+                          </Col>
+                        </Row>
+                        <Button className="text-button" icon="plus">添加</Button>
+                      </div>
+
+
+
+
+                      <div className="table-like">
+                        <Row>
+                          <Col span={8}>
+                            <strong>有限网络</strong>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-9">单价</strong>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-9">数量</strong>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-9">金额</strong>
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col span={8}>
+                            <Select defaultValue="1" style={{width: 200}}>
+                              <Option value="1">用电</Option>
+                            </Select>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-9">121</strong>
+                          </Col>
+                          <Col span={4}>
+                            <InputNumber min={1} defaultValue={1}/>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-9">121</strong>
+                          </Col>
+                          <Col span={4}>
+                            <Icon type="close"/>
+                          </Col>
+                        </Row>
+                        <Button className="text-button" icon="plus">添加</Button>
+                      </div>
+
+
+                    </div>
+                  </li>
+                </ul>
+              </dd>
+            </dl>
+          </div>
+        </Modal>
 
       </div>
     );
@@ -703,10 +913,6 @@ export default class extends AntAbstractControllerIndex {
   update(inTabId) {
     AppBase.$.memory = {tabId: inTabId,};
     AppBase.$.memory = {footer: this.footerView()};
-  }
-
-  _addMount(){
-     $modal.show('add');
   }
 
   _onClick = inStatus => {
@@ -732,5 +938,10 @@ export default class extends AntAbstractControllerIndex {
   render() {
     return this.pureLayout();
   }
+
+  _onClose() {
+     this.setState({ modalVisible: false });
+   }
+
 }
 

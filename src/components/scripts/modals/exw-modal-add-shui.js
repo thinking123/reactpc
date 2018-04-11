@@ -18,12 +18,12 @@ let {Dragger} = Upload;
 export default class extends Component {
 
   _onClose = e => {
-    $modal.hide('add');
+    $modal.hide('add-shui');
   };
 
   render() {
     const {className, children, ...props} = this.props;
-    const {modalBuildersRefuse} = AppBase.$.memory;
+    const {modalBuildersRefuse2} = AppBase.$.memory;
 
     return (
       <Modal title={'新增发票'} {...props}
@@ -31,8 +31,8 @@ export default class extends Component {
              onCancel={this._onClose}
              okText="确认"
              cancelText="取消"
-             visible={modalBuildersRefuse}
-             className={ classNames("exm-modal-add", className) }>
+             visible={modalBuildersRefuse2}
+             className={ classNames("exm-modal-add-shui", className) }>
 2222222
         <div className="my-exhibition-show-view">
           <dl>

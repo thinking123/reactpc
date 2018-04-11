@@ -34,7 +34,7 @@ export const ExwPageException=require('./exw-page-exception').default;
 export const ExwEntryItem=require('./exw-entry-item').default;
 export const ExwSloganSwitch=require('./exw-slogan-switch').default;
 
-export const ExwModalAdd=require('./modals/exw-modal-add').default;
+export const ExwModalAdd=require('./modals/exw-modal-add-shui').default;
 export const ExwModalAddCost=require('./modals/exw-modal-add-cost').default;
 
 /*===components end===*/
