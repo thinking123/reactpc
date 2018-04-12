@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { Button, Input, Icon, Row, Col, Select, Divider, Upload, Radio} from "antd";
+import React, {Component} from "react";
+import {Button, Input, Icon, Row, Col, Select, Divider, Upload, Radio} from "antd";
 import  AppBase, {
   $api, $route, $modal,
   AntAbstractControllerIndex
@@ -7,11 +7,11 @@ import  AppBase, {
 
 const RadioGroup = Radio.Group;
 
-let { Option } = Select;
-let { Dragger } = Upload;
+let {Option} = Select;
+let {Dragger} = Upload;
 
 export default class extends Component {
-  constructor(){
+  constructor() {
     super();
 
     this.state = {
@@ -21,23 +21,23 @@ export default class extends Component {
     this.addNewRecord(false);
   };
 
-  addNewRecord(shouldSetState = true){
+  addNewRecord(shouldSetState = true) {
     var records = this.state.records;
 
     // records.push(
     //   this.renderRecord()
     // );
 
-    if(shouldSetState){
-      this.setState({ records });
+    if (shouldSetState) {
+      this.setState({records});
     }
   };
 
-  filterOption(input, option){
+  filterOption(input, option) {
     return option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0;
   };
 
-  renderSubRow(text, detail, double){
+  renderSubRow(text, detail, double) {
     return (
       <Row>
         <Col className="title" span={double ? 4 : 2}>{text}</Col>
@@ -46,7 +46,7 @@ export default class extends Component {
     );
   };
 
-  renderSubCol(text){
+  renderSubCol(text) {
     return (
       <Col span="12">{
         this.renderSubRow(
@@ -69,14 +69,14 @@ export default class extends Component {
   };
 
 
-  render(){
+  render() {
+    // todo: illegal-records-add will be remove!
     return (
-      <div className="illegal-records-add">
-
+      <div className="h100 illegal-records-add account-setting-view">
         <div className="content">
           <h3 className="mb10">
             <a href="javascript:;" onClick={$route.back}>
-              <Icon type="left" />
+              <Icon type="left"/>
               <span>返回账号设置</span>
             </a>
           </h3>
@@ -87,7 +87,7 @@ export default class extends Component {
               <strong>新密码:</strong>
             </Col>
             <Col span={7}>
-              <Input placeholder=""  />
+              <Input placeholder=""/>
             </Col>
           </Row>
 
@@ -96,20 +96,20 @@ export default class extends Component {
               <strong>再次输入新密码:</strong>
             </Col>
             <Col span={7}>
-              <Input placeholder=""  />
+              <Input placeholder=""/>
             </Col>
           </Row>
 
         </div>
-        <div className="footer">
+        <footer className="abs l0 r0 b0 footer">
           <Button size="large">取消</Button>
           <Button size="large" type="primary">保存</Button>
-        </div>
+        </footer>
       </div>
     )
   };
 
-  onChangeRadio(){
+  onChangeRadio() {
 
   }
 };

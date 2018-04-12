@@ -2,8 +2,21 @@ import  AppBase, {
   $api, $route, $modal,
   AntAbstractControllerIndex
 } from 'components/scripts/index';
-import {Row, Col, Tag, Icon,Tabs,Tab} from 'antd';
+// import {Row, Col, Tag, Icon, Alert, Tabs, Tab} from 'antd';
 import ReactSmartPhoto from 'react-smart-photo';
+
+import { Row, Col, Button, Icon, Alert, Tabs, Tab, Tag, Collapse, Radio, Modal, Select,Input,Upload,InputNumber} from 'antd';
+// import { $route } from 'components/scripts/index';
+// import Toolbar from 'components/mixins/toolbar';
+import Details from 'components/mixins/details';
+import { SelectorInfo } from '../../components/mixins/details';
+import classNames from "classnames";
+// import {Upload} from "antd/lib/index";
+//
+// let { Tabs, Tabs: { Tab } } = Toolbar;
+let { Merger, Info, InputInfo, Divider, Title, Tools, Image } = Details;
+let { Panel } = Collapse;
+let {Dragger} = Upload;
 
 @mixin(['pure-layout', 'match'])
 export default class extends AntAbstractControllerIndex {
@@ -11,7 +24,47 @@ export default class extends AntAbstractControllerIndex {
   layout = 'pure';
 
   state = {
-    tabId: '1'
+    tabId: '1',
+    selectedList: null,
+    modalVisible: false,
+    multipleLists: [{
+      status: 'approved',
+      total: 55000,
+      applyTime: '2018年1月4日',
+      handleTime: '2018年1月4日',
+      handler: '工作人员',
+      usage: [{ type: '类型', unit: 121, amount: 1, price: 121 }],
+      temp: [{ type: '类型', unit: 121, amount: 1, price: 121 }],
+      waterAndGas: [{ type: '类型', unit: 121, amount: 1, price: 121 }],
+      network: [{ type: '类型', unit: 121, amount: 1, price: 121 }]
+    }, {
+      status: 'pending',
+      total: 15000,
+      applyTime: '2018年1月4日',
+      usage: [{ type: '类型', unit: 121, amount: 1, price: 121 }],
+      temp: [{ type: '类型', unit: 121, amount: 1, price: 121 }],
+      waterAndGas: [{ type: '类型', unit: 121, amount: 1, price: 121 }],
+      network: [{ type: '类型', unit: 121, amount: 1, price: 121 }]
+    }, {
+      status: 'rejected',
+      reason: '被拒原因',
+      total: 35000,
+      applyTime: '2018年1月4日',
+      handleTime: '2018年1月4日',
+      handler: '工作人员',
+      usage: [{ type: '类型', unit: 121, amount: 1, price: 121 }],
+      temp: [{ type: '类型', unit: 121, amount: 1, price: 121 }],
+      waterAndGas: [{ type: '类型', unit: 121, amount: 1, price: 121 }],
+      network: [{ type: '类型', unit: 121, amount: 1, price: 121 }]
+    }, {
+      status: 'pending',
+      total: 15000,
+      applyTime: '2018年1月4日',
+      usage: [{ type: '类型', unit: 121, amount: 1, price: 121 }],
+      temp: [{ type: '类型', unit: 121, amount: 1, price: 121 }],
+      waterAndGas: [{ type: '类型', unit: 121, amount: 1, price: 121 }],
+      network: [{ type: '类型', unit: 121, amount: 1, price: 121 }]
+    }],
   };
 
   // _onClick = inStatus => {
@@ -52,26 +105,38 @@ export default class extends AntAbstractControllerIndex {
     );
   }
 
+  onSelectList(index) {
+    console.log(index);
+    // let { secondTab } = this.state;
+    // secondTab.selectedList = index;
+    // this.setState({ secondTab });
+  };
+
   childView() {
     const {tabId} = AppBase.$.memory;
+    let { dataList } = this;
+    let {
+      usage, temp, waterAndGas, network, manage, cert, safety
+    } = this.state;
+    const infoSpans = { text: 6, content: 18 };
+    const halfSpans = { text: 3, content: 21 };
+
 
     return (
       <div className="abs trbl0 p20 bg-f my-exhibition-show-view">
         <h3 className="mb10">
           <a href="javascript:;" onClick={$route.back}>
-            <Icon type="left" />
+            <Icon type="left"/>
             <span>返回列表</span>
           </a>
         </h3>
         <h2 className="f20 mb20 b">报馆详情</h2>
-        <h3 className="sub-title">
-          <span className="b f14">有部分材料申请被拒绝，请修改并重新提交</span>
-        </h3>
+        <Alert className="my10" message="有部分材料申请被拒绝，请修改并重新提交" type="warning"/>
 
         <Tabs activeKey={tabId} onChange={this._onChange}>
           <Tabs.TabPane tab="展位和搭建商信息" key="info">
             <dl className="item">
-              <dt className="mb20 b">展位信息 { JSON.stringify(this.params)}</dt>
+              <dt className="mb20 b">展位信息</dt>
               <dd>
                 <ul className="lfix_">
                   <li>
@@ -101,18 +166,6 @@ export default class extends AntAbstractControllerIndex {
                     <strong>现场负责人手机号:</strong>
                     <em className="c-9">12345678909</em>
                   </li>
-                  {/*<li style={{width: '100%'}}  className="mt10">*/}
-                  {/*<strong>身份证扫描件:</strong>*/}
-                  {/*<em className="c-9">*/}
-                  {/*<ReactSmartPhoto group="id" items={[*/}
-                  {/*{*/}
-                  {/*href: 'http://placeholder.qiniudn.com/180x180',*/}
-                  {/*src: 'http://placeholder.qiniudn.com/80x80',*/}
-                  {/*caption: '身份证'*/}
-                  {/*}*/}
-                  {/*]}/>*/}
-                  {/*</em>*/}
-                  {/*</li>*/}
                 </ul>
               </dd>
             </dl>
@@ -128,7 +181,7 @@ export default class extends AntAbstractControllerIndex {
                     <em>室内双层</em>
                   </li>
 
-                  <li style={{width: '100%'}}  className="mt10">
+                  <li style={{width: '100%'}} className="mt10">
                     <strong>展位图纸:</strong>
                     <em className="c-9">
                       <ReactSmartPhoto group="cid" items={[
@@ -223,6 +276,14 @@ export default class extends AntAbstractControllerIndex {
           </Tabs.TabPane>
           <Tabs.TabPane tab="费用清单" key="list">
             <div>
+              <Row>
+                <Col span={7}>
+                  <Button style={{width: '120px'}} type="primary" onClick={() => {
+                    this.setState({ modalVisible: true });
+                  }}>添加费用清单</Button>
+                </Col>
+              </Row>
+
               <div className="dotted-bottom wp-8 f14 c-0">
                 <Row>
                   <Col span={9}>
@@ -450,8 +511,396 @@ export default class extends AntAbstractControllerIndex {
 
             </div>
           </Tabs.TabPane>
+
+          <Tabs.TabPane tab="多个费用清单（临时展示在这里）" key="lists">
+            <div>
+              <Row>
+                <Col span={7}>
+                  <Button style={{width: '120px'}} type="primary" onClick={() => {
+                    this.setState({ modalVisible: true });
+                  }}>添加费用清单</Button>
+                </Col>
+              </Row>
+
+              <Collapse className="collapse" bordered={false}>
+                {this.state.multipleLists.map((list, index) =>
+                  <Panel
+                    key={index}
+                    header={(
+                      <Row>
+                        <Col span={20}>
+                          <div className="collapse__title">
+                            <strong className="c-gray">费用合计：</strong>
+                            <span className="c-blue-a">{list.total}</span>
+                          </div>
+                          <div className="collapse__apply-time">
+                            <strong className="c-gray">提交时间：</strong>
+                            <span>{list.applyTime}</span>
+                          </div>
+                        </Col>
+                        {
+                          list.status !== 'pending' ?
+                            <Col span={4}>
+                              <div className={`collapse__status ` + (list.status === 'approved' ? 'c-green' : 'c-red')}>
+                                <Icon type={ list.status === 'approved' ? 'check-circle-o' : '' } />
+                                <span>{list.status === 'approved' ? '通过' : '审核中'}</span>
+                              </div>
+
+                              <Row>
+                                <Col span={12}><strong className="c-gray">上次处理时间: </strong></Col>
+                                <Col span={12}><em>{list.handleTime}</em></Col>
+                              </Row>
+                            </Col>
+                            :
+                            <Radio
+                              checked={this.state.selectedList === index}
+                              onChange={this.onSelectList.bind(this, index)} />
+                        }
+                      </Row>
+                    )}>
+                    <div className="collapse__panel">
+                      {
+                        list.status === 'rejected' && <Alert type="error" className="custom mb10" message={list.reason} />
+                      }
+                      <div className="table-like">
+                        <Row>
+                          <Col span={8}>
+                            <strong>展期用电</strong>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-gray">单价</strong>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-gray">数量</strong>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-gray">金额</strong>
+                          </Col>
+                        </Row>
+                        {list.usage.map((item, index) =>
+                          <Row key={index}>
+                            <Col span={8}>
+                              <span>{item.type}</span>
+                            </Col>
+                            <Col span={4}>
+                              <span>{item.unit}</span>
+                            </Col>
+                            <Col span={4}>
+                              <span>{item.amount}</span>
+                            </Col>
+                            <Col span={4}>
+                              <span>{item.unit * item.amount}</span>
+                            </Col>
+                          </Row>
+                        )}
+                      </div>
+                      <div className="table-like">
+                        <Row>
+                          <Col span={8}>
+                            <strong>展期用电</strong>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-gray">单价</strong>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-gray">数量</strong>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-gray">金额</strong>
+                          </Col>
+                        </Row>
+                        {list.temp.map((item, index) =>
+                          <Row key={index}>
+                            <Col span={8}>
+                              <span>{item.type}</span>
+                            </Col>
+                            <Col span={4}>
+                              <span>{item.unit}</span>
+                            </Col>
+                            <Col span={4}>
+                              <span>{item.amount}</span>
+                            </Col>
+                            <Col span={4}>
+                              <span>{item.unit * item.amount}</span>
+                            </Col>
+                          </Row>
+                        )}
+                      </div>
+                      <div className="table-like">
+                        <Row>
+                          <Col span={8}>
+                            <strong>用水、气服务</strong>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-gray">单价</strong>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-gray">数量</strong>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-gray">金额</strong>
+                          </Col>
+                        </Row>
+                        {list.waterAndGas.map((item, index) =>
+                          <Row key={index}>
+                            <Col span={8}>
+                              <span>{item.type}</span>
+                            </Col>
+                            <Col span={4}>
+                              <span>{item.unit}</span>
+                            </Col>
+                            <Col span={4}>
+                              <span>{item.amount}</span>
+                            </Col>
+                            <Col span={4}>
+                              <span>{item.unit * item.amount}</span>
+                            </Col>
+                          </Row>
+                        )}
+                      </div>
+                      <div className="table-like">
+                        <Row>
+                          <Col span={8}>
+                            <strong>有线网络</strong>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-gray">单价</strong>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-gray">数量</strong>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-gray">金额</strong>
+                          </Col>
+                        </Row>
+                        {list.network.map((item, index) =>
+                          <Row key={index}>
+                            <Col span={8}>
+                              <span>{item.type}</span>
+                            </Col>
+                            <Col span={4}>
+                              <span>{item.unit}</span>
+                            </Col>
+                            <Col span={4}>
+                              <span>{item.amount}</span>
+                            </Col>
+                            <Col span={4}>
+                              <span>{item.unit * item.amount}</span>
+                            </Col>
+                          </Row>
+                        )}
+                      </div>
+                    </div>
+                  </Panel>
+                )}
+              </Collapse>
+            </div>
+          </Tabs.TabPane>
+
         </Tabs>
 
+        <Modal title={'新增费用清单'}
+               onOk={() => {
+                 this.setState({ modalVisible: false });
+               }}
+               onCancel={() => {
+                 this.setState({ modalVisible: false });
+               }}
+               okText="确认"
+               cancelText="取消"
+               visible={this.state.modalVisible}
+               className="">
+          <div className="my-exhibition-show-view">
+            <dl className="item">
+              <dd>
+                <ul className="lfix_">
+
+                  <li style={{width: '100%'}}>
+                    <div className="wp-10">
+                      <div className="table-like">
+                        <Row>
+                          <Col span={8}>
+                            <strong>展期用电</strong>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-9">单价</strong>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-9">数量</strong>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-9">金额</strong>
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col span={8}>
+                            <Select defaultValue="1" style={{width: 200}}>
+                              <Option value="1">用电</Option>
+                            </Select>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-9">121</strong>
+                          </Col>
+                          <Col span={4}>
+                            <InputNumber min={1} defaultValue={1}/>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-9">121</strong>
+                          </Col>
+                          <Col span={4}>
+                            <Icon type="close"/>
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col span={8}>
+                            <Select defaultValue="1" style={{width: 200}}>
+                              <Option value="1">用电</Option>
+                            </Select>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-9">123</strong>
+                          </Col>
+                          <Col span={4}>
+                            <InputNumber min={1} defaultValue={1}/>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-9">123</strong>
+                          </Col>
+                          <Col span={4}>
+                            <Icon type="close"/>
+                          </Col>
+                        </Row>
+                        <Button className="text-button" icon="plus">添加</Button>
+                      </div>
+                      <div className="table-like">
+                        <Row>
+                          <Col span={8}>
+                            <strong>临时搭建用电</strong>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-9">单价</strong>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-9">数量</strong>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-9">金额</strong>
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col span={8}>
+                            <Select defaultValue="1" style={{width: 200}}>
+                              <Option value="1">用电</Option>
+                            </Select>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-9">121</strong>
+                          </Col>
+                          <Col span={4}>
+                            <InputNumber min={1} defaultValue={1}/>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-9">121</strong>
+                          </Col>
+                          <Col span={4}>
+                            <Icon type="close"/>
+                          </Col>
+                        </Row>
+                        <Button className="text-button" icon="plus">添加</Button>
+                      </div>
+
+
+
+
+
+
+
+
+                      <div className="table-like">
+                        <Row>
+                          <Col span={8}>
+                            <strong>用水、气服务</strong>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-9">单价</strong>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-9">数量</strong>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-9">金额</strong>
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col span={8}>
+                            <Select defaultValue="1" style={{width: 200}}>
+                              <Option value="1">用电</Option>
+                            </Select>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-9">121</strong>
+                          </Col>
+                          <Col span={4}>
+                            <InputNumber min={1} defaultValue={1}/>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-9">121</strong>
+                          </Col>
+                          <Col span={4}>
+                            <Icon type="close"/>
+                          </Col>
+                        </Row>
+                        <Button className="text-button" icon="plus">添加</Button>
+                      </div>
+
+
+
+
+                      <div className="table-like">
+                        <Row>
+                          <Col span={8}>
+                            <strong>有限网络</strong>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-9">单价</strong>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-9">数量</strong>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-9">金额</strong>
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col span={8}>
+                            <Select defaultValue="1" style={{width: 200}}>
+                              <Option value="1">用电</Option>
+                            </Select>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-9">121</strong>
+                          </Col>
+                          <Col span={4}>
+                            <InputNumber min={1} defaultValue={1}/>
+                          </Col>
+                          <Col span={4}>
+                            <strong className="c-9">121</strong>
+                          </Col>
+                          <Col span={4}>
+                            <Icon type="close"/>
+                          </Col>
+                        </Row>
+                        <Button className="text-button" icon="plus">添加</Button>
+                      </div>
+
+
+                    </div>
+                  </li>
+                </ul>
+              </dd>
+            </dl>
+          </div>
+        </Modal>
 
       </div>
     );
@@ -465,7 +914,6 @@ export default class extends AntAbstractControllerIndex {
     AppBase.$.memory = {tabId: inTabId,};
     AppBase.$.memory = {footer: this.footerView()};
   }
-
 
   _onClick = inStatus => {
     switch (inStatus) {
@@ -490,5 +938,10 @@ export default class extends AntAbstractControllerIndex {
   render() {
     return this.pureLayout();
   }
+
+  _onClose() {
+     this.setState({ modalVisible: false });
+   }
+
 }
 

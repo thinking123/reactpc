@@ -1,5 +1,5 @@
 import AppBase, {
-  $api, $store, $app, $config,$route,
+  $api, $store, $app, $config, $route,
   AntAbstractControllerIndex
 } from 'components/scripts/index';
 import {Table, Icon, Card, Input, Button, Tabs} from 'antd';
@@ -7,25 +7,11 @@ import {Table, Icon, Card, Input, Button, Tabs} from 'antd';
 
 @mixin(['tabs-layout'])
 export default class extends AntAbstractControllerIndex {
-  layout = 'tabs';
+  static defaultProps = {
+    className: 'p20'
+  };
 
-  get extra() {
-    const {params} = AppBase.$.memory;
-    const {state} = params;
-    return (
-      <div className="lfix_ ml10_ ml__ extra">
-        {/*{state == '1' && <Button type="primary" icon="add">新增报馆</Button>}*/}
-        <Button
-          type="primary"
-          size="large"
-          icon="plus"
-          onClick={$route.push.bind(null, "/admin/my-exhibition/add")}>
-          新增报馆
-        </Button>
-        <Input.Search className="dib" style={{width: 220}} enterButton placeholder="do search"/>
-      </div>
-    )
-  }
+  layout = 'tabs';
 
   get route() {
     return {
@@ -34,20 +20,52 @@ export default class extends AntAbstractControllerIndex {
     };
   }
 
-  componentDidMount() {
-    //TODO:
-  }
-
   get header() {
     return [
       {
         state: '1',
-        component: <span>待审核(12)</span>
+        component: <span>拒绝(12)</span>
       },
       {
         state: '2',
-        component: <span>已审核(213)</span>
+        component: <span>未提交(213)</span>
+      },
+      {
+        state: '3',
+        component: <span>待审核(12)</span>
+      },
+      {
+        state: '4',
+        component: <span>审核中(213)</span>
+      },
+      {
+        state: '5',
+        component: <span>通过(213)</span>
       }
     ];
   }
+
+  componentDidMount() {
+    //TODO:
+  }
+
+  topView() {
+    return (
+      <div className="lrfix_ top-view">
+        <h3 className="f20 b left">
+          我的报馆
+        </h3>
+        <div className="ml10_ ml__ right">
+          <Button
+            type="primary"
+            icon="plus"
+            onClick={$route.push.bind(null, "/admin/my-exhibition/add-step1")}>
+            新增报馆
+          </Button>
+          <Input.Search className="dib" style={{width: 220}} enterButton placeholder="do search"/>
+        </div>
+      </div>
+    )
+  }
+
 }

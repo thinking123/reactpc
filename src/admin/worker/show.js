@@ -1,9 +1,18 @@
+import React, {Component} from "react";
+import {Button, Input, Icon, Row, Col, Alert, Select, Divider, Upload, Radio, Tabs, Tab, Table, Tag} from "antd";
 import  AppBase, {
   $api, $route, $modal,
   AntAbstractControllerIndex
 } from 'components/scripts/index';
-import {Row, Col, Table,Button, Tag, Icon,Tabs,Tab} from 'antd';
-import ReactSmartPhoto from 'react-smart-photo';
+
+
+import Details from "components/mixins/details";
+let { Info } = Details;
+
+const RadioGroup = Radio.Group;
+
+let {Option} = Select;
+let {Dragger} = Upload;
 
 @mixin(['pure-layout', 'match'])
 export default class extends AntAbstractControllerIndex {
@@ -12,35 +21,35 @@ export default class extends AntAbstractControllerIndex {
 
   state = {
     tabId: '1',
-    endTime:'2018年3月26日18:00',
+    endTime: '2018年3月26日18:00',
     data: [
       {
         id: '1',
         username: '施工人',
         idcardnumber: '参展商',
-        saomiaojian:'扫描件',
-        yicunzhaopian:'一寸照片',
+        saomiaojian: '扫描件',
+        yicunzhaopian: '一寸照片',
       },
       {
         id: '2',
         username: '施工人',
         idcardnumber: '参展商',
-        saomiaojian:'扫描件',
-        yicunzhaopian:'一寸照片',
+        saomiaojian: '扫描件',
+        yicunzhaopian: '一寸照片',
       },
       {
         id: '3',
         username: '施工人',
         idcardnumber: '参展商',
-        saomiaojian:'扫描件',
-        yicunzhaopian:'一寸照片',
+        saomiaojian: '扫描件',
+        yicunzhaopian: '一寸照片',
       },
       {
         id: '4',
         username: '施工人',
         idcardnumber: '参展商',
-        saomiaojian:'扫描件',
-        yicunzhaopian:'一寸照片',
+        saomiaojian: '扫描件',
+        yicunzhaopian: '一寸照片',
       }
 
     ],
@@ -68,13 +77,15 @@ export default class extends AntAbstractControllerIndex {
       {
         title: '',
         key: 'action',
-        render: () => {
-          return (
-            <div className="actions">
-              <Button size="small" onClick={$route.push.bind(null, '/')}>查看</Button>
-            </div>
-          )
-        }
+        render: (text, record) => (
+          <span>
+              <a href={`#/admin/worker/show/${record.key}`}>拒绝</a>
+              <Divider type="vertical" />
+              <a href={`#/admin/worker/show/${record.key}`}>修改</a>
+              <Divider type="vertical" />
+              <a href={`#/admin/worker/show/${record.key}`}>删除</a>
+          </span>
+        ),
       }
     ]
   };
@@ -106,28 +117,45 @@ export default class extends AntAbstractControllerIndex {
 
   childView() {
     const {tabId} = AppBase.$.memory;
-    const {endTime,columns, data} = this.state;
+    const {endTime, columns, data} = this.state;
 
     return (
       <div className="p20 my-exhibition-view bg-f">
         <h3 className="mb10">
           <a href="javascript:;" onClick={$route.back}>
-            <Icon type="left" />
+            <Icon type="left"/>
             <span>返回列表</span>
           </a>
         </h3>
         <header>
           <span className="b f18">施工人员详情</span>
         </header>
-        <header className="sub-title">
-          <span className="b f14">有部分施工人员申请被拒绝，请修改并重新提交</span>
-        </header>
 
+        <Info text="提交时间:">2017年12月20日</Info>
+
+        <Alert className="my10" message="有部分施工人员申请被拒绝，请修改并重新提交" type="warning"/>
         <Tabs activeKey={tabId} onChange={this._onChange}>
-          <Tabs.TabPane tab="展位和搭建商信息" key="info">
+          <Tabs.TabPane tab="施工人员信息" key="info">
             <Table bordered rowKey={'id'} columns={columns} dataSource={data} size="middle"/>
           </Tabs.TabPane>
-          <Tabs.TabPane tab="费用清单" key="list">Content of Tab Pane 2</Tabs.TabPane>
+          <Tabs.TabPane tab="保险单" key="list">
+            <Dragger
+              multiple
+              beforeUpload={() => {
+                return false;
+              }}
+              onChange={() => {
+                console.log("选择附件")
+              }}
+            >
+              <p className="ant-upload-hint">
+                添加保险单
+                <Button size="large">添加保险单</Button>
+              </p>
+            </Dragger>
+            <p>注意：请上传施工人员保险单，单个图片不超过1M，仅限JPG格式。</p>
+
+          </Tabs.TabPane>
         </Tabs>
       </div>
     )

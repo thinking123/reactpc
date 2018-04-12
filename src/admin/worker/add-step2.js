@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-import { Button, Input, Icon, Row, Col, Select, Divider, Upload, Radio} from "antd";
+import { Button, Input, Icon, Row, Col, Select, Divider, Upload, Radio, Steps} from "antd";
 import  AppBase, {
   $api, $route, $modal,
   AntAbstractControllerIndex
 } from 'components/scripts/index';
 
 const RadioGroup = Radio.Group;
+const Step = Steps.Step;
 
 let { Option } = Select;
 let { Dragger } = Upload;
@@ -15,7 +16,8 @@ export default class extends Component {
     super();
 
     this.state = {
-      records: []
+      records: [],
+      current: 0,
     };
 
     this.addNewRecord(false);
@@ -70,6 +72,8 @@ export default class extends Component {
 
 
   render(){
+    const {current} = this.state;
+
     return (
       <div className="illegal-records-add">
 
@@ -82,6 +86,11 @@ export default class extends Component {
           </h3>
           <h2 className="f20 mb20 b">添加施工人员</h2>
 
+          <Steps current={1} style={{width: '50%'}}>
+            <Steps.Step title="上传施工人员信息"/>
+            <Steps.Step title="上传保险单"/>
+          </Steps>
+
           <p className="text">
             施工人数(0)
           </p>
@@ -92,11 +101,11 @@ export default class extends Component {
             onChange={() => { console.log("选择附件") }}
           >
             <p className="ant-upload-hint">
-              上传施工人员表格
+              上传施工人员保险单
               <Button size="large">添加文件</Button>
             </p>
           </Dragger>
-          <p>请点击这里下载施工人员表格模板填写。</p>
+          <p>注意：请上传施工人员保险单，单个图片不超过1M，仅限JPG格式。</p>
 
         </div>
         <div className="footer">

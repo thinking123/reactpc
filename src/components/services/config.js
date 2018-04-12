@@ -15,28 +15,32 @@ export default class {
         'banner_create': ['post', '/banner'],
         'banner_delete': ['delete', '/banner/{id}'],
         'banner_update': ['put', '/banner/{id}'],
-      },
-      '/register': {
-        'banner_index': ['get', '/banners'],
-        'banner_create': ['post', '/banner'],
-        'banner_delete': ['delete', '/banner/{id}'],
-        'banner_update': ['put', '/banner/{id}'],
       }
+      // ,
+      // '/register': {
+      //   'banner_index': ['get', '/banners'],
+      //   'banner_create': ['post', '/banner'],
+      //   'banner_delete': ['delete', '/banner/{id}'],
+      //   'banner_update': ['put', '/banner/{id}'],
+      // }
     }
   };
 
   static ROUTES = [
-    '/register/index',
+    '/registers/step1',
+    '/registers/step2',
 
     '/admin/orders/index',
 
     '/admin/my-exhibition/index',
     '/admin/my-exhibition/show/:id',
-    '/admin/my-exhibition/add',
+    '/admin/my-exhibition/add-step1',
+    '/admin/my-exhibition/add-step2',
 
     '/admin/worker/index',
     '/admin/worker/show/:id',
-    '/admin/worker/add',
+    '/admin/worker/add-step1',
+    '/admin/worker/add-step2',
 
     '/admin/payment-notice/index',
     '/admin/payment-notice/show/:id',
@@ -54,6 +58,8 @@ export default class {
     '/admin/bank-flow/index',
     '/admin/bank-flow/show',
     '/admin/bank-flow/add',
+
+    '/admin/user-company/index',
   ];
 }
 

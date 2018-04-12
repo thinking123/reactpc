@@ -1,0 +1,41 @@
+.table-component {
+	color: #404453;
+	padding: 12px 28px;
+	background-color: #fff;
+
+	.ant-table-thead th {
+		background-color: white;
+	}
+
+	.ant-table-content td,
+	.ant-table-content th {
+		font-size: 14px;
+	}
+
+	.ant-table-thead th {
+		color: #98A2B5;
+	}
+
+	.ant-table-tbody tr:nth-child(odd) {
+		background-color: #f6f7f9;	
+	}
+
+	.editable-cell {
+		position: relative;
+
+		.ant-input {
+			width: auto;
+		}
+
+		.editable-cell-buttons {
+			position: absolute;
+			top: 50%;
+			right: 0;
+			transform: translateY(-50%);
+
+			.ant-btn {
+				margin-left: 3px;
+			}
+		}
+	}
+}

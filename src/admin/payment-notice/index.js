@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Row, Col, Menu, Icon, Table, Button, Input} from 'antd';
+import {Row, Col, Menu, Icon, Table, Button, Input, Checkbox} from 'antd';
 import AppBase, {
   $api, $store, $route,
 } from 'components/scripts/index';
@@ -8,6 +8,7 @@ export default class extends Component {
   state = {
     data: [
       {
+        key:0,
         number: '1232123',
         location: '展位号',
         canzhuanshang: '参展商',
@@ -15,6 +16,7 @@ export default class extends Component {
         time: '昨天'
       },
       {
+        key:1,
         number: '1232123',
         location: '展位号',
         canzhuanshang: '参展商',
@@ -22,6 +24,7 @@ export default class extends Component {
         time: '昨天'
       },
       {
+        key:2,
         number: '1232123',
           location: '展位号',
         canzhuanshang: '参展商',
@@ -58,13 +61,11 @@ export default class extends Component {
       {
         title: '付款通知单',
         key: 'action',
-        render: () => {
-          return (
-            <div className="actions">
-              <Button size="small" onClick={$route.push.bind(null, '/admin/payment-notice/show')}>再次下载</Button>
-            </div>
-          )
-        }
+        render: (text, record) => (
+          <span>
+                  <a href="#">再次下载</a>
+                </span>
+        ),
       }
     ]
   };
@@ -78,8 +79,23 @@ export default class extends Component {
           <Input.Search className="right wp-3" placeholder="Search" enterButton/>
         </header>
         <div className="blank-20"/>
-        <Table bordered rowKey={'id'} columns={columns} dataSource={data} size="middle"/>
+
+        <Checkbox onChange={(e) => this.onSelectAll(e)}><lable>批量下载</lable></Checkbox>
+
+        <Table bordered rowKey={'key'} columns={columns} dataSource={data} size="middle"  rowSelection={{
+          onChange: (selectedRowKeys, selectedRows) => {
+            this.onSelectTargets(selectedRowKeys, selectedRows);
+          }
+        }}/>
       </div>
     )
+  }
+
+  onSelectTargets(selectedRowKeys, selectedRows) {
+    console.log(`selectedRowKeys: ${selectedRowKeys}`, 'selectedRows: ', selectedRows);
+  };
+
+  onSelectAll(e){
+    console.log('select all');
   }
 }

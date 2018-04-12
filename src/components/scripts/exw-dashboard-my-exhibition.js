@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
-import {Row, Col, Menu, Icon, Table, Button, Input} from 'antd';
+import {Row, Col, Menu, Icon, Alert, Table, Button, Input} from 'antd';
 import AppBase, {
   $api, $store, $route,
 } from 'components/scripts/index';
 
 export default class extends Component {
   state = {
-    endTime:'2018年3月26日18:00',
+    endTime: '2018年3月26日18:00',
     data: [
       {
         id: '1',
@@ -49,7 +49,7 @@ export default class extends Component {
         render: () => {
           return (
             <div className="actions">
-              <Button size="small" onClick={$route.push.bind(null, '/admin/my-exhibition/index/1')}>查看</Button>
+              <a href={'javascript:;'} onClick={$route.push.bind(null, '/admin/my-exhibition/index/1')}>查看</a>
             </div>
           )
         }
@@ -58,17 +58,21 @@ export default class extends Component {
   };
 
   render() {
-    const {endTime,columns, data} = this.state;
+    const {endTime, columns, data} = this.state;
     return (
       <div className="p20 my-exhibition-view bg-f">
         <header>
           <span className="b f18">我的报馆</span>
         </header>
-        <header className="sub-title">
-          <span className="b f14">报馆截止时间为{endTime}</span>
-        </header>
-        <Table bordered rowKey={'id'} columns={columns} dataSource={data} size="middle"/>
-        <Button type="primary" icon="add">新增报馆</Button>
+        <Alert className="my10" message={`报馆截止时间为${endTime}`} type="warning"/>
+        <Table
+          className='table-component p0'
+          rowKey={'id'} columns={columns}
+          pagination={false}
+          dataSource={data} size="middle"/>
+        <footer className={'mt10'}>
+          <Button type="primary" icon="plus" onClick={$route.push.bind(null, '/admin/my-exhibition/add-step1')}>新增报馆</Button>
+        </footer>
       </div>
     )
   }

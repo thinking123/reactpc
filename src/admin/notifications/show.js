@@ -11,7 +11,7 @@ export default class extends React.PureComponent {
         <h3 className="mb10">
           <a href="javascript:;" onClick={$route.back}>
             <Icon type="left" />
-            <span>返回</span>
+            <span>返回列表</span>
           </a>
         </h3>
         <h2 className="f20 mb20 b">通知详情</h2>

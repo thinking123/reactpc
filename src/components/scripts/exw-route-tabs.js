@@ -37,7 +37,6 @@ export default class extends Component {
   };
 
   _onClick = inItem => {
-    console.log(inItem);
     AppBase.$.memory = {
       activeState: inItem.state,
       activeRoute: `/admin/my-exhibition/index/${inItem.state}`
@@ -45,28 +44,29 @@ export default class extends Component {
   };
 
   render() {
-    const {className, extra, route, header, match, ...props} = this.props;
+    const {className, extra, route, header, match, topView, ...props} = this.props;
     const matchUrl = match.url;
     return (
-      <div className={ classNames("abs trbl0 webkit-sassui-flex-fixed-bdauto exw-route-tabs", className) }>
-        <nav className="rel px14 lrfix_ hd">
+      <div className={classNames("abs trbl0 webkit-sassui-flex-fixed-bdauto exw-route-tabs", className)}>
+        { topView }
+        <nav className="rel mb14 lrfix_ hd">
           <ul className="left">
             {
               header.map((item) => {
                 return (
-                  <li onClick={this._onClick.bind(this, item)} key={item.state}><NavLink activeClassName='active'
-                                                                                         to={`${matchUrl}/${item.state}`}>{item.component}</NavLink>
+                  <li onClick={this._onClick.bind(this, item)} key={item.state}>
+                    <NavLink activeClassName='active' to={`${matchUrl}/${item.state}`}>{item.component}</NavLink>
                   </li>
                 )
               })
             }
           </ul>
           <aside className="r0 mr14 webkit-sassui-transform-center-y right">
-            { extra }
+            {extra}
           </aside>
         </nav>
 
-        <section className="rel p14 bd ovs-y">
+        <section className="rel bd ovs-y">
           <Route {...route}/>
         </section>
 

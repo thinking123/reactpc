@@ -2,7 +2,6 @@
   > .hd {
     @include hlh(50px);
     border-bottom: 1px solid #ccc;
-    background: #EBF0F4;
     .left {
       @extend .lfix_;
       li {
@@ -24,6 +23,6 @@
   }
 
   > .bd {
-    @extend .p10, .bg-f;
+    @extend .bg-f;
   }
 }

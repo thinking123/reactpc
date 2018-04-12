@@ -1,0 +1,43 @@
+/**building-businesses Start**/
+.building-businesses {
+  &-show-view {
+    > .item {
+      width: 80%;
+      color: #000;
+      ul {
+        li {
+          line-height: 30px;
+          width: 50%;
+          > * {
+            vertical-align: top;
+            display: inline-block;
+          }
+
+          strong {
+            color: #98A2B4;
+            min-width: 120px;
+          }
+          em {
+          }
+        }
+      }
+      &.documents {
+        width: 100%;
+        ul > li {
+          border-bottom: 1px dotted #ccc;
+        }
+        .ant-tag {
+          padding: 8px 14px;
+          font-size: 14px;
+          height: auto;
+          line-height: 20px;
+          min-width: 70px;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+}
+
+/**building-businesses  End**/

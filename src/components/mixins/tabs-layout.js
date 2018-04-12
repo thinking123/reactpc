@@ -24,9 +24,14 @@ export default class {
     return [];
   }
 
+  topView(){
+    return null;
+  }
+
   tabsLayout() {
     return (
       <ExwRouteTabs
+        topView={this.topView()}
         extra={this.extra}
         route={this.route}
         header={this.header}

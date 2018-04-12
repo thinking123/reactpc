@@ -2,7 +2,7 @@ import  AppBase, {
   $api, $route, $modal,
   AntAbstractControllerIndex
 } from 'components/scripts/index';
-import {Row, Col, Tag, Icon} from 'antd';
+import {Row, Col, Tag, Alert, Icon, Button} from 'antd';
 import ReactSmartPhoto from 'react-smart-photo';
 
 @mixin(['pure-layout', 'match'])
@@ -50,39 +50,58 @@ export default class extends React.Component {
       <div className="abs trbl0 p20 bg-f my-exhibition-show-view">
         <h3 className="mb10">
           <a href="javascript:;" onClick={$route.back}>
-            <Icon type="left" />
+            <Icon type="left"/>
             <span>返回列表</span>
           </a>
         </h3>
         <h2 className="f20 mb20 b">银行汇款水单详情</h2>
         {/*<h3 className="sub-title">*/}
-          {/*<span className="b f14">有部分材料申请被拒绝，请修改并重新提交</span>*/}
+        {/*<span className="b f14">有部分材料申请被拒绝，请修改并重新提交</span>*/}
         {/*</h3>*/}
 
-        <dl className="item">
-          {/*<dt className="mb20 b">展位信息 { JSON.stringify(this.params)}</dt>*/}
-          <dd>
-            <ul className="lfix_">
-              <li>
-                <strong>支付的展位:</strong>
-                <em>A103B</em>
-              </li>
 
-              <li>
-                <strong></strong>
-                <em>A103B</em>
-              </li>
+          <dl className="item">
+            <dd>
+              <ul className="lfix_">
+                <li style={{width: '100%'}}>
+                  <strong>支付的展位：</strong>
+                  <div className="table-like bordered wp-10">
+                    <Row className="table-like__header">
+                      <Col span={6}>展位号</Col>
+                      <Col span={6}>参展商</Col>
+                      <Col span={4}>费用合计</Col>
+                      <Col span={4}>押金</Col>
+                      <Col span={4}>服务费</Col>
+                    </Row>
+                    <Row>
+                      <Col span={6}>A101</Col>
+                      <Col span={6}>参展商</Col>
+                      <Col span={4}>30000</Col>
+                      <Col span={4}>10000</Col>
+                      <Col span={4}>20000</Col>
+                    </Row>
+                    <Row>
+                      <Col span={6}>A103</Col>
+                      <Col span={6}>参展商</Col>
+                      <Col span={4}>30000</Col>
+                      <Col span={4}>5000</Col>
+                      <Col span={4}>25000</Col>
+                    </Row>
+                    <Row className="table-like__footer">
+                      <Col span={6}>合计</Col>
+                      <Col span={4} offset={6}>60000</Col>
+                      <Col span={4}>15000</Col>
+                      <Col span={4}>45000</Col>
+                    </Row>
+                  </div>
+                </li>
+              </ul>
+            </dd>
+          </dl>
 
-            </ul>
-          </dd>
-        </dl>
         <dl className="item">
           <dt className="mb20 b">银行汇款水单信息</dt>
-          <h3 className="sub-title">
-          <span className="b f14">通过
-
-上次处理时间: 2018年1月4日</span>
-          </h3>
+          <dd><Alert message="通过 上次处理时间: 2018年1月4日" type="success" showIcon/></dd>
           <dd>
             <ul className="lfix_">
               <li>
@@ -119,11 +138,9 @@ export default class extends React.Component {
 
         <dl className="item">
           <dt className="mb20 b">发票信息</dt>
-          <h3 className="sub-title">
-          <span className="b f14">通过
-
-上次处理时间: 2018年1月4日</span>
-          </h3>
+          <dd>
+            <Alert message="通过 上次处理时间: 2018年1月4日" type="success" showIcon/>
+          </dd>
           <dd>
             <ul className="lfix_">
               <li>
@@ -168,11 +185,9 @@ export default class extends React.Component {
 
         <dl className="item">
           <dt className="mb20 b">发票收件人信息</dt>
-          <h3 className="sub-title">
-          <span className="b f14">通过
-
-上次处理时间: 2018年1月4日</span>
-          </h3>
+          <dd>
+            <Alert message="未通过 上次处理时间: 2018年1月4日" type="error" showIcon/>
+          </dd>
           <dd>
             <ul className="lfix_">
               <li>
@@ -190,6 +205,14 @@ export default class extends React.Component {
             </ul>
           </dd>
         </dl>
+
+        <footer className="tl">
+          <Row>
+            <Col span={7}>
+              <Button style={{width: '120px'}} type="primary" onClick={this._writeReceipt}>开发票</Button>
+            </Col>
+          </Row>
+        </footer>
       </div>
     );
   }
@@ -202,6 +225,10 @@ export default class extends React.Component {
 
   render() {
     return this.pureLayout();
+  }
+
+  _writeReceipt(){
+    $modal.show('builders-refuse');
   }
 }
 
