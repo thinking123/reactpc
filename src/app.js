@@ -1,6 +1,6 @@
 import {HashRouter as Router, Route, Switch} from 'react-router-dom';
 import AppBase, {
-  $api, $store,
+  $api, $store, $date,
   ExwModalAddCost
 } from 'components/scripts/index';
 
@@ -52,6 +52,7 @@ export default class extends AppBase {
     //TODO: remove
     window.$ = AppBase.$;
     this.attachGlobalEvents();
+    this.checkLogin();
   }
 
   componentWillUnmount() {
@@ -73,6 +74,18 @@ export default class extends AppBase {
     })
   }
 
+  checkLogin() {
+    const {login} = AppBase.$.local;
+    if (login) {
+      const now = +$date.create();
+      const expired = +$date.create(login.expired);
+      if (now > expired) {
+        //this.logout();
+        AppBase.$.local = {login: null};
+      }
+    }
+  }
+
   render() {
     return (
       <Router ref="root">
@@ -82,9 +95,9 @@ export default class extends AppBase {
           <Route path="/registers/step1" component={RegisterStep1}/>
           <Route path="/registers/step2" component={RegisterStep2}/>
           <section className="modal-container">
-          {/*<MODAL_START />*/}
+            {/*<MODAL_START />*/}
             <ExwModalAddCost/>
-          {/*<MODAL_END />*/}
+            {/*<MODAL_END />*/}
           </section>
         </section>
       </Router>
