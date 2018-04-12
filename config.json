@@ -55,9 +55,9 @@
     "proxy": [
       {
         "context": [
-          "/admin"
+          "/auth/spec"
         ],
-        "target": "http://smartpark.wenweikeji.com:80",
+        "target": "http://47.93.242.118:10080",
         "changeOrigin": true,
         "secure": false
       }

@@ -5,8 +5,8 @@ export default class {
   static APIS = {
     baseUrl: `//${location.host}`,
     items: {
-      '/admin': {
-        'user_index': ['get', '/getAdminUserList'],
+      '/auth/spec': {
+        'signin': ['post', '/signin'],
         'user_create': ['post', '/addAdminUser'],
         'user_update': ['put', '/updateAdminUser'],
       },
