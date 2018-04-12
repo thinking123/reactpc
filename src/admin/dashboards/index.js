@@ -22,6 +22,9 @@ export default class extends AntAbstractControllerIndex {
   }
 
   childView() {
+    const {dashboardInfo} = AppBase.$.memory;
+    console.log(dashboardInfo);
+
     return (
       <div className="trbl0 abs p20 dashboard-view">
         <Row gutter={30}>
@@ -51,7 +54,7 @@ export default class extends AntAbstractControllerIndex {
           <Col span="7">
             <Row gutter={20}>
               <Col span="24">
-                <ExwInfoCardItemWelcome username="李华" time="10:30 am"/>
+                <ExwInfoCardItemWelcome username="李华" time={dashboardInfo.last_login_time}/>
               </Col>
             </Row>
 
@@ -64,5 +67,13 @@ export default class extends AntAbstractControllerIndex {
         </Row>
       </div>
     )
+  }
+
+  componentDidMount() {
+    $api.dashboard_index({user_id: 123123}).then(resp=>{
+      AppBase.$.memory = {
+        dashboardInfo: resp.data
+      }
+    })
   }
 }
