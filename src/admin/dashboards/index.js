@@ -17,6 +17,10 @@ import card5 from 'images/card5.png';
 export default class extends AntAbstractControllerIndex {
   layout = 'pure';
 
+  load() {
+
+  }
+
   childView() {
     return (
       <div className="trbl0 abs p20 dashboard-view">
