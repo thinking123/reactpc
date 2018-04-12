@@ -34,7 +34,8 @@ export default class extends AppBase {
         sidebarCollapsed: false,
         activeRoute: hash.slice(1),
         openKeys: null,
-        activeState: null
+        activeState: null,
+        dashboardInfo:{}
       },
       session: {
         currentList: currentList || []

@@ -1,13 +1,12 @@
 import React, {Component} from "react";
-import {Button, Input, Icon, Row, Col, Alert, Select, Divider, Upload, Radio, Tabs, Tab, Table, Tag} from "antd";
+import {Button, Divider,Input, Icon, Row, Col, Alert, Select, Upload, Radio, Tabs, Tab, Tag, Table} from "antd";
 import  AppBase, {
   $api, $route, $modal,
   AntAbstractControllerIndex
 } from 'components/scripts/index';
 
-
 import Details from "components/mixins/details";
-let { Info } = Details;
+let { Title, Merger, Info, Image, Tools} = Details;
 
 const RadioGroup = Radio.Group;
 
@@ -120,7 +119,7 @@ export default class extends AntAbstractControllerIndex {
     const {endTime, columns, data} = this.state;
 
     return (
-      <div className="p20 my-exhibition-view bg-f">
+      <Details className="illegal-records-details holy-grain">
         <h3 className="mb10">
           <a href="javascript:;" onClick={$route.back}>
             <Icon type="left"/>
@@ -131,7 +130,7 @@ export default class extends AntAbstractControllerIndex {
           <span className="b f18">施工人员详情</span>
         </header>
 
-        <Info text="提交时间:">2017年12月20日</Info>
+        <Info text="提交时间">2017年12月20日</Info>
 
         <Alert className="my10" message="有部分施工人员申请被拒绝，请修改并重新提交" type="warning"/>
         <Tabs activeKey={tabId} onChange={this._onChange}>
@@ -157,7 +156,7 @@ export default class extends AntAbstractControllerIndex {
 
           </Tabs.TabPane>
         </Tabs>
-      </div>
+      </Details>
     )
   }
 

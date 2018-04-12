@@ -3,10 +3,10 @@ export default class {
   static VERSION = '__BUILD_VERSION__';
   static ICP_INFO = '京ICP备12048196';
   static APIS = {
-    baseUrl: `//${location.host}`,
+    baseUrl: 'http://47.93.242.118:10080',
     items: {
-      '/admin': {
-        'user_index': ['get', '/getAdminUserList'],
+      '/customer': {
+        'dashboard_index': ['get', '/home'],
         'user_create': ['post', '/addAdminUser'],
         'user_update': ['put', '/updateAdminUser'],
       },
@@ -16,13 +16,6 @@ export default class {
         'banner_delete': ['delete', '/banner/{id}'],
         'banner_update': ['put', '/banner/{id}'],
       }
-      // ,
-      // '/register': {
-      //   'banner_index': ['get', '/banners'],
-      //   'banner_create': ['post', '/banner'],
-      //   'banner_delete': ['delete', '/banner/{id}'],
-      //   'banner_update': ['put', '/banner/{id}'],
-      // }
     }
   };
 
