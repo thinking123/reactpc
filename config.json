@@ -55,7 +55,7 @@
     "proxy": [
       {
         "context": [
-          "/auth/spec"
+          "/auth"
         ],
         "target": "http://47.93.242.118:10080",
         "changeOrigin": true,

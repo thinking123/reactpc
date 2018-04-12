@@ -5,6 +5,7 @@ import ReactAntForm from 'react-ant-form';
 import AppBase, {
   $api, $route, $app, $config,
 } from 'components/scripts/index';
+
 export default Form.create()(class extends React.Component {
 
   state = {
@@ -33,8 +34,13 @@ export default Form.create()(class extends React.Component {
 
   _onSubmit = (e) => {
     console.log(e);
-    $api.signin();
-    $app.successPush('登录成功', '/admin/dashboards/index');
+    $api.signin(e).then(resp => {
+      $app.successPush('登录成功', '/admin/dashboards/index');
+      AppBase.$.local = {
+        login: resp
+      }
+    });
+
   };
 
   render() {
@@ -42,7 +48,7 @@ export default Form.create()(class extends React.Component {
       <section className="login-view h100">
         <div className="rel login-left">
           <div className="login-logo">
-              <img className="wp-10 login-logo-img" src={logoImg}/>
+            <img className="wp-10 login-logo-img" src={logoImg}/>
           </div>
 
 
@@ -71,16 +77,16 @@ export default Form.create()(class extends React.Component {
           </footer>
         </div>
         <div className="login-right">
-            <lable className="login-lable1">
-                专业的展会管理团队
-            </lable>
-            <lable className="login-lable2">
-                拥有10000平米以上的制作工厂百余名专业技术人员
-            </lable>
-            <lable className="login-lable3">
-                每年负责的主场和特装面积达500000平方米
-            </lable>
-            <img className="login-right-img" src={bgImg}></img>
+          <lable className="login-lable1">
+            专业的展会管理团队
+          </lable>
+          <lable className="login-lable2">
+            拥有10000平米以上的制作工厂百余名专业技术人员
+          </lable>
+          <lable className="login-lable3">
+            每年负责的主场和特装面积达500000平方米
+          </lable>
+          <img className="login-right-img" src={bgImg}></img>
         </div>
         <div className="login-right2"></div>
       </section>
