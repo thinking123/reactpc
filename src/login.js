@@ -33,6 +33,7 @@ export default Form.create()(class extends React.Component {
 
   _onSubmit = (e) => {
     console.log(e);
+    $api.signin();
     $app.successPush('登录成功', '/admin/dashboards/index');
   };
 
