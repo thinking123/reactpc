@@ -27,16 +27,17 @@ export default class extends Component {
         status: '审核中'
       }
     ],
+
     columns: [
       {
         title: '展位',
-        key: 'position',
-        dataIndex: 'position'
+        key: 'booth_num',
+        dataIndex: 'booth_num'
       },
       {
         title: '参展商',
-        key: 'shangjia',
-        dataIndex: 'shangjia'
+        key: 'exhibitors_name',
+        dataIndex: 'exhibitors_name'
       },
       {
         title: '状态',
@@ -59,6 +60,9 @@ export default class extends Component {
 
   render() {
     const {endTime, columns, data} = this.state;
+
+    const {dashboardInfo} = AppBase.$.memory;
+
     return (
       <div className="p20 my-exhibition-view bg-f">
         <header>
@@ -67,9 +71,9 @@ export default class extends Component {
         <Alert className="my10" message={`报馆截止时间为${endTime}`} type="warning"/>
         <Table
           className='table-component p0'
-          rowKey={'id'} columns={columns}
+          rowKey={'booth_id'} columns={columns}
           pagination={false}
-          dataSource={data} size="middle"/>
+          dataSource={dashboardInfo.my_booth} size="middle"/>
         <footer className={'mt10'}>
           <Button type="primary" icon="plus" onClick={$route.push.bind(null, '/admin/my-exhibition/add-step1')}>新增报馆</Button>
         </footer>
