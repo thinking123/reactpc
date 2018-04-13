@@ -3,7 +3,7 @@ export default class {
   static VERSION = '__BUILD_VERSION__';
   static ICP_INFO = '京ICP备12048196';
   static APIS = {
-    baseUrl: `//${location.host}`,
+    baseUrl: 'http://47.93.242.118:10080',
     items: {
       '/auth': {
         'signin': ['post', '/signin'],
@@ -17,7 +17,8 @@ export default class {
         'banner_update': ['put', '/banner/{id}'],
       },
       '/customer': {
-        'dashboard_index': ['get', '/home']
+        'dashboard_index': ['get', '/home'],
+        'myexhibition_index': ['get', '/booth/list/'],
       },
     }
   };
