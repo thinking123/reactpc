@@ -36,7 +36,8 @@ export default class extends AppBase {
         openKeys: null,
         activeState: null,
         dashboardInfo:{},
-        myexhibitionList:[]
+        myexhibitionList:[],
+        constructorList:[],
       },
       session: {
         currentList: currentList || []
