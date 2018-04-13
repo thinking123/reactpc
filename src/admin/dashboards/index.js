@@ -23,7 +23,6 @@ export default class extends AntAbstractControllerIndex {
 
   childView() {
     const {dashboardInfo} = AppBase.$.memory;
-    console.log(dashboardInfo);
 
     return (
       <div className="trbl0 abs p20 dashboard-view">
@@ -31,21 +30,21 @@ export default class extends AntAbstractControllerIndex {
           <Col span="17">
             <Row gutter={20}>
               <Col span="8">
-                <ExwInfoCardItem img={card1} count="12" agree="1" reject="2" title="我的报馆" apply/>
+                <ExwInfoCardItem img={card1} count="9999" agree={dashboardInfo.booth_passed} reject={dashboardInfo.booth_rejected} title="我的报馆" />
               </Col>
               <Col span="8">
-                <ExwInfoCardItem img={card2} count="3" agree="1" reject="2" title="施工人员" apply/>
+                <ExwInfoCardItem img={card2} count="9999" agree={dashboardInfo.constructor_passed} reject={dashboardInfo.constructor_rejected} title="施工人员" />
               </Col>
               <Col span="8">
-                <ExwInfoCardItem img={card3} count="112" reject="2" title="通知" apply/>
+                <ExwInfoCardItem img={card3} count={dashboardInfo.unread_notification}  title="通知" apply/>
               </Col>
             </Row>
             <Row gutter={20}>
               <Col span="8">
-                <ExwInfoCardItem img={card4} count="12" agree="1" title="付款通知单" apply/>
+                <ExwInfoCardItem img={card4} count={dashboardInfo.bill_notificatioin}  title="付款通知单"/>
               </Col>
               <Col span="8">
-                <ExwInfoCardItem img={card5} count="3" title="汇款水单和发票" apply/>
+                <ExwInfoCardItem img={card5} count="9999" agree={dashboardInfo.bill_and_invoice_passed} reject={dashboardInfo.bill_and_invoice_passed} title="汇款水单和发票"/>
               </Col>
             </Row>
 
@@ -54,13 +53,13 @@ export default class extends AntAbstractControllerIndex {
           <Col span="7">
             <Row gutter={20}>
               <Col span="24">
-                <ExwInfoCardItemWelcome username="李华" time={dashboardInfo.last_login_time}/>
+                <ExwInfoCardItemWelcome username={dashboardInfo.user_name} time={dashboardInfo.last_login_time}/>
               </Col>
             </Row>
 
             <Row gutter={20}>
               <Col span="24">
-                <ExwInfoCardItemException icon="exception" score="112" count="3" title="违规记录"/>
+                <ExwInfoCardItemException icon="exception" score={dashboardInfo.violation_total_points} count={dashboardInfo.violation_total_counts} title="违规记录"/>
               </Col>
             </Row>
           </Col>
