@@ -17,8 +17,17 @@ export default class {
         'banner_update': ['put', '/banner/{id}'],
       },
       '/customer': {
+        // 首页
         'dashboard_index': ['get', '/home'],
+        // 我的报馆
         'myexhibition_index': ['get', '/booth/list/'],
+
+        //施工人员
+        'constructor_index': ['get', '/constructor/list/'],//施工人员列表
+        'constructor_create': ['post', '/constructor/list/'],//添加施工人员
+        'constructor_delete': ['get', '/constructor/delete/'],//删除施工人员
+        'constructor_update': ['post', '/constructor/update/'],//添加或更新施工人员
+        'constructor_upload_insurance': ['post', '/constructor/upload_insurance/'],//上传保险单
       },
     }
   };
