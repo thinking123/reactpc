@@ -10,21 +10,21 @@ export default class extends AntAbstractControllerIndex {
   get fields() {
     return [
       {
-        key: 'id',
-        dataIndex: 'id',
+        key: 'booth_num',
+        dataIndex: 'booth_num',
         title: '展位'
       }, {
-        key: 'name',
-        dataIndex: 'name',
+        key: 'customer_name',
+        dataIndex: 'customer_name',
         title: '参展商'
       }, {
-        key: 'data',
-        dataIndex: 'data',
+        key: 'status_reason',
+        dataIndex: 'status_reason',
         title: '拒绝材料'
       },
       {
-        key: 'time',
-        dataIndex: 'time',
+        key: 'updated_time',
+        dataIndex: 'updated_time',
         title: '上次处理时间'
       } ,{
         title: '',
@@ -49,21 +49,23 @@ export default class extends AntAbstractControllerIndex {
     //TODO: will be removed
     const data = [
       {
-        id: '展位号',
-        name: '参展商1',
-        data: '搭建委托书，展商保证书等2项',
-        time: '昨天'
+        booth_num: '展位号2',
+        customer_name: '参展商2',
+        status_reason: '搭建委托书，展商保证书等2项',
+        updated_time: '今天'
       },
       {
-        id: '展位号2',
-        name: '参展商2',
-        data: '搭建委托书，展商保证书等2项',
-        time: '今天'
+        booth_num: '展位号2',
+        customer_name: '参展商2',
+        status_reason: '搭建委托书，展商保证书等2项',
+        updated_time: '今天'
       }
     ];
 
     setTimeout(() => {
-      this.setState({data, total: 2});
+      // this.setState({data, total: 2});
+      const {myexhibitionList} = AppBase.$.memory;
+      this.setState({myexhibitionList, total: myexhibitionList.length});
     }, 100);
   }
 
