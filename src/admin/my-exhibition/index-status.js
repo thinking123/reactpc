@@ -63,9 +63,9 @@ export default class extends AntAbstractControllerIndex {
     ];
 
     setTimeout(() => {
-      // this.setState({data, total: 2});
-      const {myexhibitionList} = AppBase.$.memory;
-      this.setState({myexhibitionList, total: myexhibitionList.length});
+       this.setState({data, total: 2});
+      //const {myexhibitionList} = AppBase.$.memory;
+      //this.setState({myexhibitionList, total: myexhibitionList.length});
     }, 100);
   }
 
