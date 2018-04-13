@@ -35,7 +35,8 @@ export default class extends AppBase {
         activeRoute: hash.slice(1),
         openKeys: null,
         activeState: null,
-        dashboardInfo:{}
+        dashboardInfo:{},
+        myexhibitionList:[]
       },
       session: {
         currentList: currentList || []
