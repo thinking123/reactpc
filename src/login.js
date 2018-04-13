@@ -86,9 +86,9 @@ export default Form.create()(class extends React.Component {
           <lable className="login-lable3">
             每年负责的主场和特装面积达500000平方米
           </lable>
-          <img className="login-right-img" src={bgImg}></img>
+          <img className="login-right-img" src={bgImg}/>
         </div>
-        <div className="login-right2"></div>
+        <div className="login-right2"/>
       </section>
     );
   }
