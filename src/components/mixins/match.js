@@ -21,6 +21,7 @@ export default class {
     AppBase.$.memory = {
       params: match.params
     };
+    this.load()
   }
 
   unWatchParams() {
