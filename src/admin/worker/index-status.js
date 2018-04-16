@@ -10,23 +10,23 @@ export default class extends AntAbstractControllerIndex {
   get fields() {
     return [
       {
-        key: 'id',
-        dataIndex: 'id',
+        key: 'constructor_amount',
+        dataIndex: 'constructor_amount',
         title: '施工人员（个）'
       }, {
-        key: 'name',
-        dataIndex: 'name',
+        key: 'insurance_amount',
+        dataIndex: 'insurance_amount',
         title: '保险单(个)'
       }, {
-        key: 'data',
-        dataIndex: 'data',
+        key: 'updated_at',
+        dataIndex: 'updated_at',
         title: '上次修改时间'
       },   {
       title: '',
         key: 'action',
         render: (text, record) => (
         <span>
-                  <a href={`#/admin/worker/show/${record.key}`}>查看</a>
+                  <a href={`#/admin/worker/show/${record.user}`}>查看</a>
                 </span>
       ),
     }
@@ -41,26 +41,45 @@ export default class extends AntAbstractControllerIndex {
   }
 
   load() {
-    //TODO: will be removed
-    const data = [
-      {
-        id: 1,
-        key:1,
-        name: '10',
-        data: '昨天',
-      },
-      {
-        id: 2,
-        key:2,
-        name: '10',
-        data: '3天前',
-      }
-    ];
+    const {params} = AppBase.$.memory;
+    let status;
+    let st = "1";
+    if(params && params.state){
+      st = params.state;
+    }
+    switch (st) {
+      case '1':
+        status = "rejected";
+        break;
+      case '2':
+        status = "uncommitted";
+        break;
+      case '3':
+        status = "pending";
+        break;
+      case '4':
+        status = "under_review";
+        break;
+      case '5':
+        status = "passed";
+        break;
+      default:
+        status = "rejected";
+    }
 
-    setTimeout(() => {
-      this.setState({data, total: 2});
-    }, 100);
+    this.fetchData(status);
   }
+
+
+  fetchData(status){
+    $api.constructor_index({user_id: 123123,status:status}).then(resp=>{
+      AppBase.$.memory = {
+        constructorList: resp.data
+      };
+      this.setState({data: resp.data, total: resp.data.length});
+    })
+  }
+
 
   componentWillUnmount() {
     this.unWatchParams();
