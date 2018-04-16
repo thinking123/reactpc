@@ -55,7 +55,10 @@
     "proxy": [
       {
         "context": [
-          "/auth"
+          "/auth",
+          "/customer",
+          "/customer",
+          "/customer"
         ],
         "target": "http://47.93.242.118:10080",
         "changeOrigin": true,

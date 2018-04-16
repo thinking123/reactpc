@@ -98,4 +98,12 @@ export default class extends Component {
   onSelectAll(e){
     console.log('select all');
   }
+
+  componentDidMount() {
+    $api.payment_notice_index({user_id: 123123,status:'rejected'}).then(resp=>{
+      AppBase.$.memory = {
+        paymentNoticeList: resp.data
+      }
+    })
+  }
 }

@@ -35,9 +35,10 @@ export default class extends AppBase {
         activeRoute: hash.slice(1),
         openKeys: null,
         activeState: null,
-        dashboardInfo:{},
-        myexhibitionList:[],
-        constructorList:[],
+        dashboardInfo:{}, //首页信息
+        myexhibitionList:[],//我的报馆列表信息
+        constructorList:[],//施工人员列表信息
+        paymentNoticeList:[],//付款通知列表信息
       },
       session: {
         currentList: currentList || []

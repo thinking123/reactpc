@@ -34,7 +34,7 @@
   },
   "homepage": "https://github.com/afeiship/exhibition-web#readme",
   "dependencies": {
-    "antd": "^3.2.3",
+    "antd": "^3.4.1",
     "classnames": "^2.2.5",
     "http-rest-config": "github:afeiship/http-rest-config",
     "mixin-decorator": "github:afeiship/mixin-decorator",
@@ -96,7 +96,7 @@
     "babel": "^6.23.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
-    "babel-plugin-import": "^1.6.3",
+    "babel-plugin-import": "^1.7.0",
     "babel-plugin-module-resolver": "^2.7.1",
     "babel-plugin-transform-array-from": "^1.0.0",
     "babel-plugin-transform-class-properties": "^6.19.0",
