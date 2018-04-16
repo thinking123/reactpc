@@ -45,11 +45,13 @@ export default class extends AntAbstractControllerIndex {
     const data = [
       {
         id: 1,
+        key:1,
         name: '10',
         data: '昨天',
       },
       {
         id: 2,
+        key:2,
         name: '10',
         data: '3天前',
       }

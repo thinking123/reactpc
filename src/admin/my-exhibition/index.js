@@ -46,7 +46,7 @@ export default class extends AntAbstractControllerIndex {
   }
 
   componentDidMount() {
-    $api.myexhibition_index({user_id: 123123,status:'rejected'}).then(resp=>{
+    $api.myexhibition_index({user_id: 123123,status:'uncommitted'}).then(resp=>{
       AppBase.$.memory = {
         myexhibitionList: resp.data
       }

@@ -47,7 +47,7 @@ export default class extends AntAbstractControllerIndex {
 
 
   componentDidMount() {
-    $api.constructor_index({user_id: 123123,status:'rejected'}).then(resp=>{
+    $api.constructor_index({user_id: 123123,status:'uncommitted'}).then(resp=>{
       AppBase.$.memory = {
         constructorList: resp.data
       }

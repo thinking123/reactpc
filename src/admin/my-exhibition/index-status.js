@@ -14,8 +14,8 @@ export default class extends AntAbstractControllerIndex {
         dataIndex: 'booth_num',
         title: '展位'
       }, {
-        key: 'customer_name',
-        dataIndex: 'customer_name',
+        key: 'exhibition',
+        dataIndex: 'exhibition',
         title: '参展商'
       }, {
         key: 'status_reason',
@@ -23,8 +23,8 @@ export default class extends AntAbstractControllerIndex {
         title: '拒绝材料'
       },
       {
-        key: 'updated_time',
-        dataIndex: 'updated_time',
+        key: 'updated_at',
+        dataIndex: 'updated_at',
         title: '上次处理时间'
       } ,{
         title: '',
@@ -63,10 +63,10 @@ export default class extends AntAbstractControllerIndex {
     ];
 
     setTimeout(() => {
-       this.setState({data, total: 2});
-      //const {myexhibitionList} = AppBase.$.memory;
-      //this.setState({myexhibitionList, total: myexhibitionList.length});
-    }, 100);
+      // this.setState({data, total: 2});
+      const {myexhibitionList} = AppBase.$.memory;
+      this.setState({data: myexhibitionList, total: myexhibitionList.length});
+    }, 1000);
   }
 
   componentWillUnmount() {
