@@ -46,6 +46,9 @@ export default class extends React.Component {
   }
 
   childView() {
+    const {profileDetail} = AppBase.$.memory;
+    alert(profileDetail);
+
     return (
       <div className="abs trbl0 p20 bg-f my-exhibition-show-view">
 
@@ -147,6 +150,12 @@ export default class extends React.Component {
     AppBase.$.memory = {
       footer: this.footerView()
     };
+
+    $api.profile_detail({user_id: 123123,status:status}).then(resp=>{
+      AppBase.$.memory = {
+        profileDetail: resp.data
+      };
+    })
   }
 
   render() {

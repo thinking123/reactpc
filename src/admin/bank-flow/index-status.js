@@ -11,24 +11,24 @@ export default class extends AntAbstractControllerIndex {
   get fields() {
     return [
       {
-        key: 'id',
-        dataIndex: 'id',
+        key: 'remittance_company',
+        dataIndex: 'remittance_company',
         title: '汇款公司'
       }, {
-        key: 'name',
-        dataIndex: 'name',
+        key: 'remittance_company_bank_account',
+        dataIndex: 'remittance_company_bank_account',
         title: '汇款公司账号'
       }, {
-        key: 'data',
-        dataIndex: 'data',
+        key: 'remittance_amount',
+        dataIndex: 'remittance_amount',
         title: '汇款总额'
       }, {
-        key: 'yajin',
-        dataIndex: 'yajin',
+        key: 'deposit_amount',
+        dataIndex: 'deposit_amount',
         title: '押金'
       }, {
-        key: 'kaipiaojine',
-        dataIndex: 'kaipiaojine',
+        key: 'invoice_amount',
+        dataIndex: 'invoice_amount',
         title: '开票金额'
       },
       {
@@ -36,11 +36,9 @@ export default class extends AntAbstractControllerIndex {
         key: 'action',
         render: (text, record) => (
           <span>
-                  {/*<a href={`#/admin/bank-flow/show/${record.key}`}>开发票</a>*/}
             <a href="javascript:;" onClick={this._openTicket}>开发票</a>
-
                   <Divider type="vertical" />
-                  <a href={`#/admin/bank-flow/show/${record.key}`}>修改</a>
+                  <a href={`#/admin/bank-flow/show/${record.invoice_id}`}>修改</a>
                 </span>
 
         ),
@@ -56,27 +54,43 @@ export default class extends AntAbstractControllerIndex {
   }
 
   load() {
-    //TODO: will be removed
-    const data = [
-      {
-        id: 1,
-        name: '公司名',
-        data: 12345678,
-        yajin:1000,
-        kaipiaojine:1000
-      },
-      {
-        id: 2,
-        name: '公司名2',
-        data: 123333,
-        yajin:2000,
-        kaipiaojine:2000
-      }
-    ];
+    const {params} = AppBase.$.memory;
+    let status;
+    let st = "1";
+    if(params && params.state){
+      st = params.state;
+    }
+    switch (st) {
+      case '1':
+        status = "rejected";
+        break;
+      case '2':
+        status = "uncommitted";
+        break;
+      case '3':
+        status = "pending";
+        break;
+      case '4':
+        status = "under_review";
+        break;
+      case '5':
+        status = "passed";
+        break;
+      default:
+        status = "rejected";
+    }
 
-    setTimeout(() => {
-      this.setState({data, total: 2});
-    }, 100);
+    this.fetchData(status);
+  }
+
+
+  fetchData(status){
+    $api.invoice_remittance_receipt_index({user_id: 123123,status:status}).then(resp=>{
+      AppBase.$.memory = {
+        invoiceRemittanceReceiptList: resp.data
+      };
+      this.setState({data: resp.data, total: resp.data.length});
+    })
   }
 
   componentWillUnmount() {

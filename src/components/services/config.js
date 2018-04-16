@@ -28,6 +28,12 @@ export default class {
         'constructor_delete': ['get', '/constructor/delete/'],//删除施工人员
         'constructor_update': ['post', '/constructor/update/'],//添加或更新施工人员
         'constructor_upload_insurance': ['post', '/constructor/upload_insurance/'],//上传保险单
+
+        //银行汇款水单
+        'invoice_remittance_receipt_index': ['get', '/invoice/remittance_receipt/list/'],//银行汇款水单列表
+
+        //个人和公司
+        'profile_detail': ['get', '/profile/detail/'],//查看个人和公司
       },
     }
   };

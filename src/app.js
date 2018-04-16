@@ -39,6 +39,8 @@ export default class extends AppBase {
         myexhibitionList:[],//我的报馆列表信息
         constructorList:[],//施工人员列表信息
         paymentNoticeList:[],//付款通知列表信息
+        profileDetail:{},//个人和公司详情
+        invoiceRemittanceReceiptList:[],//银行汇款水单列表
       },
       session: {
         currentList: currentList || []
