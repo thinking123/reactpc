@@ -57,8 +57,8 @@
         "context": [
           "/auth",
           "/customer",
-          "/customer",
-          "/customer"
+          "/finance",
+          "/notice"
         ],
         "target": "http://47.93.242.118:10080",
         "changeOrigin": true,

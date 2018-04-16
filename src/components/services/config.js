@@ -19,6 +19,7 @@ export default class {
       '/customer': {
         // 首页
         'dashboard_index': ['get', '/home'],
+
         // 我的报馆
         'myexhibition_index': ['get', '/booth/list/'],
 
@@ -34,6 +35,10 @@ export default class {
 
         //个人和公司
         'profile_detail': ['get', '/profile/detail/'],//查看个人和公司
+
+      },
+      '/finance': {
+        'payment_notice_index': ['get', '/api/billheads/{id}/info/'],//付款通知单列表
       },
     }
   };

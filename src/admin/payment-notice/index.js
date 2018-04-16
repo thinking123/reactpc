@@ -100,7 +100,7 @@ export default class extends Component {
   }
 
   componentDidMount() {
-    $api.payment_notice_index({user_id: 123123,status:'rejected'}).then(resp=>{
+    $api.payment_notice_index({id: 123123}).then(resp=>{
       AppBase.$.memory = {
         paymentNoticeList: resp.data
       }
