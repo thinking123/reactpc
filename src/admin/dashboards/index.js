@@ -30,10 +30,10 @@ export default class extends AntAbstractControllerIndex {
           <Col span="17">
             <Row gutter={20}>
               <Col span="8">
-                <ExwInfoCardItem img={card1} count="9999" agree={dashboardInfo.booth_passed} reject={dashboardInfo.booth_rejected} title="我的报馆" />
+                <ExwInfoCardItem img={card1} count={dashboardInfo.booth_count} agree={dashboardInfo.booth_passed} reject={dashboardInfo.booth_rejected} title="我的报馆" />
               </Col>
               <Col span="8">
-                <ExwInfoCardItem img={card2} count="9999" agree={dashboardInfo.constructor_passed} reject={dashboardInfo.constructor_rejected} title="施工人员" />
+                <ExwInfoCardItem img={card2} count={dashboardInfo.constructor_count} agree={dashboardInfo.constructor_passed} reject={dashboardInfo.constructor_rejected} title="施工人员" />
               </Col>
               <Col span="8">
                 <ExwInfoCardItem img={card3} count={dashboardInfo.unread_notification}  title="通知" apply/>
