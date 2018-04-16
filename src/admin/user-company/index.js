@@ -47,7 +47,6 @@ export default class extends React.Component {
 
   childView() {
     const {profileDetail} = AppBase.$.memory;
-    alert(profileDetail);
 
     return (
       <div className="abs trbl0 p20 bg-f my-exhibition-show-view">
@@ -61,31 +60,31 @@ export default class extends React.Component {
             <ul className="lfix_">
               <li>
                 <strong>姓名:</strong>
-                <em className="c-9">姓名</em>
+                <em className="c-9">{profileDetail.user_name}</em>
               </li>
               <li >
                 <strong>职务:</strong>
-                <em className="c-9">未填写</em>
+                <em className="c-9">{profileDetail.job_title}</em>
               </li>
               <li >
                 <strong>身份证号:</strong>
-                <em className="c-9">123456789012345678</em>
+                <em className="c-9">{profileDetail.id_number}</em>
               </li>
               <li>
                 <strong>微信号:</strong>
-                <em className="c-9">未填写</em>
+                <em className="c-9">{profileDetail.wechat_id}</em>
               </li>
               <li style={{width: '100%'}}>
                 <strong>邮箱:</strong>
-                <em className="c-9">30,000</em>
+                <em className="c-9">{profileDetail.email}</em>
               </li>
               <li style={{width: '100%'}}>
                 <strong>邮寄地址:</strong>
-                <em className="c-9">邮寄地址</em>
+                <em className="c-9">{profileDetail.mail_address}</em>
               </li>
               <li style={{width: '100%'}}>
                 <strong>身份证扫描</strong>
-                <em className="c-9">20,000</em>
+                <em className="c-9">{profileDetail.id_scan_image}</em>
               </li>
             </ul>
           </dd>
@@ -100,43 +99,43 @@ export default class extends React.Component {
             <ul className="lfix_">
               <li>
                 <strong>公司名称:</strong>
-                <em className="c-9">公司名称</em>
+                <em className="c-9">{profileDetail.company_name}</em>
               </li>
               <li >
                 <strong>传真:</strong>
-                <em className="c-9">123-456-7899</em>
+                <em className="c-9">{profileDetail.fax}</em>
               </li>
               <li style={{width: '100%'}}>
                 <strong>办公地址:</strong>
-                <em className="c-9">办公地址</em>
+                <em className="c-9">{profileDetail.company_address}</em>
               </li>
               <li>
                 <strong>法人姓名:</strong>
-                <em className="c-9">法人姓名</em>
+                <em className="c-9">{profileDetail.legal_person_name}</em>
               </li>
               <li >
                 <strong>法人手机号:</strong>
-                <em className="c-9">法人手机号</em>
+                <em className="c-9">{profileDetail.legal_person_phone}</em>
               </li>
               <li>
                 <strong>法人身份证号:</strong>
-                <em className="c-9">123456789012345678</em>
+                <em className="c-9">{profileDetail.legal_person_id_number}</em>
               </li>
               <li>
                 <strong>法人座机:</strong>
-                <em className="c-9">未填写</em>
+                <em className="c-9">{profileDetail.legal_person_work_phone}</em>
               </li>
               <li style={{width: '100%'}}>
                 <strong>法人身份证扫描件</strong>
-                <em className="c-9">13000000000</em>
+                <em className="c-9">{profileDetail.legal_person_id_scan_image}</em>
               </li>
               <li style={{width: '100%'}}>
                 <strong>公司营业执照</strong>
-                <em className="c-9">地址</em>
+                <em className="c-9">{profileDetail.company_business_license_scan_image}</em>
               </li>
               <li style={{width: '100%'}}>
                 <strong>其他资质扫描件</strong>
-                <em className="c-9">地址</em>
+                <em className="c-9">{profileDetail.company_other_license_scan_image}</em>
               </li>
             </ul>
           </dd>
@@ -151,7 +150,7 @@ export default class extends React.Component {
       footer: this.footerView()
     };
 
-    $api.profile_detail({user_id: 123123,status:status}).then(resp=>{
+    $api.profile_detail({user_id: 123123}).then(resp=>{
       AppBase.$.memory = {
         profileDetail: resp.data
       };
