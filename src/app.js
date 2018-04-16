@@ -7,7 +7,7 @@ import AppBase, {
 import Login from './login';
 import Admin from './admin';
 // import Main from './main';
-import Register from './admin/register';
+// import Register from './admin/register';
 import RegisterStep1 from './admin/registers/step1';
 import RegisterStep2 from './admin/registers/step2';
 import NxDomEvent from 'next-dom-event';

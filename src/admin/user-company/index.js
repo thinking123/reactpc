@@ -84,7 +84,14 @@ export default class extends React.Component {
               </li>
               <li style={{width: '100%'}}>
                 <strong>身份证扫描</strong>
-                <em className="c-9">{profileDetail.id_scan_image}</em>
+                {/*<em className="c-9">{profileDetail.id_scan_image}</em>*/}
+                <ReactSmartPhoto group="cid" items={[
+                  {
+                    href: profileDetail.id_scan_image,
+                    src: profileDetail.id_scan_image,
+                    caption: '身份证扫描'
+                  }
+                ]}/>
               </li>
             </ul>
           </dd>
@@ -127,15 +134,36 @@ export default class extends React.Component {
               </li>
               <li style={{width: '100%'}}>
                 <strong>法人身份证扫描件</strong>
-                <em className="c-9">{profileDetail.legal_person_id_scan_image}</em>
+                {/*<em className="c-9">{profileDetail.legal_person_id_scan_image}</em>*/}
+                <ReactSmartPhoto group="cid" items={[
+                  {
+                    href: profileDetail.legal_person_id_scan_image,
+                    src: profileDetail.legal_person_id_scan_image,
+                    caption: '法人身份证扫描件'
+                  }
+                ]}/>
               </li>
               <li style={{width: '100%'}}>
                 <strong>公司营业执照</strong>
-                <em className="c-9">{profileDetail.company_business_license_scan_image}</em>
+                {/*<em className="c-9">{profileDetail.company_business_license_scan_image}</em>*/}
+                <ReactSmartPhoto group="cid" items={[
+                  {
+                    href: profileDetail.company_business_license_scan_image,
+                    src: profileDetail.company_business_license_scan_image,
+                    caption: '公司营业执照'
+                  }
+                ]}/>
               </li>
               <li style={{width: '100%'}}>
                 <strong>其他资质扫描件</strong>
-                <em className="c-9">{profileDetail.company_other_license_scan_image}</em>
+                {/*<em className="c-9">{profileDetail.company_other_license_scan_image}</em>*/}
+                <ReactSmartPhoto group="cid" items={[
+                  {
+                    href: profileDetail.company_other_license_scan_image,
+                    src: profileDetail.company_other_license_scan_image,
+                    caption: '其他资质扫描件'
+                  }
+                ]}/>
               </li>
             </ul>
           </dd>
