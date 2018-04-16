@@ -16,21 +16,21 @@ export default class extends Component {
     columns: [
       {
         title: '内容',
-        key: 'content',
-        dataIndex: 'content'
+        key: 'body',
+        dataIndex: 'body'
       },
       {
         title: '通知时间',
-        key: 'time',
-        dataIndex: 'time'
+        key: 'updated_at',
+        dataIndex: 'updated_at'
       },
       {
         title: '操作',
         key: 'action',
-        render: () => {
+        render: (text, record) => {
           return (
             <div className="actions">
-              <Button size="small" onClick={$route.push.bind(null, '/admin/notifications/show')}>查看</Button>
+              <Button size="small" onClick={$route.push.bind(null, `/admin/notifications/show/${record.id}`)}>查看</Button>
             </div>
           )
         }
@@ -40,6 +40,8 @@ export default class extends Component {
 
   render() {
     const {columns, data} = this.state;
+    const {noticeList} = AppBase.$.memory;
+
     return (
       <div className="p20 notification-view">
         <header className="lrfix_" style={{lineHeight: '32px'}}>
@@ -47,7 +49,7 @@ export default class extends Component {
           <Input.Search className="right wp-3" placeholder="Search" enterButton/>
         </header>
         <div className="blank-20"/>
-        <Table bordered rowKey={'id'} columns={columns} dataSource={data} size="middle"/>
+        <Table bordered rowKey={'id'} columns={columns} dataSource={noticeList} size="middle"/>
       </div>
     )
   }
