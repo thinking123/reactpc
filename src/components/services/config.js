@@ -40,6 +40,9 @@ export default class {
       '/finance': {
         'payment_notice_index': ['get', '/api/billheads/{id}/info/'],//付款通知单列表
       },
+      '/notice': {
+        'notice_index': ['get', '/notifications/'],//付款通知单列表
+      },
     }
   };
 

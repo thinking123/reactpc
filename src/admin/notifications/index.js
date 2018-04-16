@@ -51,4 +51,12 @@ export default class extends Component {
       </div>
     )
   }
+
+  componentDidMount() {
+    $api.notice_index().then(resp=>{
+      AppBase.$.memory = {
+        noticeList: resp.data
+      }
+    })
+  }
 }
