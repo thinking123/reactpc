@@ -33,7 +33,7 @@ export default class extends AntAbstractControllerIndex {
           <span>
                   <a href={`#/admin/my-exhibition/show/${record.key}`}>查看</a>
                 </span>
-        ),
+        )
       }
     ]
   }
@@ -46,27 +46,43 @@ export default class extends AntAbstractControllerIndex {
   }
 
   load() {
-    //TODO: will be removed
-    const data = [
-      {
-        booth_num: '展位号2',
-        customer_name: '参展商2',
-        status_reason: '搭建委托书，展商保证书等2项',
-        updated_time: '今天'
-      },
-      {
-        booth_num: '展位号2',
-        customer_name: '参展商2',
-        status_reason: '搭建委托书，展商保证书等2项',
-        updated_time: '今天'
+      const {params} = AppBase.$.memory;
+      let status;
+      let st = "1";
+      if(params && params.state){
+        st = params.state;
       }
-    ];
+      switch (st) {
+        case '1':
+          status = "rejected";
+          break;
+        case '2':
+          status = "uncommitted";
+          break;
+          case '3':
+            status = "pending";
+        break;
+        case '4':
+          status = "under_review";
+          break;
+        case '5':
+          status = "passed";
+          break;
+        default:
+          status = "rejected";
+      }
 
-    setTimeout(() => {
-      // this.setState({data, total: 2});
-      const {myexhibitionList} = AppBase.$.memory;
-      this.setState({data: myexhibitionList, total: myexhibitionList.length});
-    }, 1000);
+       this.fetchData(status);
+  }
+
+
+  fetchData(status){
+    $api.myexhibition_index({user_id: 123123,status:status}).then(resp=>{
+      AppBase.$.memory = {
+        myexhibitionList: resp.data
+      };
+      this.setState({data: resp.data, total: resp.data.length});
+    })
   }
 
   componentWillUnmount() {
