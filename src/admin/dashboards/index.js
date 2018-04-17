@@ -44,7 +44,7 @@ export default class extends AntAbstractControllerIndex {
                 <ExwInfoCardItem img={card4} count={dashboardInfo.bill_notificatioin}  title="付款通知单"/>
               </Col>
               <Col span="8">
-                <ExwInfoCardItem img={card5} count="9999" agree={dashboardInfo.bill_and_invoice_passed} reject={dashboardInfo.bill_and_invoice_passed} title="汇款水单和发票"/>
+                <ExwInfoCardItem img={card5} count={dashboardInfo.bill_and_invoice_count} agree={dashboardInfo.bill_and_invoice_passed} reject={dashboardInfo.bill_and_invoice_passed} title="汇款水单和发票"/>
               </Col>
             </Row>
 
@@ -73,6 +73,21 @@ export default class extends AntAbstractControllerIndex {
       AppBase.$.memory = {
         dashboardInfo: resp.data
       }
-    })
+    });
+    // $api.payment_notice_count({user_id: 123123}).then(resp=>{
+    //   AppBase.$.memory = {
+    //     paymentNoticeCount: resp.data
+    //   }
+    // });
+    // $api.illegal_records_count({user_id: 123123}).then(resp=>{
+    //   AppBase.$.memory = {
+    //     illegalRecordsCount: resp.data
+    //   }
+    // });
+    // $api.illegal_records_score({user_id: 123123}).then(resp=>{
+    //   AppBase.$.memory = {
+    //     illegalRecordsScore: resp.data
+    //   }
+    // })
   }
 }

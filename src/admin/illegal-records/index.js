@@ -91,6 +91,16 @@ export default class extends Component {
     //   AppBase.$.memory = {
     //     illegalRecordList: resp.data
     //   }
+    // });
+    // $api.illegal_records_count({user_id: 123123}).then(resp=>{
+    //   AppBase.$.memory = {
+    //     illegalRecordsCount: resp.data
+    //   }
+    // });
+    // $api.illegal_records_score({user_id: 123123}).then(resp=>{
+    //   AppBase.$.memory = {
+    //     illegalRecordsScore: resp.data
+    //   }
     // })
   }
 }
