@@ -58,7 +58,10 @@
           "/auth",
           "/customer",
           "/finance",
-          "/notice"
+          "/notice",
+          "/expoManagement",
+          "/oss",
+          "/account"
         ],
         "target": "http://47.93.242.118:10080",
         "changeOrigin": true,
