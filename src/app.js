@@ -7,7 +7,7 @@ import AppBase, {
 import Login from './login';
 import Admin from './admin';
 // import Main from './main';
-import Register from './admin/register';
+// import Register from './admin/register';
 import RegisterStep1 from './admin/registers/step1';
 import RegisterStep2 from './admin/registers/step2';
 import NxDomEvent from 'next-dom-event';
@@ -41,6 +41,8 @@ export default class extends AppBase {
         paymentNoticeList:[],//付款通知列表信息
         profileDetail:{},//个人和公司详情
         invoiceRemittanceReceiptList:[],//银行汇款水单列表
+        noticeList:[],//通知列表
+        illegalRecordList:[],//违规记录列表
       },
       session: {
         currentList: currentList || []

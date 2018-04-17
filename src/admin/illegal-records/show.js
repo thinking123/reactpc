@@ -75,23 +75,7 @@ export default class extends Component {
             );
           })
         }
-        {/*<Tools>*/}
-          {/*<Button size="large" onClick={()=> {*/}
-            {/*$route.back();*/}
-          {/*}}>*/}
-            {/*<Icon type="left" />*/}
-            {/*返回*/}
-          {/*</Button>*/}
-          {/*<Button*/}
-            {/*size="large"*/}
-            {/*type="primary"*/}
-            {/*onClick={() => {*/}
-              {/*$route.push("/admin/illegal-records/edit");*/}
-            {/*}}*/}
-          {/*>*/}
-            {/*修改*/}
-          {/*</Button>*/}
-        {/*</Tools>*/}
+
       </Details>
     )
   };

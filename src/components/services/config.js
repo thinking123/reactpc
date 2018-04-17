@@ -40,6 +40,14 @@ export default class {
       '/finance': {
         'payment_notice_index': ['get', '/api/billheads/{id}/info/'],//付款通知单列表
       },
+      '/notice': {
+        'notice_index': ['get', '/notifications/'],//通知列表
+        'notice_search': ['get', '/notifications/search/'],//搜索列表
+        'notice_detail': ['get', '/notifications/{id}/'],//获取通知详情
+        'sms_send_code': ['post', '/sms/send_code/'],//发送短信验证码
+        'sms_verify_code': ['post', '/sms/verify_code/'],//验证短信验证码
+      },
+
     }
   };
 

@@ -41,10 +41,10 @@ export default class extends Component {
       {
         title: '操作',
         key: 'action',
-        render: () => {
+        render: (text, record) => {
           return (
             <div className="actions">
-              <Button size="small" onClick={$route.push.bind(null, '/admin/illegal-records/show')}>查看</Button>
+              <Button size="small" onClick={$route.push.bind(null, `/admin/illegal-records/show/${record.id}`)}>查看</Button>
             </div>
           )
         }
@@ -54,6 +54,7 @@ export default class extends Component {
 
   render() {
     const {columns, data} = this.state;
+    const {illegalRecordList} = AppBase.$.memory;
 
     return (
       <div className="p20 notification-view">
@@ -83,5 +84,13 @@ export default class extends Component {
         <Table bordered rowKey={'id'} columns={columns} dataSource={data} size="middle"/>
       </div>
     )
+  }
+
+  componentDidMount() {
+    // $api.illegal_records_index().then(resp=>{
+    //   AppBase.$.memory = {
+    //     illegalRecordList: resp.data
+    //   }
+    // })
   }
 }
