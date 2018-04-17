@@ -42,6 +42,7 @@ export default class extends AppBase {
         paymentNoticeCount:null,//首页-付款通知数量
         profileDetail:{},//个人和公司详情
         invoiceRemittanceReceiptList:[],//银行汇款水单列表
+        remittanceReceiptDetail:{},//银行汇款水单详情
         noticeList:[],//通知列表
         illegalRecordList:[],//违规记录列表
         illegalRecordsCount:null,//违规记录条数

@@ -32,6 +32,11 @@ export default class {
 
         //银行汇款水单
         'invoice_remittance_receipt_index': ['get', '/invoice/remittance_receipt/list/'],//银行汇款水单列表
+        'invoice_create': ['post', '/invoice/create/'],//新增发票
+        'remittance_receipt_create': ['post', '/invoice/remittance_receipt/list/'],//新增银行汇款水单
+        'remittance_receipt_detail': ['get', '/invoice/remittance_receipt/detail/'],// 银行汇款水单详情
+
+
 
         //个人和公司
         'profile_detail': ['get', '/profile/detail/'],//查看个人和公司

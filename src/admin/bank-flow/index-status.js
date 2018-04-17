@@ -98,7 +98,7 @@ export default class extends AntAbstractControllerIndex {
   }
 
   onRowClick = inRecord => {
-    $route.push(`/admin/bank-flow/show/${inRecord.id}`)
+    $route.push(`/admin/bank-flow/show/${inRecord.invoice_id}`)
   };
 
   pureLayout() {

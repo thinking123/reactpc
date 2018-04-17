@@ -46,6 +46,10 @@ export default class extends React.Component {
   }
 
   childView() {
+    const {remittanceReceiptDetail} = AppBase.$.memory;
+    let invoice_info = remittanceReceiptDetail.invoice_info || {};
+    let taxpayer_info = remittanceReceiptDetail.taxpayer_info || {};
+
     return (
       <div className="abs trbl0 p20 bg-f my-exhibition-show-view">
         <h3 className="mb10">
@@ -55,10 +59,6 @@ export default class extends React.Component {
           </a>
         </h3>
         <h2 className="f20 mb20 b">银行汇款水单详情</h2>
-        {/*<h3 className="sub-title">*/}
-        {/*<span className="b f14">有部分材料申请被拒绝，请修改并重新提交</span>*/}
-        {/*</h3>*/}
-
 
           <dl className="item">
             <dd>
@@ -106,31 +106,32 @@ export default class extends React.Component {
             <ul className="lfix_">
               <li>
                 <strong>汇款公司名称:</strong>
-                <em className="c-9">公司名称</em>
+                <em className="c-9">{invoice_info.company_name}</em>
               </li>
               <li >
                 <strong>开户行:</strong>
-                <em className="c-9">开户行</em>
+                <em className="c-9">{invoice_info.account_bank}</em>
               </li>
               <li style={{width: '100%'}}>
                 <strong>汇款公司账号:</strong>
-                <em className="c-9">W8DSJH298FHLKJFJKN2</em>
+                <em className="c-9">{invoice_info.remittance_company_bank_account}</em>
               </li>
               <li>
                 <strong>汇款总额(￥):</strong>
-                <em className="c-9">50,000</em>
+                <em className="c-9">{invoice_info.remittance_amount}</em>
               </li>
               <li >
                 <strong>押金金额(￥):</strong>
-                <em className="c-9">30,000</em>
+                <em className="c-9">{invoice_info.deposit_amount}</em>
               </li>
               <li style={{width: '100%'}}>
                 <strong>开票金额(￥):</strong>
-                <em className="c-9">20,000</em>
+                <em className="c-9">{invoice_info.invoice_amount}</em>
               </li>
               <li style={{width: '100%'}}>
                 <strong>银行汇款水单</strong>
-                <em className="c-9">20,000</em>
+                {/*//TODO 图片*/}
+                <em className="c-9">{invoice_info.remittance_bill_scan_image}</em>
               </li>
             </ul>
           </dd>
@@ -144,12 +145,16 @@ export default class extends React.Component {
           <dd>
             <ul className="lfix_">
               <li>
+                <strong>提交时间:</strong>
+                <em className="c-9">{taxpayer_info.created_at}</em>
+              </li>
+              <li>
                 <strong>发票类型:</strong>
-                <em className="c-9">增值税专用发票</em>
+                <em className="c-9">{taxpayer_info.invoice_type}</em>
               </li>
               <li >
                 <strong>汇款公司名称:</strong>
-                <em className="c-9">名称</em>
+                <em className="c-9">{taxpayer_info.invoice_type}</em>
               </li>
               <li>
                 <strong>金额(￥):</strong>
@@ -161,7 +166,8 @@ export default class extends React.Component {
               </li>
               <li >
                 <strong>一般人纳税证明:</strong>
-                <em className="c-9"></em>
+                {/*//TODO 图片*/}
+                <em className="c-9">{taxpayer_info.general_taxpayer_certificate}</em>
               </li>
               <li>
                 <strong>开户行:</strong>
@@ -169,15 +175,15 @@ export default class extends React.Component {
               </li>
               <li>
                 <strong>纳税人识别号</strong>
-                <em className="c-9">识别号</em>
+                <em className="c-9">{taxpayer_info.taxpayer_id_number}</em>
               </li>
               <li>
                 <strong>电话</strong>
-                <em className="c-9">13000000000</em>
+                <em className="c-9">{taxpayer_info.taxpayer_phone_number}</em>
               </li>
               <li>
                 <strong>地址</strong>
-                <em className="c-9">地址</em>
+                <em className="c-9">{taxpayer_info.taxpayer_address}</em>
               </li>
             </ul>
           </dd>
@@ -192,15 +198,15 @@ export default class extends React.Component {
             <ul className="lfix_">
               <li>
                 <strong>收件人姓名:</strong>
-                <em className="c-9">姓名</em>
+                <em className="c-9">{taxpayer_info.receiver_name}</em>
               </li>
               <li >
                 <strong>收件人手机号:</strong>
-                <em className="c-9">12345678909</em>
+                <em className="c-9">{taxpayer_info.receiver_phone_number}</em>
               </li>
               <li>
                 <strong>收件人地址:</strong>
-                <em className="c-9">地址</em>
+                <em className="c-9">{taxpayer_info.receiver_address}</em>
               </li>
             </ul>
           </dd>
@@ -221,6 +227,12 @@ export default class extends React.Component {
     AppBase.$.memory = {
       footer: this.footerView()
     };
+
+    $api.remittance_receipt_detail({invoice_id: 1}).then(resp=>{
+      AppBase.$.memory = {
+        remittanceReceiptDetail: resp.data
+      };
+    })
   }
 
   render() {
