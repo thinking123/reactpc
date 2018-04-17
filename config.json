@@ -58,7 +58,8 @@
           "/auth",
           "/customer",
           "/finance",
-          "/notice"
+          "/notice",
+          "/account"
         ],
         "target": "http://47.93.242.118:10080",
         "changeOrigin": true,

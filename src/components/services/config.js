@@ -39,6 +39,7 @@ export default class {
       },
       '/finance': {
         'payment_notice_index': ['get', '/api/billheads/{id}/info/'],//付款通知单列表
+        'payment_notice_count': ['get', '/api/set-up-the-site/{id}/billheads/status/2/count/'],//付款通知单数量
       },
       '/notice': {
         'notice_index': ['get', '/notifications/'],//通知列表
@@ -46,6 +47,12 @@ export default class {
         'notice_detail': ['get', '/notifications/{id}/'],//获取通知详情
         'sms_send_code': ['post', '/sms/send_code/'],//发送短信验证码
         'sms_verify_code': ['post', '/sms/verify_code/'],//验证短信验证码
+      },
+      '/account': {
+        'illegal_records_index': ['get', '/_criminalRecordsList/{id}'],//违规记录列表
+        'illegal_records_count': ['get', '_criminalRecordsTotalNumber/{id}'],//违规记录条数
+        'illegal_records_score': ['get', '_criminalRecordsTotalScore/{id}'],//违规记录总分
+
       },
 
     }
