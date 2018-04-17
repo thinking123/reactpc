@@ -55,34 +55,34 @@ export default class extends AntAbstractControllerIndex {
     columns: [
       {
         title: '姓名',
-        key: 'username',
-        dataIndex: 'username'
+        key: 'name',
+        dataIndex: 'name'
       },
       {
         title: '身份证号',
-        key: 'idcardnumber',
-        dataIndex: 'idcardnumber'
+        key: 'id_number',
+        dataIndex: 'id_number'
       },
       {
         title: '身份证扫描件',
-        key: 'saomiaojian',
-        dataIndex: 'saomiaojian'
+        key: 'id_scan_image',
+        dataIndex: 'id_scan_image'
       },
       {
         title: '一寸照片',
-        key: 'yicunzhaopian',
-        dataIndex: 'yicunzhaopian'
+        key: 'werwweerwdasder',
+        dataIndex: 'werwweerwdasder'
       },
       {
         title: '',
         key: 'action',
         render: (text, record) => (
           <span>
-              <a href={`#/admin/worker/show/${record.key}`}>拒绝</a>
+              <a href={`#/admin/worker/show/${record.id}`}>拒绝</a>
               <Divider type="vertical" />
-              <a href={`#/admin/worker/show/${record.key}`}>修改</a>
+              <a href={`#/admin/worker/show/${record.id}`}>修改</a>
               <Divider type="vertical" />
-              <a href={`#/admin/worker/show/${record.key}`}>删除</a>
+              <a href={`#/admin/worker/show/${record.id}`}>删除</a>
           </span>
         ),
       }
@@ -118,6 +118,9 @@ export default class extends AntAbstractControllerIndex {
     const {tabId} = AppBase.$.memory;
     const {endTime, columns, data} = this.state;
 
+    const {constructorDetail} = AppBase.$.memory || {};
+    let source = constructorDetail.constructor || [] ;
+
     return (
       <Details className="illegal-records-details holy-grain">
         <h3 className="mb10">
@@ -135,7 +138,7 @@ export default class extends AntAbstractControllerIndex {
         <Alert className="my10" message="有部分施工人员申请被拒绝，请修改并重新提交" type="warning"/>
         <Tabs activeKey={tabId} onChange={this._onChange}>
           <Tabs.TabPane tab="施工人员信息" key="info">
-            <Table bordered rowKey={'id'} columns={columns} dataSource={data} size="middle"/>
+            <Table bordered rowKey={'id'} columns={columns} dataSource={source} size="middle"/>
           </Tabs.TabPane>
           <Tabs.TabPane tab="保险单" key="list">
             <Dragger
@@ -162,6 +165,12 @@ export default class extends AntAbstractControllerIndex {
 
   componentDidMount() {
     this.update('info');
+
+    $api.constructor_detail_list({user_id: 123123, constructor_list: 1}).then(resp=>{
+      AppBase.$.memory = {
+        constructorDetail: resp.data || {}
+      };
+    })
   }
 
   update(inTabId) {

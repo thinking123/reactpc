@@ -38,6 +38,7 @@ export default class extends AppBase {
         dashboardInfo:{}, //首页信息
         myexhibitionList:[],//我的报馆列表信息
         constructorList:[],//施工人员列表信息
+        constructorDetail:{},//施工人员详情页
         paymentNoticeList:[],//付款通知列表信息
         paymentNoticeCount:null,//首页-付款通知数量
         profileDetail:{},//个人和公司详情
