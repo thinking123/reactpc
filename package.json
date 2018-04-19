@@ -72,6 +72,7 @@
     "react-smart-photo": "github:afeiship/react-smart-photo",
     "react-status-manager": "github:afeiship/react-status-manager",
     "react-toggle": "github:afeiship/react-toggle",
+    "redux": "^3.7.2",
     "webkit-sass-flexbox-grid": "github:afeiship/webkit-sass-flexbox-grid",
     "webkit-sass-functions": "github:afeiship/webkit-sass-functions",
     "webkit-sass-generators": "github:afeiship/webkit-sass-generators",
